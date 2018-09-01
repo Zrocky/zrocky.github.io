@@ -113,18 +113,18 @@
 
 
 
-  <meta name="description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验. 开发工具以下列举了我们公司在iOS开发中经常使用到工具, 并附上地址, 原则上需要全部安装  Xcode 历史版本 RubyGems (Ruby环境) Alcatraz (Xcode开发工具安装包)  以下插件均可在Alcatraz插件安装包中下载安装  Peckham (头文件快捷导入) cocoapods">
+  <meta name="description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.">
 <meta name="keywords" content="Zrocky, iOS, Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS Develop Guideline">
 <meta property="og:url" content="http://zrocky.com/2016/ios-develop-guideline/index.html">
 <meta property="og:site_name" content="Zrocky">
-<meta property="og:description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验. 开发工具以下列举了我们公司在iOS开发中经常使用到工具, 并附上地址, 原则上需要全部安装  Xcode 历史版本 RubyGems (Ruby环境) Alcatraz (Xcode开发工具安装包)  以下插件均可在Alcatraz插件安装包中下载安装  Peckham (头文件快捷导入) cocoapods">
+<meta property="og:description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-01T09:55:15.542Z">
+<meta property="og:updated_time" content="2018-09-01T09:58:13.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS Develop Guideline">
-<meta name="twitter:description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验. 开发工具以下列举了我们公司在iOS开发中经常使用到工具, 并附上地址, 原则上需要全部安装  Xcode 历史版本 RubyGems (Ruby环境) Alcatraz (Xcode开发工具安装包)  以下插件均可在Alcatraz插件安装包中下载安装  Peckham (头文件快捷导入) cocoapods">
+<meta name="twitter:description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.">
 
 
 
@@ -401,6 +401,7 @@
 
       
         <p>以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.</p>
+<a id="more"></a>
 <h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><p>以下列举了我们公司在iOS开发中经常使用到工具, 并附上地址, 原则上需要全部安装</p>
 <ul>
 <li><a href="https://developer.apple.com/downloads/" target="_blank" rel="noopener">Xcode 历史版本</a></li>
@@ -413,7 +414,6 @@
 <li><a href="https://github.com/kattrali/cocoapods-xcode-plugin" target="_blank" rel="noopener">cocoapods plugin (cocoapods插件)</a></li>
 <li><a href="https://github.com/Zrocky/VVDocumenter-Xcode" target="_blank" rel="noopener">VVDocumenter (文档快捷注释)</a></li>
 </ul>
-<a id="more"></a>
 <h2 id="文件规范"><a href="#文件规范" class="headerlink" title="文件规范"></a>文件规范</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">- Project</span><br><span class="line"> 	- Classes</span><br><span class="line"> 		- Tool</span><br><span class="line"> 		- Expand</span><br><span class="line"> 			- Macros</span><br><span class="line"> 				- Macro.h</span><br><span class="line"> 				- A Macro.h</span><br><span class="line"> 				- B Macro.h</span><br><span class="line"> 			- Const</span><br><span class="line"> 				- Const.h</span><br><span class="line"> 				- A Const.h</span><br><span class="line"> 				- B Const.h</span><br><span class="line">			- DataBase</span><br><span class="line"> 			- CoreData</span><br><span class="line"> 		- Category</span><br><span class="line"> 			- UI</span><br><span class="line"> 				- UIView</span><br><span class="line"> 				- UIButton</span><br><span class="line"> 				- UIViewController</span><br><span class="line"> 				- UITableView</span><br><span class="line"> 				- UIImage</span><br><span class="line"> 			- Data</span><br><span class="line"> 				- NSDate</span><br><span class="line"> 				- NSString</span><br><span class="line"> 		- NetworkCenter</span><br><span class="line"> 			- APIManager</span><br><span class="line"> 				- A Module</span><br><span class="line"> 				- B Module</span><br><span class="line"> 			- Foundation</span><br><span class="line"> 		- Vender</span><br><span class="line"> 	- Resource</span><br><span class="line"> 		- Image</span><br><span class="line"> 		- Font</span><br><span class="line"> 		- Video</span><br><span class="line"> 		- Audio</span><br></pre></td></tr></table></figure>
 <h2 id="代码区块规范"><a href="#代码区块规范" class="headerlink" title="代码区块规范"></a>代码区块规范</h2><h3 id="Controller代码区块规范"><a href="#Controller代码区块规范" class="headerlink" title="Controller代码区块规范"></a>Controller代码区块规范</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - life cycle</span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">	[super viewDidLoad];</span><br><span class="line"></span><br><span class="line">    [self setupLayouts];</span><br><span class="line">&#125;</span><br><span class="line">- (void)setupLayouts &#123;</span><br><span class="line">&#125;</span><br><span class="line">- (void)viewWillAppear:(BOOL)animated &#123;</span><br><span class="line">     [super viewWillAppear:animated];</span><br><span class="line">&#125;</span><br><span class="line">#pragma mark - delegate</span><br><span class="line">#pragma mark - event response</span><br><span class="line">#pragma mark - public methods</span><br><span class="line">#pragma mark - private methods</span><br><span class="line">#pragma mark - setter and getter</span><br></pre></td></tr></table></figure>
 <h3 id="View代码区块规范"><a href="#View代码区块规范" class="headerlink" title="View代码区块规范"></a>View代码区块规范</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - life cycle</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame &#123;</span><br><span class="line">     if (self = [super initWithFrame:frame]) &#123;</span><br><span class="line">         [self setupSubviews];</span><br><span class="line">         [self setupLayouts];</span><br><span class="line">     &#125;</span><br><span class="line">     return self;</span><br><span class="line">&#125;</span><br><span class="line">- (void)setupSubviews &#123;</span><br><span class="line">&#125;</span><br><span class="line">- (void)setupLayouts &#123;</span><br><span class="line">&#125;</span><br><span class="line">#pragma mark - delegate</span><br><span class="line">#pragma mark - event response</span><br><span class="line">#pragma mark - public methods</span><br><span class="line">#pragma mark - private methods</span><br><span class="line">#pragma mark - setter and getter</span><br></pre></td></tr></table></figure>
@@ -468,8 +468,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/python-crawier/" rel="prev" title="Python爬虫">
-                Python爬虫 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/python-learning-note/" rel="prev" title="Python笔记">
+                Python笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

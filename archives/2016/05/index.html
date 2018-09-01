@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="Stay Hungry, Stay Foolish">
+  <meta name="description" content="Zrocky&apos;s Technology Blog">
 <meta name="keywords" content="Zrocky, iOS, Python">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zrocky">
 <meta property="og:url" content="http://zrocky.com/archives/2016/05/index.html">
 <meta property="og:site_name" content="Zrocky">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
+<meta property="og:description" content="Zrocky&apos;s Technology Blog">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zrocky">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:description" content="Zrocky&apos;s Technology Blog">
 
 
 
@@ -197,6 +197,10 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1>
+      
     
   </div>
 
@@ -315,7 +319,7 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2016/05/23/Python爬虫/" itemprop="url">
+            <a class="post-title-link" href="/2016/python-crawier/" itemprop="url">
               
                 <span itemprop="name">Python爬虫</span>
               
@@ -325,7 +329,7 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-23T17:14:03+08:00"
+              datetime="2016-05-23T00:00:00+08:00"
               content="2016-05-23" >
           05-23
         </time>
@@ -352,7 +356,7 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2016/05/23/Python笔记/" itemprop="url">
+            <a class="post-title-link" href="/2016/python-learning-note/" itemprop="url">
               
                 <span itemprop="name">Python笔记</span>
               
@@ -362,7 +366,7 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-23T13:27:37+08:00"
+              datetime="2016-05-23T00:00:00+08:00"
               content="2016-05-23" >
           05-23
         </time>
@@ -389,7 +393,7 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2016/05/03/iOS-Develop-Guideline/" itemprop="url">
+            <a class="post-title-link" href="/2016/ios-develop-guideline/" itemprop="url">
               
                 <span itemprop="name">iOS Develop Guideline</span>
               
@@ -399,7 +403,7 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-03T16:15:50+08:00"
+              datetime="2016-05-03T00:00:00+08:00"
               content="2016-05-03" >
           05-03
         </time>
@@ -562,6 +566,8 @@
   
 
   
+    <script id="dsq-count-scr" src="https://zrocky.disqus.com/count.js" async></script>
+  
 
   
 
@@ -583,6 +589,75 @@
 
 
   
+
+  
+  <script>
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+        .done(function ({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz",
+                'X-LC-Key': "YSdUunmrX0Nv5YF1jN3lhU9R",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          if ($('.post-title-link').length >= 1) {
+            showTime(Counter);
+          }
+          
+        })
+    });
+  </script>
+
+
 
   
 

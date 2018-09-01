@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="Objective-C编码规范，内容来自苹果、谷歌的文档翻译，自己的编码经验和对其它资料的总结。  Github  概要Objective-C是一门面向对象的动态编程语言，主要用于编写iOS和Mac应用程序。关于Objective-C的编码规范，苹果和谷歌都已经有很好的总结：  Apple Coding Guidelines for Cocoa Google Objective-C Style G">
-<meta name="keywords" content="guideline">
+<meta name="keywords" content="Zrocky, iOS, Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS Coding Guideline">
 <meta property="og:url" content="http://zrocky.com/2016/04/27/iOS-Coding-Guideline/index.html">
@@ -117,7 +117,7 @@
 <meta property="og:description" content="Objective-C编码规范，内容来自苹果、谷歌的文档翻译，自己的编码经验和对其它资料的总结。  Github  概要Objective-C是一门面向对象的动态编程语言，主要用于编写iOS和Mac应用程序。关于Objective-C的编码规范，苹果和谷歌都已经有很好的总结：  Apple Coding Guidelines for Cocoa Google Objective-C Style G">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.github.com/onevcat/VVDocumenter-Xcode/master/ScreenShot.gif">
-<meta property="og:updated_time" content="2018-05-11T03:41:40.000Z">
+<meta property="og:updated_time" content="2018-09-01T05:33:39.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS Coding Guideline">
 <meta name="twitter:description" content="Objective-C编码规范，内容来自苹果、谷歌的文档翻译，自己的编码经验和对其它资料的总结。  Github  概要Objective-C是一门面向对象的动态编程语言，主要用于编写iOS和Mac应用程序。关于Objective-C的编码规范，苹果和谷歌都已经有很好的总结：  Apple Coding Guidelines for Cocoa Google Objective-C Style G">
@@ -224,13 +224,6 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">首页</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">标签<span class="badge">3</span></a>
   </li>
         
         
@@ -368,17 +361,6 @@
           
 
           
-          
-             <span id="/2016/04/27/iOS-Coding-Guideline/" class="leancloud_visitors" data-flag-title="iOS Coding Guideline">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -567,6 +549,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//正确，使用点分语法访问属性</span><br><span class="line">NSString *oldName = myObject.name;</span><br><span class="line">myObject.name = @&quot;Alice&quot;;</span><br><span class="line"></span><br><span class="line">//错误，不要用点分语法调用方法</span><br><span class="line">NSArray *array = [NSArray arrayWithObject:@&quot;hello&quot;];</span><br><span class="line">NSUInteger numberOfItems = array.count;</span><br><span class="line">array.release;</span><br></pre></td></tr></table></figure>
 <h3 id="Delegate要使用弱引用"><a href="#Delegate要使用弱引用" class="headerlink" title="Delegate要使用弱引用"></a>Delegate要使用弱引用</h3><p>一个类的Delegate对象通常还引用着类本身，这样很容易造成引用循环的问题，所以类的Delegate属性要设置为弱引用。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/** delegate */</span><br><span class="line">@property (nonatomic, weak) id &lt;IPCConnectHandlerDelegate&gt; delegate;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -583,12 +566,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/guideline/" rel="tag"># guideline</a>
-          
-        </div>
       
 
       
@@ -824,67 +801,6 @@
   
 
   
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function ({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
-            
-            .done(function () {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            })
-            
-            .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-            })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
-            
-          }
-        })
-      .fail(function ({ responseJSON }) {
-        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
-      });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz")
-        .done(function ({ api_server }) {
-          var Counter = function (method, url, data) {
-            return $.ajax({
-              method: method,
-              url: `https://${api_server}/1.1${url}`,
-              headers: {
-                'X-LC-Id': "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz",
-                'X-LC-Key': "YSdUunmrX0Nv5YF1jN3lhU9R",
-                'Content-Type': 'application/json',
-              },
-              data: data,
-            });
-          };
-          
-          addCount(Counter);
-          
-        })
-    });
-  </script>
-
-
-
-  
 
   
 
@@ -905,72 +821,6 @@
   
 
   
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
-
 
 </body>
 </html>

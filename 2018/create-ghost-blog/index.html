@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="Zrocky">
 <meta property="og:description" content="Ghost是一个现代化的，开源的，基于Node.js的博客发布平台，它的前端管理系统基于Ember.js， 后端的模板引擎采用的handlebars， 而默认数据库是MySQL，当然，你也可以使用其他类型的数据库。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-01T10:02:09.223Z">
+<meta property="og:updated_time" content="2018-09-01T10:10:45.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ghost博客搭建">
 <meta name="twitter:description" content="Ghost是一个现代化的，开源的，基于Node.js的博客发布平台，它的前端管理系统基于Ember.js， 后端的模板引擎采用的handlebars， 而默认数据库是MySQL，当然，你也可以使用其他类型的数据库。">
@@ -427,25 +427,41 @@
 </ul>
 <h3 id="Follow-me"><a href="#Follow-me" class="headerlink" title="Follow me"></a>Follow me</h3><h4 id="1GB内存？-你需要Swap"><a href="#1GB内存？-你需要Swap" class="headerlink" title="1GB内存？ 你需要Swap"></a>1GB内存？ 你需要Swap</h4><p>你可以看<a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04" target="_blank" rel="noopener">这个</a>，或者在命令行中输入（官方推荐方法）</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/var/swap bs=1k count=1024k</span><br><span class="line">mkswap /var/swap</span><br><span class="line">swapon /var/swap</span><br><span class="line">echo '/var/swap swap swap default 0 0' &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
-<h3 id="用非root用户执行ghost命令"><a href="#用非root用户执行ghost命令" class="headerlink" title="用非root用户执行ghost命令"></a>用非root用户执行ghost命令</h3><p>增加用户<br><code>adduser &lt;user&gt;</code></p>
-<p>给用户sudo权限<br><code>usermod -G sudo &lt;user&gt;</code></p>
-<p>切换到非root用户<br><code>su - &lt;user&gt;</code></p>
+<h3 id="用非root用户执行ghost命令"><a href="#用非root用户执行ghost命令" class="headerlink" title="用非root用户执行ghost命令"></a>用非root用户执行ghost命令</h3><p>增加用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser &lt;user&gt;</span><br></pre></td></tr></table></figure>
+<p>给用户sudo权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -G sudo &lt;user&gt;</span><br></pre></td></tr></table></figure>
+<p>切换到非root用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - &lt;user&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="用apt-get安装MySQL和Nginx以及Node"><a href="#用apt-get安装MySQL和Nginx以及Node" class="headerlink" title="用apt-get安装MySQL和Nginx以及Node"></a>用apt-get安装MySQL和Nginx以及Node</h3><p>如果你已经安装好这些东西，跳过就行</p>
-<p><strong>Update package lists</strong><br><code>sudo apt-get update</code></p>
-<p><strong>Upgrade installed packages</strong><br><code>sudo apt-get upgrade</code></p>
-<p><strong>Install NGINX</strong><br><code>sudo apt-get install nginx</code></p>
-<p><strong>Open Firewall for HTTP/HTTPS</strong><br><code>sudo ufw allow &#39;Nginx Full&#39;</code></p>
-<p><strong>Install MySQL</strong><br><code>sudo apt-get install mysql-server</code></p>
-<p><strong>Add the NodeSource APT repository for Node 6</strong><br><code>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash</code></p>
+<p><strong>Update package lists</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<p><strong>Upgrade installed packages</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<p><strong>Install NGINX</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<p><strong>Open Firewall for HTTP/HTTPS</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 'Nginx Full'</span><br></pre></td></tr></table></figure>
+<p><strong>Install MySQL</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+<p><strong>Add the NodeSource APT repository for Node 6</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash</span><br></pre></td></tr></table></figure>
 <p><strong>install Node.js</strong></p>
-<p><code>sudo apt-get install -y nodejs</code></p>
-<p><strong>安装Ghost-CLI</strong><br><code>sudo npm i -g ghost-cli</code></p>
-<p><strong>或者使用yarn(&gt;= 0.23.x)</strong><br><code>sudo yarn global add ghost-cli</code> </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<p><strong>安装Ghost-CLI</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm i -g ghost-cli</span><br></pre></td></tr></table></figure>
+<p><strong>或者使用yarn(&gt;= 0.23.x)</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yarn global add ghost-cli</span><br></pre></td></tr></table></figure>
 <p>准备工作完成。</p>
-<h3 id="安装Ghost"><a href="#安装Ghost" class="headerlink" title="安装Ghost"></a>安装Ghost</h3><p>新建一个文件夹<br><code>sudo mkdir -p /var/www/ghost</code></p>
-<p>！！不要安装在/root下<br>给这个文件夹你的用户的权限([user] 换成你的非root用户名)<br><code>sudo chown [user]:[user] /var/www/ghost</code></p>
-<p>切换到新文件夹里<br><code>cd /var/www/ghost</code></p>
-<p>安装<br><code>ghost install`</code><br>然后会蹦出一系列的问题，包括</p>
+<h3 id="安装Ghost"><a href="#安装Ghost" class="headerlink" title="安装Ghost"></a>安装Ghost</h3><p>新建一个文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /var/www/ghost</span><br></pre></td></tr></table></figure>
+<p>！！不要安装在/root下<br>给这个文件夹你的用户的权限([user] 换成你的非root用户名)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown [user]:[user] /var/www/ghost</span><br></pre></td></tr></table></figure>
+<p>切换到新文件夹里</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/ghost</span><br></pre></td></tr></table></figure>
+<p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ghost install</span><br></pre></td></tr></table></figure>
+<p>然后会蹦出一系列的问题，包括</p>
 <ul>
 <li>域名</li>
 <li>MySQL信息（localhost, 用户名，密码， 数据库名）</li>
@@ -454,8 +470,8 @@
 <li>其他</li>
 <li>最后一步会提示你是否要启动服务</li>
 </ul>
-<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p>现在，你输入你的域名，应该就能成功的访问了。<br>输入<br><code>域名/ghost</code><br>可以进入网站的后台系统，可以进行发布，更换主题等各种功能</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="https://docs.ghost.org/v1/docs/introduction" target="_blank" rel="noopener">官方文档</a><br>你可以使用ghost config来更改配置<br>你也可以用ghost start/stop/restart来管理你的应用<br>你也可以用ghost install 来更新你的应用</p>
+<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p>现在，你输入你的域名，应该就能成功的访问了。<br>输入<code>域名/ghost</code><br>可以进入网站的后台系统，可以进行发布，更换主题等各种功能</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="https://docs.ghost.org/v1/docs/introduction" target="_blank" rel="noopener">官方文档</a><br>你可以使用<code>ghost config</code>来更改配置<br>你也可以用<code>ghost start/stop/restart</code>来管理你的应用<br>你也可以用<code>ghost install</code>来更新你的应用</p>
 
       
     </div>

@@ -122,7 +122,7 @@
 <meta property="og:description" content="爬虫, 数据说话的时代, 具有数据收集的手段, 我觉得很重要, 因为这些数据能帮助我们更好的分析趋势, 在解决问题时提供良好的依据, 以上就是我学习爬虫的动力所在">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://qiniu.cuiqingcai.com/wp-content/uploads/2015/02/20130515113723855.png">
-<meta property="og:updated_time" content="2018-09-01T09:57:42.386Z">
+<meta property="og:updated_time" content="2018-09-01T10:28:25.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫">
 <meta name="twitter:description" content="爬虫, 数据说话的时代, 具有数据收集的手段, 我觉得很重要, 因为这些数据能帮助我们更好的分析趋势, 在解决问题时提供良好的依据, 以上就是我学习爬虫的动力所在">
@@ -411,7 +411,7 @@
 <h3 id="Urllib的使用"><a href="#Urllib的使用" class="headerlink" title="Urllib的使用"></a>Urllib的使用</h3><p>在使用之前, 需要导入Urllib库</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2</span><br></pre></td></tr></table></figure>
 <h4 id="获取网页"><a href="#获取网页" class="headerlink" title="获取网页"></a>获取网页</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 标准写法 (推荐)</span></span><br><span class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line"><span class="keyword">print</span> response.read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简写</span></span><br><span class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
-<p><code>urlopen(url, data, timeout)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">urlopen(url, data, timeout)</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>第一个参数<code>url</code>即为<code>URL</code>，第二个参数<code>data</code>是访问<code>URL</code>时要传送的数据，第三个<code>timeout</code>是设置超时时间。</p>
 </li>

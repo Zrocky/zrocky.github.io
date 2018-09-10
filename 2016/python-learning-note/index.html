@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-zrocky.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zrocky.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zrocky.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/zrocky.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="很早就对Python这门语言感兴趣, 终于有时间可以系统地学习, 所以才会有这篇笔记, 笔记本身基于C, OC, Swift三门语言, 相同之处没有太多赘述, 我也是一笔带过, 希望知晓! 我学习的来源主要是廖雪峰的Python教程, 本人并不是原创者, 笔记仅为本人自我记录的学习笔记">
+<meta name="keywords" content="Zrocky, iOS, Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python笔记">
+<meta property="og:url" content="http://zrocky.com/2016/python-learning-note/index.html">
+<meta property="og:site_name" content="Zrocky">
+<meta property="og:description" content="很早就对Python这门语言感兴趣, 终于有时间可以系统地学习, 所以才会有这篇笔记, 笔记本身基于C, OC, Swift三门语言, 相同之处没有太多赘述, 我也是一笔带过, 希望知晓! 我学习的来源主要是廖雪峰的Python教程, 本人并不是原创者, 笔记仅为本人自我记录的学习笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/001387245992536e2ba28125cf04f5c8985dbc94a02245e000/0">
+<meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/001387245979827634fd6204f9346a1ae6358d9ed051666000/0">
+<meta property="og:updated_time" content="2018-09-01T10:26:03.426Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python笔记">
+<meta name="twitter:description" content="很早就对Python这门语言感兴趣, 终于有时间可以系统地学习, 所以才会有这篇笔记, 笔记本身基于C, OC, Swift三门语言, 相同之处没有太多赘述, 我也是一笔带过, 希望知晓! 我学习的来源主要是廖雪峰的Python教程, 本人并不是原创者, 笔记仅为本人自我记录的学习笔记">
+<meta name="twitter:image" content="http://www.liaoxuefeng.com/files/attachments/001387245992536e2ba28125cf04f5c8985dbc94a02245e000/0">
+
+
+
+
+
+
+  <link rel="canonical" href="http://zrocky.com/2016/python-learning-note/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python笔记 | Zrocky</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=119024149"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '119024149');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zrocky</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">分类<span class="badge">4</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">归档<span class="badge">8</span></a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zrocky.com/2016/python-learning-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zrocky">
+      <meta itemprop="description" content="Zrocky's Technology Blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zrocky">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Python笔记
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-05-23 18:00:00" itemprop="dateCreated datePublished" datetime="2016-05-23T18:00:00+08:00">2016-05-23</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/python-learning-note/" class="leancloud_visitors" data-flag-title="Python笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>很早就对<code>Python</code>这门语言感兴趣, 终于有时间可以系统地学习, 所以才会有这篇笔记, 笔记本身基于<code>C</code>, <code>OC</code>, <code>Swift</code>三门语言, 相同之处没有太多赘述, 我也是一笔带过, 希望知晓! 我学习的来源主要是廖雪峰的<code>Python</code>教程, 本人并不是原创者, 笔记仅为本人自我记录的学习笔记</p>
+<a id="more"></a>
+<ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="noopener">廖雪峰的Python教程</a></li>
+</ul>
+<h2 id="Paython开发基础"><a href="#Paython开发基础" class="headerlink" title="Paython开发基础"></a>Paython开发基础</h2><h3 id="Python安装"><a href="#Python安装" class="headerlink" title="Python安装"></a>Python安装</h3><p>在Mac系统中, 系统内置了Python2.7版本, 所以Mac系统用户此时已基本满足编译所需环境。但是随着Python3.x版本的普及,建议使用Python3.x版本进行开发,笔记中代码也是在Python3.x环境下编译的</p>
+<h4 id="使用HomeBrew安装Python3"><a href="#使用HomeBrew安装Python3" class="headerlink" title="使用HomeBrew安装Python3"></a>使用HomeBrew安装Python3</h4><p>在Terminal通过命令<code>brew install python3</code>安装即可</p>
+<h3 id="Python编译器选择"><a href="#Python编译器选择" class="headerlink" title="Python编译器选择"></a>Python编译器选择</h3><p>在Mac系统中可以选择Sublime Text作为Python的编译器</p>
+<h3 id="Python3编译说明"><a href="#Python3编译说明" class="headerlink" title="Python3编译说明"></a>Python3编译说明</h3><p>虽然我们使用HomeBrew安装了Python3版本，但是因为Mac内置了Python2.7，所以通用的<code>Python</code>命令在Mac下寻址的仍然是Python2.7，我们需要使用<code>Python3</code>命令来区分两种版本</p>
+<h3 id="运行Python代码"><a href="#运行Python代码" class="headerlink" title="运行Python代码"></a>运行Python代码</h3><p>这里会有两种方式, 一种是讲Python代码写在.py文件中, 利用Terminal命令进行编译</p>
+<ul>
+<li>在终端运行.py文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python3 first.py</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在Terminal的Python交互环境中直接书写Python命令进行编译</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python3</span><br></pre></td></tr></table></figure>
+<p>在Mac或Linux系统中, 可以在代码最前面加上<code>#!/usr/bin/env python</code>, 系统会识别<code>.py</code>文件为可执行程序, Windows系统中将会忽略这一句</p>
+<h2 id="Paython语言基础"><a href="#Paython语言基础" class="headerlink" title="Paython语言基础"></a>Paython语言基础</h2><h3 id="输入输出-I-O"><a href="#输入输出-I-O" class="headerlink" title="输入输出(I/O)"></a>输入输出(I/O)</h3><h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>使用<code>print()</code>函数输出, </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'Hello, World'</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>使用<code>&#39;</code>表示字符串</p>
+</li>
+<li><p><code>print()</code>函数也可以接受多个字符串，使用<code>,</code>隔开</p>
+</li>
+<li><p><code>print()</code>函数在遇到<code>,</code>时会输出一个空格</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'Hello'</span>, <span class="string">'World'</span>)</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>print()</code>函数也可以打印整数，或者计算结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="number">300</span>)</span><br><span class="line"><span class="number">300</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="number">100</span> + <span class="number">200</span>)</span><br><span class="line"><span class="number">300</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>混合输出数值和字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'100 + 200 ='</span>, <span class="number">100</span> + <span class="number">200</span>)</span><br><span class="line"><span class="number">100</span> + <span class="number">200</span> = <span class="number">300</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>使用<code>raw_input(&quot;输入提示语: &quot;)</code>让用户从键盘输入, 括号中可填入友好提醒词</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = raw_input(<span class="string">"Please input your name: "</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">"Hello,"</span>, name</span><br></pre></td></tr></table></figure>
+<p>输入的字符会保存在<code>name</code>变量中</p>
+<h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>使用<code>#</code>放在解释语句前面进行注释</p>
+<h4 id="大小写区分"><a href="#大小写区分" class="headerlink" title="大小写区分"></a>大小写区分</h4><p>严格区分大小写, 混用会造成编译出错</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>Python的数据类型与其它开发语言大致相同</p>
+<p>整数运算得出的永远是整数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="number">10</span> / <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>结果为<code>3</code></p>
+<p>如果需要做出精确的计算, 必须带有浮点数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="number">10.0</span> / <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>结果为<code>3.3333333333333335</code></p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>使用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>可以打印换行的文本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'''line1</span></span><br><span class="line"><span class="string">line2</span></span><br><span class="line"><span class="string">line3'''</span></span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">line1</span><br><span class="line">line2</span><br><span class="line">line3</span><br></pre></td></tr></table></figure>
+<h4 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h4><p>包含两个值<code>True</code>和<code>False</code>(注意区分大小写)</p>
+<p>涉及的运算符有<code>and</code>,<code>not</code>,<code>or</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># and</span></span><br><span class="line"><span class="keyword">print</span> <span class="keyword">True</span> <span class="keyword">and</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<p>输出结果: <code>False</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">print</span> <span class="keyword">True</span> <span class="keyword">or</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<p>输出结果: <code>True</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># not</span></span><br><span class="line"><span class="keyword">print</span> <span class="keyword">not</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<p>输出结果: <code>False</code></p>
+<h4 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h4><p>使用<code>None</code>表示空值, 但是空值并不等于<code>0</code></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>Python是一门<code>动态变量语言</code>,相对应的有<code>静态变量语言</code>, 动态语言的特点是在定义变量时可以不指定变量类型, 而静态语言则必须在定义变量时确定变量的类型</p>
+<p>同一个变量可以反复赋值, 并且每次赋值的类型可以不同</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">a = <span class="string">"python is fun"</span></span><br></pre></td></tr></table></figure>
+<p>针对变量的赋值操作<code>a = &quot;ABC&quot;</code>, Python首先创建了一个<code>&quot;ABC&quot;</code>字符串, 然后创建了一个<code>a</code>变量, 并且让<code>a</code>指向<code>&quot;ABC&quot;</code></p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>常量约定俗成使用全大写字母表示, 例如<code>WIDTH</code></p>
+<h3 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h3><p><code>ASCII</code>使用一字节保存字符, 包含字母数字和一些符号</p>
+<p><code>GB2312</code>等国际语言使用两个字节保存字符</p>
+<p><code>Unicode</code>包含所有语言字符</p>
+<p>但是<code>Unicode</code>的英文数字也是使用2个字节, 所以发明了可变长的编码<code>UTF-8</code>, 当是英文数字时, 使用一个字节, 其它字符用多个字节保存</p>
+<p><code>UTF-8</code>可变长字符编码</p>
+<p>用记事本编辑的时候，从文件读取的<code>UTF-8</code>字符被转换为<code>Unicode</code>字符到内存里，编辑完成后，保存的时候再把<code>Unicode</code>转换为<code>UTF-8</code>保存到文件：</p>
+<p><img src="http://www.liaoxuefeng.com/files/attachments/001387245992536e2ba28125cf04f5c8985dbc94a02245e000/0" alt="textCode"></p>
+<p>浏览网页的时候，服务器会把动态生成的<code>Unicode</code>内容转换为<code>UTF-8</code>再传输到浏览器：</p>
+<p><img src="http://www.liaoxuefeng.com/files/attachments/001387245979827634fd6204f9346a1ae6358d9ed051666000/0" alt="webCode"></p>
+<h3 id="Python字符"><a href="#Python字符" class="headerlink" title="Python字符"></a>Python字符</h3><h4 id="ASCII与字符之间的转换"><a href="#ASCII与字符之间的转换" class="headerlink" title="ASCII与字符之间的转换"></a>ASCII与字符之间的转换</h4><p>使用<code>chr()</code>和<code>ord()</code>函数, 可用于字符与<code>ASCII</code>字符之间的互转</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将ASCII转化为字符</span></span><br><span class="line">chr(<span class="number">65</span>)</span><br><span class="line"><span class="comment"># 将字符转化为ASCII</span></span><br><span class="line">ord(<span class="string">"a"</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A</span><br><span class="line">97</span><br></pre></td></tr></table></figure>
+<h4 id="Unicode字符"><a href="#Unicode字符" class="headerlink" title="Unicode字符"></a>Unicode字符</h4><p>使用<code>u&quot;...&quot;</code>表示<code>Unicode</code>字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u&apos;niha&apos;</span><br></pre></td></tr></table></figure>
+<p>输出结果为<code>niha</code></p>
+<h4 id="UTF-8字符"><a href="#UTF-8字符" class="headerlink" title="UTF-8字符"></a>UTF-8字符</h4><p>使用<code>encode(&#39;utf-8&#39;)</code>方法将<code>Unicode</code>字符转化为<code>UTF-8</code>字符</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">u'ABC'</span>.encode(<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
+<p> 输出结果: <code>&#39;ABC&#39;</code></p>
+<p>使用<code>decode(&#39;utf-8&#39;)</code>方法将<code>UTF-8</code>字符转化为<code>Unicode</code>字符</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'ABC'</span>.decode(<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
+<p> 输出结果: <code>u&#39;ABC&#39;</code></p>
+<h4 id="Python中字符的实际应用"><a href="#Python中字符的实际应用" class="headerlink" title="Python中字符的实际应用"></a>Python中字符的实际应用</h4><p>使用<code>len()</code>函数可以计算出字符的长度</p>
+<p>因为Python文件本身也是也是一个文本文件, 所以在文件中使用中文时, 需要使用<code>UTF-8</code>编码</p>
+<p>在文件开头添加<code># -*- coding: utf-8 -*-</code>, 让编译器以<code>UTF-8</code>编码进行编译文件, 不然可能出现乱码</p>
+<h4 id="字符格式化"><a href="#字符格式化" class="headerlink" title="字符格式化"></a>字符格式化</h4><p>使用格式化字符串进行格式化输出, 格式与C语言保持一致</p>
+<p>使用<code>%</code>拼接格式化的值, 值用括号包含, 以<code>,</code>分隔多个值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">"Hi! %s, your score is %d"</span> % (<span class="string">"Michelle"</span>, <span class="number">97</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi! Michelle, your scrore is 97</span><br></pre></td></tr></table></figure>
+<p>常用的占位符有</p>
+<ul>
+<li>%d    整数</li>
+<li>%f浮点数</li>
+<li>%s字符串</li>
+<li>%x十六进制整数</li>
+</ul>
+<p>格式化整数和浮点数还可以指定是否补0和整数与小数的位数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'%2d-%02d'</span> % (<span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"><span class="string">'%.2f'</span> % <span class="number">3.1415926</span></span><br></pre></td></tr></table></figure>
+<p>输出结果: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3-01</span><br><span class="line">3.14</span><br></pre></td></tr></table></figure>
+<h3 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h3><h4 id="list类型"><a href="#list类型" class="headerlink" title="list类型"></a>list类型</h4><p>使用<code>[..., ...]</code>表示一个<code>list</code>, <code>list</code>内元素可以改变, 且元素类型可以不同</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">"Rocky"</span>, <span class="string">"Shawn"</span>, <span class="string">"James"</span>]</span><br></pre></td></tr></table></figure>
+<h5 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h5><p>获取其中一个值, 索引为负数表示从后向前获取索引</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names[<span class="number">1</span>]</span><br><span class="line"><span class="comment"># 倒数第一个值</span></span><br><span class="line">names[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<h5 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h5><p>插入一个值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names.insert(<span class="number">1</span>, <span class="string">"Henry"</span>)</span><br></pre></td></tr></table></figure>
+<p>在末尾拼接一个值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names.append(<span class="string">"Harley"</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="删值"><a href="#删值" class="headerlink" title="删值"></a>删值</h5><p>删除<code>list</code>中某个索引的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除最后一个值</span></span><br><span class="line">names.pop()</span><br><span class="line"><span class="comment"># 删除指定索引的值</span></span><br><span class="line">names.pop(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="改值"><a href="#改值" class="headerlink" title="改值"></a>改值</h5><p>修改<code>list</code>中的某个索引的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names[<span class="number">1</span>] = <span class="string">"Yuri"</span></span><br></pre></td></tr></table></figure>
+<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><p>使用<code>sort()</code>进行排序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name.sort()</span><br></pre></td></tr></table></figure>
+<h4 id="tuple-元组-类型"><a href="#tuple-元组-类型" class="headerlink" title="tuple(元组)类型"></a>tuple(元组)类型</h4><p>使用<code>(..., ...)</code>表示一个<code>tuple</code>, <code>tuple</code>内元素不可改变, 元素类型可以不同</p>
+<p>因为<code>tuple</code>不可改变, 所以更加安全, 在实际使用中推荐尽量使用<code>tuple</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names = (&quot;Rocky&quot;, &quot;Jack&quot;, &quot;James&quot;)</span><br></pre></td></tr></table></figure>
+<p>定义1个元素的<code>tuple</code>, 如果元素是数字, 需要使用<code>(1,)</code>写法</p>
+<p><code>tuple</code>也有可变的形式, 当我们把<code>tuple</code>内的元素定义为<code>list</code>时, <code>list</code>内元素可进行变化, 生成了一个简洁可变的<code>tuple</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t = ([<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">t[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">11</span></span><br></pre></td></tr></table></figure>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><p>使用<code>if</code>, <code>else</code>, <code>elif</code>关键字编写条件判断语句</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"HaHa"</span></span><br><span class="line"><span class="keyword">elif</span> a == <span class="number">2</span>:</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"WaWa"</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"KaKa"</span></span><br></pre></td></tr></table></figure>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p><code>Python</code>有两种循环, 一种是<code>for...in</code>循环, 另一种是<code>while</code>循环</p>
+<h4 id="for…in循环"><a href="#for…in循环" class="headerlink" title="for…in循环"></a>for…in循环</h4><p><code>for...in</code>遍历了<code>list</code>里所有的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">	<span class="keyword">print</span> name</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Rocky</span><br><span class="line">Michael</span><br><span class="line">Jack</span><br></pre></td></tr></table></figure>
+<p>在实际开发中, 经常需要遍历整数集合, <code>Python</code>提供了<code>range(...)</code>函数用来遍历整数集合</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">	<span class="keyword">print</span> index</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><p>当满足条件时, 则不断调循环体, 当不满足条件时, 则退出循环</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="keyword">while</span> &lt; <span class="number">0</span>:  </span><br><span class="line">	a = a - <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+<h3 id="字典集合"><a href="#字典集合" class="headerlink" title="字典集合"></a>字典集合</h3><h4 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h4><p><code>dict</code>是使用键值对形式的存储集合, 以<code>{key : value}</code>形式表示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">score = &#123;<span class="string">"Rocky"</span> : <span class="number">100</span>, <span class="string">"Jack"</span> : <span class="number">30</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>判断<code>key</code>是否在<code>dict</code>内</p>
+<p>返回True或False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"Allen"</span> <span class="keyword">in</span> score</span><br></pre></td></tr></table></figure>
+<p>返回None或者自定义的默认返回值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scroe.get(<span class="string">"Allen"</span>, <span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="取值及赋值"><a href="#取值及赋值" class="headerlink" title="取值及赋值"></a>取值及赋值</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> score[<span class="string">"Rocky"</span>]</span><br><span class="line">score[<span class="string">"Rocky"</span>] = <span class="number">99</span></span><br><span class="line"><span class="keyword">print</span> score[<span class="string">"Rocky"</span>]</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">100</span><br><span class="line">99</span><br></pre></td></tr></table></figure>
+<h5 id="删值-1"><a href="#删值-1" class="headerlink" title="删值"></a>删值</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">score.pop(<span class="string">"Jack"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>使用<code>set([key, key])</code>表示一个set, 创建时需传入一个<code>list</code>作为输入集合</p>
+<p><code>set</code>是一个元素不重复集合, 也就是说<code>set</code>会对所有元素进行去重</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">score = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="keyword">print</span> score</span><br></pre></td></tr></table></figure>
+<p>输出结果: <code>set([1, 2, 3])</code></p>
+<h5 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h5><p>使用<code>add(key)</code>方法进行添加, 可添加重复值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">score.add(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>使用<code>remove(key)</code>方法进行删除</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">score.remove(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="集合运算"><a href="#集合运算" class="headerlink" title="集合运算"></a>集合运算</h5><p><code>set</code>的数学本质是无序不重复集合, 所以两个<code>set</code>之间可以做交集并集运算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">second = set([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="keyword">print</span> first &amp; second</span><br><span class="line"><span class="keyword">print</span> first | second</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set([2, 3])</span><br><span class="line">set([1, 2, 3, 4])</span><br></pre></td></tr></table></figure>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>使用抽象方法, 不关心底层实现, 专注问题本身</p>
+<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h3><p>在<code>Python</code>官网可以查看<code>Python</code>内置的函数使用方法</p>
+<p><a href="https://docs.python.org/2/library/functions.html" target="_blank" rel="noopener">Python内置函数</a></p>
+<h4 id="类型转换函数"><a href="#类型转换函数" class="headerlink" title="类型转换函数"></a>类型转换函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">'123'</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="number">12.34</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(<span class="string">'12.34'</span>)</span><br><span class="line"><span class="number">12.34</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str(<span class="number">1.23</span>)</span><br><span class="line"><span class="string">'1.23'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>unicode(<span class="number">100</span>)</span><br><span class="line"><span class="string">u'100'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bool(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bool(<span class="string">''</span>)</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<h4 id="函数别名"><a href="#函数别名" class="headerlink" title="函数别名"></a>函数别名</h4><p>函数名其实是一个指向函数对象的引用, 所以可以将函数名赋值给一个变量, 相当于起别名</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = abs</span><br><span class="line">a(<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h3><p>使用<code>def</code>关键字定义函数, 用<code>return</code>返回返回值, 如果返回空可以<code>return None</code>, 也可以简写为<code>return</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">(a, b)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> a &gt; b:</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> b</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> rocky(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果: <code>2</code></p>
+<h4 id="空函数"><a href="#空函数" class="headerlink" title="空函数"></a>空函数</h4><p>如果想定义一个空函数, 可以使用<code>pass</code>, 表示什么也不做</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>也可以使用在判断语句当中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a &gt; b:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h4 id="参数检查"><a href="#参数检查" class="headerlink" title="参数检查"></a>参数检查</h4><p>系统的函数会自动检查参数类型, 而我们自定义的则没有, 我们可以添加参数检查代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">(a, b)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> isinstance(a, (int)):</span><br><span class="line">		<span class="keyword">raise</span> TypeError (<span class="string">"bad operand type"</span>)</span><br><span class="line">	<span class="keyword">if</span> a &gt; b:</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> b</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> rocky(<span class="number">1</span>, <span class="number">2.1</span>)</span><br></pre></td></tr></table></figure>
+<p>输出结果: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">File &quot;first.py&quot;, line 81, in &lt;module&gt;</span><br><span class="line">    print rocky(1, 2.1)</span><br><span class="line">  File &quot;first.py&quot;, line 75, in rocky</span><br><span class="line">    raise TypeError (&quot;bad operand type&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><p>函数可以返回多个返回值, 但<code>Python</code>本质上是只能返回一个返回值, 之所以能返回多个, 是因为返回值的类型为<code>tuple</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">(a, b)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> a, b</span><br></pre></td></tr></table></figure>
+<p>输出结果:<code>(1, 2)</code></p>
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>在<code>Python</code>中函数参数有多种实用方法, 使用默认参数、可变参数和关键字参数, 可以不同程度地简化代码</p>
+<h4 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h4><p>当函数中有的值不是经常变化的, 就可以使用默认参数, 让函数调用变得简单</p>
+<p><em>必选参数必须放在默认参数前面</em></p>
+<p><em>默认参数必须指向不可变对象</em>, 不然会出现对象不重新初始化问题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置参数b默认值为2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">(a, b = <span class="number">2</span>)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> a &gt; b</span><br><span class="line">	</span><br><span class="line"><span class="comment"># 使用默认参数, 在函数调用时可以不用写可选参数部分</span></span><br><span class="line">rocky(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 当参数不是默认值时, 可以改变参数</span></span><br><span class="line">rocky(<span class="number">1</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>当多个参数中有的使用默认, 而有的需要自定义值时, 可以指定参数名对应的参数值, 也就意味着, 可以不按顺序填写参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">(a, b, c = <span class="number">1</span>, d = <span class="number">2</span>)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> a, b, c, d</span><br><span class="line">	</span><br><span class="line">rocky(<span class="number">3</span>, <span class="number">5</span>, d = <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h4><p>使用可变参数, 可以让调用对象在定义函数时, 暂时不用管参数的个数</p>
+<p>只需要在参数名前面添加<code>*</code>, 便可以创建一个可变参数, 在函数内部, 参数获得的是一个<code>tuple</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">(*numbers)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> numbers;</span><br><span class="line">	</span><br><span class="line">rocky(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>如果是一个<code>list</code>或<code>tuple</code>想要调用可变参数函数, 则需要在前面添加<code>*</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">rocky(* numbers)</span><br></pre></td></tr></table></figure>
+<h4 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h4><p>关键字参数在必选参数之外, 还可以传入一个<code>dict</code>, 用以扩展函数的功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">(a, b, **kw)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> a, b, kw</span><br><span class="line">	</span><br><span class="line"><span class="comment"># 直接应用key调用	</span></span><br><span class="line">rocky(<span class="number">1</span>, <span class="number">3</span>, c = <span class="number">4</span>, d = <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用dict调用</span></span><br><span class="line">numbers = &#123;<span class="string">"c"</span> : <span class="number">3</span>, <span class="string">"d"</span> : <span class="number">4</span>&#125;</span><br><span class="line">rocky(<span class="number">1</span>, <span class="number">2</span>, **numbers)</span><br></pre></td></tr></table></figure>
+<h4 id="参数组合"><a href="#参数组合" class="headerlink" title="参数组合"></a>参数组合</h4><p>必选参数,默认参数, 可变参数, 关键字参数可以混用, 但是参数定义的顺序必须是：必选参数、默认参数、可变参数和关键字参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rocky</span><span class="params">(a, b = <span class="number">2</span> , *numbers, *kw)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> a, b, numbers, kw</span><br></pre></td></tr></table></figure>
+<p>函数<code>fun(*args, **kw)</code>可以接收任何参数</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zrocky</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zrocky.com/2016/python-learning-note/" title="Python笔记">http://zrocky.com/2016/python-learning-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/ios-develop-guideline/" rel="next" title="iOS Develop Guideline">
+                <i class="fa fa-chevron-left"></i> iOS Develop Guideline
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/python-crawier/" rel="prev" title="Python爬虫">
+                Python爬虫 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zrocky</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://zrocky.com/2016/python-learning-note/';
+        this.page.identifier = '2016/python-learning-note/';
+        this.page.title = 'Python笔记';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Zrocky.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz",
+                'X-LC-Key': "YSdUunmrX0Nv5YF1jN3lhU9R",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.4.0"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.4.0"></script>
+
+
+  
+
+  
+
+</body>
+</html>

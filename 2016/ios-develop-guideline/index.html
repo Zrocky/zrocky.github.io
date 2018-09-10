@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-zrocky.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zrocky.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zrocky.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/zrocky.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.">
+<meta name="keywords" content="Zrocky, iOS, Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS Develop Guideline">
+<meta property="og:url" content="http://zrocky.com/2016/ios-develop-guideline/index.html">
+<meta property="og:site_name" content="Zrocky">
+<meta property="og:description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-01T10:24:21.179Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS Develop Guideline">
+<meta name="twitter:description" content="以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.">
+
+
+
+
+
+
+  <link rel="canonical" href="http://zrocky.com/2016/ios-develop-guideline/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>iOS Develop Guideline | Zrocky</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=119024149"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '119024149');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zrocky</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">分类<span class="badge">4</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">归档<span class="badge">8</span></a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zrocky.com/2016/ios-develop-guideline/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zrocky">
+      <meta itemprop="description" content="Zrocky's Technology Blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zrocky">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">iOS Develop Guideline
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-05-03 18:00:00" itemprop="dateCreated datePublished" datetime="2016-05-03T18:00:00+08:00">2016-05-03</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/ios-develop-guideline/" class="leancloud_visitors" data-flag-title="iOS Develop Guideline">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.</p>
+<a id="more"></a>
+<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><p>以下列举了我们公司在iOS开发中经常使用到工具, 并附上地址, 原则上需要全部安装</p>
+<ul>
+<li><a href="https://developer.apple.com/downloads/" target="_blank" rel="noopener">Xcode 历史版本</a></li>
+<li><a href="https://ruby.taobao.org/" target="_blank" rel="noopener">RubyGems (Ruby环境)</a></li>
+<li><a href="http://alcatraz.io/" target="_blank" rel="noopener">Alcatraz (Xcode开发工具安装包)</a></li>
+</ul>
+<p><em>以下插件均可在Alcatraz插件安装包中下载安装</em></p>
+<ul>
+<li><a href="https://github.com/markohlebar/Peckham" target="_blank" rel="noopener">Peckham (头文件快捷导入)</a></li>
+<li><a href="https://github.com/kattrali/cocoapods-xcode-plugin" target="_blank" rel="noopener">cocoapods plugin (cocoapods插件)</a></li>
+<li><a href="https://github.com/Zrocky/VVDocumenter-Xcode" target="_blank" rel="noopener">VVDocumenter (文档快捷注释)</a></li>
+</ul>
+<h2 id="文件规范"><a href="#文件规范" class="headerlink" title="文件规范"></a>文件规范</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">- Project</span><br><span class="line"> 	- Classes</span><br><span class="line"> 		- Tool</span><br><span class="line"> 		- Expand</span><br><span class="line"> 			- Macros</span><br><span class="line"> 				- Macro.h</span><br><span class="line"> 				- A Macro.h</span><br><span class="line"> 				- B Macro.h</span><br><span class="line"> 			- Const</span><br><span class="line"> 				- Const.h</span><br><span class="line"> 				- A Const.h</span><br><span class="line"> 				- B Const.h</span><br><span class="line">			- DataBase</span><br><span class="line"> 			- CoreData</span><br><span class="line"> 		- Category</span><br><span class="line"> 			- UI</span><br><span class="line"> 				- UIView</span><br><span class="line"> 				- UIButton</span><br><span class="line"> 				- UIViewController</span><br><span class="line"> 				- UITableView</span><br><span class="line"> 				- UIImage</span><br><span class="line"> 			- Data</span><br><span class="line"> 				- NSDate</span><br><span class="line"> 				- NSString</span><br><span class="line"> 		- NetworkCenter</span><br><span class="line"> 			- APIManager</span><br><span class="line"> 				- A Module</span><br><span class="line"> 				- B Module</span><br><span class="line"> 			- Foundation</span><br><span class="line"> 		- Vender</span><br><span class="line"> 	- Resource</span><br><span class="line"> 		- Image</span><br><span class="line"> 		- Font</span><br><span class="line"> 		- Video</span><br><span class="line"> 		- Audio</span><br></pre></td></tr></table></figure>
+<h2 id="代码区块规范"><a href="#代码区块规范" class="headerlink" title="代码区块规范"></a>代码区块规范</h2><h3 id="Controller代码区块规范"><a href="#Controller代码区块规范" class="headerlink" title="Controller代码区块规范"></a>Controller代码区块规范</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - life cycle</span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">	[super viewDidLoad];</span><br><span class="line"></span><br><span class="line">    [self setupLayouts];</span><br><span class="line">&#125;</span><br><span class="line">- (void)setupLayouts &#123;</span><br><span class="line">&#125;</span><br><span class="line">- (void)viewWillAppear:(BOOL)animated &#123;</span><br><span class="line">     [super viewWillAppear:animated];</span><br><span class="line">&#125;</span><br><span class="line">#pragma mark - delegate</span><br><span class="line">#pragma mark - event response</span><br><span class="line">#pragma mark - public methods</span><br><span class="line">#pragma mark - private methods</span><br><span class="line">#pragma mark - setter and getter</span><br></pre></td></tr></table></figure>
+<h3 id="View代码区块规范"><a href="#View代码区块规范" class="headerlink" title="View代码区块规范"></a>View代码区块规范</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - life cycle</span><br><span class="line">- (instancetype)initWithFrame:(CGRect)frame &#123;</span><br><span class="line">     if (self = [super initWithFrame:frame]) &#123;</span><br><span class="line">         [self setupSubviews];</span><br><span class="line">         [self setupLayouts];</span><br><span class="line">     &#125;</span><br><span class="line">     return self;</span><br><span class="line">&#125;</span><br><span class="line">- (void)setupSubviews &#123;</span><br><span class="line">&#125;</span><br><span class="line">- (void)setupLayouts &#123;</span><br><span class="line">&#125;</span><br><span class="line">#pragma mark - delegate</span><br><span class="line">#pragma mark - event response</span><br><span class="line">#pragma mark - public methods</span><br><span class="line">#pragma mark - private methods</span><br><span class="line">#pragma mark - setter and getter</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zrocky</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zrocky.com/2016/ios-develop-guideline/" title="iOS Develop Guideline">http://zrocky.com/2016/ios-develop-guideline/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/objectivec-coding-guideline/" rel="next" title="Objective-C Coding Guideline">
+                <i class="fa fa-chevron-left"></i> Objective-C Coding Guideline
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/python-learning-note/" rel="prev" title="Python笔记">
+                Python笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zrocky</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://zrocky.com/2016/ios-develop-guideline/';
+        this.page.identifier = '2016/ios-develop-guideline/';
+        this.page.title = 'iOS Develop Guideline';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Zrocky.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz",
+                'X-LC-Key': "YSdUunmrX0Nv5YF1jN3lhU9R",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.4.0"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.4.0"></script>
+
+
+  
+
+  
+
+</body>
+</html>

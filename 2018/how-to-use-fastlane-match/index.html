@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-zrocky.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-zrocky.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-zrocky.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/zrocky.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="在开发过程中，证书和配置文件的管理一直是一个让人头痛的问题，不管是Xcode自动创建的众多让人摸不着头脑的重复文件，还是不断被其它人revoke的证书，这些场景无不让人想要一个简单、彻底的解决方案， match正是为解决这些问题而开发的。match的方案是只创建一份code sign所需文件，并试用Git在团队内共享。match是https://codesigning.guide概念的实现。mat">
+<meta name="keywords" content="Zrocky, iOS, Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fastlane之使用match同步证书和配置文件">
+<meta property="og:url" content="http://zrocky.com/2018/how-to-use-fastlane-match/index.html">
+<meta property="og:site_name" content="Zrocky">
+<meta property="og:description" content="在开发过程中，证书和配置文件的管理一直是一个让人头痛的问题，不管是Xcode自动创建的众多让人摸不着头脑的重复文件，还是不断被其它人revoke的证书，这些场景无不让人想要一个简单、彻底的解决方案， match正是为解决这些问题而开发的。match的方案是只创建一份code sign所需文件，并试用Git在团队内共享。match是https://codesigning.guide概念的实现。mat">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zrocky.com/2018/how-to-use-fastlane-match/p9sc3003b.bkt.clouddn.com/2018-09-07-match_appstore_small.gif">
+<meta property="og:image" content="http://zrocky.com/2018/how-to-use-fastlane-match/p9sc3003b.bkt.clouddn.com/2018-09-10-github_repo.png">
+<meta property="og:updated_time" content="2018-09-10T01:41:13.283Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="fastlane之使用match同步证书和配置文件">
+<meta name="twitter:description" content="在开发过程中，证书和配置文件的管理一直是一个让人头痛的问题，不管是Xcode自动创建的众多让人摸不着头脑的重复文件，还是不断被其它人revoke的证书，这些场景无不让人想要一个简单、彻底的解决方案， match正是为解决这些问题而开发的。match的方案是只创建一份code sign所需文件，并试用Git在团队内共享。match是https://codesigning.guide概念的实现。mat">
+<meta name="twitter:image" content="http://zrocky.com/2018/how-to-use-fastlane-match/p9sc3003b.bkt.clouddn.com/2018-09-07-match_appstore_small.gif">
+
+
+
+
+
+
+  <link rel="canonical" href="http://zrocky.com/2018/how-to-use-fastlane-match/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>fastlane之使用match同步证书和配置文件 | Zrocky</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zrocky</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">分类<span class="badge">4</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">归档<span class="badge">8</span></a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zrocky.com/2018/how-to-use-fastlane-match/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zrocky">
+      <meta itemprop="description" content="Zrocky's Technology Blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zrocky">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">fastlane之使用match同步证书和配置文件
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-10 09:26:40" itemprop="dateCreated datePublished" datetime="2018-09-10T09:26:40+08:00">2018-09-10</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/how-to-use-fastlane-match/" class="leancloud_visitors" data-flag-title="fastlane之使用match同步证书和配置文件">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在开发过程中，证书和配置文件的管理一直是一个让人头痛的问题，不管是Xcode自动创建的众多让人摸不着头脑的重复文件，还是不断被其它人<code>revoke</code>的证书，这些场景无不让人想要一个简单、彻底的解决方案， <code>match</code>正是为解决这些问题而开发的。<br><code>match</code>的方案是只创建一份<code>code sign</code>所需文件，并试用<code>Git</code>在团队内共享。<br><code>match</code>是<code>https://codesigning.guide</code>概念的实现。<code>match</code>创建所有必需的证书和配置文件，并将它们存储在单独的git存储库中。每个有权访问仓库的团队成员都可以使用这些凭据进行代码签名。<code>match</code>还会自动修复损坏和过期的凭据。这是跨团队共享签名凭据的最简单方法。</p>
+<a id="more"></a>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><ol>
+<li>创建一个Git仓库<code>(务必保证是私有的，安全很重要)</code>, 取名为<code>certificates</code>       </li>
+<li><code>(非必要)</code>创建一个共享的Apple Developer账号</li>
+<li><p>在项目目录中执行Shell命令:</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane match init</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>![match_init](p9sc3003b.bkt.clouddn.com/2018-09-07-match_init.gif)
+
+执行命令后会要求输入Git仓库地址, 可以是`https://或git`URL（如果你是使用SSH对Git进行身份验证，则需要使用gitURL，否则在尝试匹配时将看会身份验证错误）。  
+`fastlane match init`命令不会获取或修改你的证书和配置文件, 只会在`./fastlane`目录生成一个`Matchfile`文件。  
+
+`Matchfile`内配置示例:
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git_url(&quot;https://github.com/fastlane/certificates&quot;)</span><br><span class="line"> </span><br><span class="line">app_identifier(&quot;tools.fastlane.app&quot;)</span><br><span class="line"># username(&quot;user@fastlane.tools&quot;)</span><br></pre></td></tr></table></figure>
+
+
+文件内记录了证书和配置文件的Git仓库地址及`match`命令的相关配置，可以根据你的需求来修改它们。
+</code></pre><h4 id="生成证书和配置文件"><a href="#生成证书和配置文件" class="headerlink" title="生成证书和配置文件"></a>生成证书和配置文件</h4><blockquote>
+<p>在首次运行前, 可以使用<code>fastlane match nuke</code>命令清除现有的配置文件和证书。<a href="#清除现有配置文件和证书">(了解更多)</a></p>
+</blockquote>
+<p>你可以使用以下命令来生成证书:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 开发证书及配置文件</span><br><span class="line">fastlane match development </span><br><span class="line"></span><br><span class="line"># 生成证书及内部分发配置文件</span><br><span class="line">fastlane match adhoc</span><br><span class="line"></span><br><span class="line"># 生产证书及配置文件</span><br><span class="line">fastlane match appstore</span><br></pre></td></tr></table></figure>
+<p><img src="p9sc3003b.bkt.clouddn.com/2018-09-07-match_appstore_small.gif" alt="match_appstore"></p>
+<p>这将创建一个新的证书和配置文件（如果需要的话）并将它们存储在你的<a href="# Git Repo">Git仓库</a>中。<br>配置文件将安装在<code>~/Library/MobileDevice/Provisioning Profiles</code>中，证书和私钥安装在你的钥匙串中。  </p>
+<h5 id="处理多个标识符"><a href="#处理多个标识符" class="headerlink" title="处理多个标识符"></a>处理多个标识符</h5><p>如果你有多个标识符，则可以将同步操作换成以下命令执行，不同标识符之间使用逗号隔开</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane match appstore -a tools.fastlane.app,tools.fastlane.app.watchkitapp</span><br></pre></td></tr></table></figure>
+<p>当然，你也可以使用<code>lane</code>来处理以上操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lane :certificates do</span><br><span class="line">  match(app_identifier: [&quot;com.krausefx.app1&quot;, &quot;com.krausefx.app2&quot;, &quot;com.krausefx.app3&quot;], type: appstrore, readonly: true)</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p> 这样，你就只需执行<code>fantlane certificates</code>命令即可完成操作</p>
+<h4 id="其他成员执行同步"><a href="#其他成员执行同步" class="headerlink" title="其他成员执行同步"></a>其他成员执行同步</h4><p>其他成员需要同步证书和配置文件，只需执行相同的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane match development</span><br></pre></td></tr></table></figure>
+<p>它会识别Git仓库中是否有现成的证书和配置文件，如果有，就会安装仓库中现有的证书和配置文件<br>你甚至可以在某个模式下执行<code>match</code>操作，<code>readonly</code>用来确保不会生成证书和配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane match development --readonly</span><br></pre></td></tr></table></figure>
+<h3 id="扩展使用"><a href="#扩展使用" class="headerlink" title="扩展使用"></a>扩展使用</h3><h4 id="在lane中使用match"><a href="#在lane中使用match" class="headerlink" title="在lane中使用match"></a>在lane中使用match</h4><p>添加<code>match</code>方法到<code>Fastfile</code>中，则可以使用<code>lane</code>来快速同步证书和配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">match(type: &quot;appstore&quot;)</span><br><span class="line"></span><br><span class="line">match(git_url: &quot;https://github.com/fastlane/certificates&quot;,</span><br><span class="line">      type: &quot;development&quot;)</span><br><span class="line"></span><br><span class="line">match(git_url: &quot;https://github.com/fastlane/certificates&quot;,</span><br><span class="line">      type: &quot;adhoc&quot;,</span><br><span class="line">      app_identifier: &quot;tools.fastlane.app&quot;)</span><br><span class="line"></span><br><span class="line">match(git_url: &quot;https://github.com/fastlane/certificates&quot;,</span><br><span class="line">      type: &quot;enterprise&quot;,</span><br><span class="line">      app_identifier: &quot;tools.fastlane.app&quot;)</span><br><span class="line"></span><br><span class="line"># _match_ should be called before building the app with _gym_</span><br><span class="line">gym</span><br><span class="line"># ...</span><br></pre></td></tr></table></figure>
+<h4 id="注册新设备"><a href="#注册新设备" class="headerlink" title="注册新设备"></a>注册新设备</h4><p>通过使用<code>match</code>，每次将新设备添加到Ad Hoc或开发配置文件时都会节省大量的时间。将<code>match</code>与<code>register_devices</code>操作结合使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lane :beta do</span><br><span class="line">  register_devices(devices_file: &quot;./devices.txt&quot;)</span><br><span class="line">  match(type: &quot;adhoc&quot;, force_for_new_devices: true)</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>通过使用<code>force_for_new_devices</code>参数，<code>match</code>将检查自上次运行匹配以来，设备计数是否已更改，并在必要时自动重新生成配置文件。你也可以使用<code>force: true</code>参数强制每次运行时都重新生成配置文件。<br><strong>要点</strong>：App Store配置文件将会忽略<code>force_for_new_devices</code>参数，因为这种模式不包含任何设备信息。<br>如果你不使用<code>fastlane</code>，还可以使用命令行中的<code>force_for_new_devices</code>选项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane match adhoc --force_for_new_devices</span><br></pre></td></tr></table></figure>
+<h4 id="清除现有配置文件和证书"><a href="#清除现有配置文件和证书" class="headerlink" title="清除现有配置文件和证书"></a>清除现有配置文件和证书</h4><p>如果你的Apple Developer账户中有大量无效、过期或者Xcode自动生成的配置文件和证书，可以使用<code>match nuke</code>命令撤销证书和配置文件，不必担心，App Store / TestFlight中已有的应用程序仍然可以使用，推送证书也不在清理范围内。清除账户后，你就可以从零开始，运行<code>match</code>生成证书和配置文件。<br>要撤消特定环境的所有证书和配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fastlane match nuke development</span><br><span class="line">fastlane match nuke distribution</span><br><span class="line">fastlane match nuke enterprise</span><br></pre></td></tr></table></figure>
+<p><code>match</code>会在操作前会向你确认操作是否执行</p>
+<h4 id="Git-仓库"><a href="#Git-仓库" class="headerlink" title="Git 仓库"></a>Git 仓库</h4><p>第一次运行<code>match</code>后，你的Git仓库将包含2个目录：</p>
+<ul>
+<li><code>certs</code>文件夹包含所有带有私钥的证书</li>
+<li><code>profiles</code>文件夹包含所有配置文件</li>
+</ul>
+<p>此外，<code>match</code>还生成了一个README.md文件，让新的团队成员更容易上手：</p>
+<p><img src="p9sc3003b.bkt.clouddn.com/2018-09-10-github_repo.png" alt="github_repo"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zrocky</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zrocky.com/2018/how-to-use-fastlane-match/" title="fastlane之使用match同步证书和配置文件">http://zrocky.com/2018/how-to-use-fastlane-match/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/create-ghost-blog/" rel="next" title="Ghost博客搭建">
+                <i class="fa fa-chevron-left"></i> Ghost博客搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zrocky</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://zrocky.com/2018/how-to-use-fastlane-match/';
+        this.page.identifier = '2018/how-to-use-fastlane-match/';
+        this.page.title = 'fastlane之使用match同步证书和配置文件';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Zrocky.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "OQgH6KJnEig7znuzN5oyRs2s-gzGzoHsz",
+                'X-LC-Key': "YSdUunmrX0Nv5YF1jN3lhU9R",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.4.0"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.4.0"></script>
+
+
+  
+
+  
+
+</body>
+</html>

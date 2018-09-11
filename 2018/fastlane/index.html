@@ -91,7 +91,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '6.4.0',
-    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -1143,6 +1143,86 @@
 
 
         </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zrocky</p>
+              <p class="site-description motion-element" itemprop="description">Zrocky's Technology Blog</p>
+          </div>
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装fastlane"><span class="nav-number">1.1.</span> <span class="nav-text">安装fastlane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化fastlane"><span class="nav-number">1.2.</span> <span class="nav-text">初始化fastlane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用fastlane发布iOS-App"><span class="nav-number">1.3.</span> <span class="nav-text">使用fastlane发布iOS App</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初识lane"><span class="nav-number">1.3.1.</span> <span class="nav-text">初识lane</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码签名"><span class="nav-number">1.3.2.</span> <span class="nav-text">代码签名</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#match"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">match</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cert和sigh"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">cert和sigh</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#cert"><span class="nav-number">1.3.2.2.1.</span> <span class="nav-text">cert</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#sigh"><span class="nav-number">1.3.2.2.2.</span> <span class="nav-text">sigh</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建应用"><span class="nav-number">1.3.3.</span> <span class="nav-text">构建应用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基础用法"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">基础用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自动化构建流程"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">自动化构建流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上传应用到分发平台"><span class="nav-number">1.3.4.</span> <span class="nav-text">上传应用到分发平台</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#TestFlight"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">TestFlight</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Crashlytics-Fabric-Beta）"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">Crashlytics (Fabric Beta）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fir-im"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">fir.im</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#蒲公英"><span class="nav-number">1.3.4.4.</span> <span class="nav-text">蒲公英</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交应用到App-Store"><span class="nav-number">1.3.5.</span> <span class="nav-text">提交应用到App Store</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展使用"><span class="nav-number">2.</span> <span class="nav-text">扩展使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">2.1.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#寻找一个插件"><span class="nav-number">2.1.1.</span> <span class="nav-text">寻找一个插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在项目中添加插件"><span class="nav-number">2.1.2.</span> <span class="nav-text">在项目中添加插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在新机器上同步插件"><span class="nav-number">2.1.3.</span> <span class="nav-text">在新机器上同步插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除插件"><span class="nav-number">2.1.4.</span> <span class="nav-text">删除插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Appfile"><span class="nav-number">2.2.</span> <span class="nav-text">Appfile</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在fastlane中使用Appfile中的配置"><span class="nav-number">2.2.1.</span> <span class="nav-text">在fastlane中使用Appfile中的配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Gemfile进行依赖管理"><span class="nav-number">2.3.</span> <span class="nav-text">使用Gemfile进行依赖管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pem推送证书"><span class="nav-number">2.4.</span> <span class="nav-text">pem推送证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加内部版本号"><span class="nav-number">2.5.</span> <span class="nav-text">增加内部版本号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta内部版本号"><span class="nav-number">2.5.1.</span> <span class="nav-text">Beta内部版本号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#App-Store内部版本号"><span class="nav-number">2.5.2.</span> <span class="nav-text">App Store内部版本号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方Beta测试服务"><span class="nav-number">2.6.</span> <span class="nav-text">第三方Beta测试服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数表"><span class="nav-number">3.</span> <span class="nav-text">参数表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cert参数"><span class="nav-number">3.1.</span> <span class="nav-text">cert参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sigh参数"><span class="nav-number">3.2.</span> <span class="nav-text">sigh参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gym参数"><span class="nav-number">3.3.</span> <span class="nav-text">gym参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pem参数"><span class="nav-number">3.4.</span> <span class="nav-text">pem参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
     </main>

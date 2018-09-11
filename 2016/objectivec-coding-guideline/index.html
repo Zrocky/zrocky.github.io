@@ -91,7 +91,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '6.4.0',
-    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -665,6 +665,86 @@
 
 
         </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zrocky</p>
+              <p class="site-description motion-element" itemprop="description">Zrocky's Technology Blog</p>
+          </div>
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概要"><span class="nav-number">1.</span> <span class="nav-text">概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码格式"><span class="nav-number">2.</span> <span class="nav-text">代码格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的书写"><span class="nav-number">2.1.</span> <span class="nav-text">函数的书写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的调用"><span class="nav-number">2.2.</span> <span class="nav-text">函数的调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#public和-private标记符"><span class="nav-number">2.3.</span> <span class="nav-text">@public和@private标记符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议（Protocols）"><span class="nav-number">2.4.</span> <span class="nav-text">协议（Protocols）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包（Blocks）"><span class="nav-number">2.5.</span> <span class="nav-text">闭包（Blocks）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构的语法糖"><span class="nav-number">2.6.</span> <span class="nav-text">数据结构的语法糖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规范"><span class="nav-number">3.</span> <span class="nav-text">命名规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原则"><span class="nav-number">3.1.</span> <span class="nav-text">基本原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#清晰"><span class="nav-number">3.1.1.</span> <span class="nav-text">清晰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一致性"><span class="nav-number">3.1.2.</span> <span class="nav-text">一致性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用前缀"><span class="nav-number">3.2.</span> <span class="nav-text">使用前缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名类和协议（Class-amp-Protocol）"><span class="nav-number">3.3.</span> <span class="nav-text">命名类和协议（Class&amp;Protocol）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名头文件（Headers）"><span class="nav-number">3.4.</span> <span class="nav-text">命名头文件（Headers）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名方法（Methods）"><span class="nav-number">3.5.</span> <span class="nav-text">命名方法（Methods）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存取方法（Accessor-Methods）"><span class="nav-number">3.6.</span> <span class="nav-text">存取方法（Accessor Methods）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名委托（Delegate）"><span class="nav-number">3.7.</span> <span class="nav-text">命名委托（Delegate）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合操作类方法（Collection-Methods）"><span class="nav-number">3.8.</span> <span class="nav-text">集合操作类方法（Collection Methods）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名属性和实例变量（Properties-amp-Instance-Variables）"><span class="nav-number">3.9.</span> <span class="nav-text">命名属性和实例变量（Properties&amp;Instance Variables）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名常量（Constants）"><span class="nav-number">3.10.</span> <span class="nav-text">命名常量（Constants）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名通知（Notifications）"><span class="nav-number">3.11.</span> <span class="nav-text">命名通知（Notifications）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">4.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码注释"><span class="nav-number">4.1.</span> <span class="nav-text">代码注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码风格"><span class="nav-number">5.</span> <span class="nav-text">编码风格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不要使用new方法"><span class="nav-number">5.1.</span> <span class="nav-text">不要使用new方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用框架的根头文件"><span class="nav-number">5.2.</span> <span class="nav-text">引用框架的根头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOOL的使用"><span class="nav-number">5.3.</span> <span class="nav-text">BOOL的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用ARC"><span class="nav-number">5.4.</span> <span class="nav-text">使用ARC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在init和dealloc中不要用存取方法访问实例变量"><span class="nav-number">5.5.</span> <span class="nav-text">在init和dealloc中不要用存取方法访问实例变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按照定义的顺序释放资源"><span class="nav-number">5.6.</span> <span class="nav-text">按照定义的顺序释放资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用NSNumber的语法糖"><span class="nav-number">5.7.</span> <span class="nav-text">使用NSNumber的语法糖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nil检查"><span class="nav-number">5.8.</span> <span class="nav-text">nil检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的线程安全"><span class="nav-number">5.9.</span> <span class="nav-text">属性的线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点分语法的使用"><span class="nav-number">5.10.</span> <span class="nav-text">点分语法的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delegate要使用弱引用"><span class="nav-number">5.11.</span> <span class="nav-text">Delegate要使用弱引用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
     </main>

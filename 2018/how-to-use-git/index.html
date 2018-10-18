@@ -122,6 +122,8 @@
 <meta property="og:description" content="公司一直在使用SVN来做版本控制，虽然个人项目早已换成Git，但是对Git没有一个深入的了解，最近因为分支和标签用法的困惑，继而产生想系统学习Git使用的想法，本文是基于廖雪峰Git教程而整理的学习笔记。Git教程">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393197926757.jpg">
+<meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393198237337.jpg">
+<meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393198436289.jpg">
 <meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393228460803.jpg">
 <meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/master-branch-forward.mp4">
 <meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393233193864.jpg">
@@ -133,7 +135,7 @@
 <meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393287303720.jpg">
 <meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393299601183.jpg">
 <meta property="og:image" content="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393300560209.jpg">
-<meta property="og:updated_time" content="2018-10-16T02:07:34.929Z">
+<meta property="og:updated_time" content="2018-10-18T08:24:03.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Git进行版本控制">
 <meta name="twitter:description" content="公司一直在使用SVN来做版本控制，虽然个人项目早已换成Git，但是对Git没有一个深入的了解，最近因为分支和标签用法的困惑，继而产生想系统学习Git使用的想法，本文是基于廖雪峰Git教程而整理的学习笔记。Git教程">
@@ -429,11 +431,11 @@
 <p><code>master</code>是Git自动创建的第一个分支</p>
 </blockquote>
 <p><code>Git</code>工作分为两步</p>
-<pre><code>1. `git add`把文件修改添加到暂存区
-    ![git add](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393198237337.jpg)
-2. `git commit`把暂存区的所有内容提交到当前分支
-    ![git commit](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393198436289.jpg)
-</code></pre><h3 id="Git协议"><a href="#Git协议" class="headerlink" title="Git协议"></a>Git协议</h3><p>Git支持多种协议，<code>git://</code>和<code>https</code>等<br><code>https</code>协议速度会慢一些</p>
+<ol>
+<li><code>git add</code>把文件修改添加到暂存区<br> <img src="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393198237337.jpg" alt="git add"></li>
+<li><code>git commit</code>把暂存区的所有内容提交到当前分支<br> <img src="http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393198436289.jpg" alt="git commit"></li>
+</ol>
+<h3 id="Git协议"><a href="#Git协议" class="headerlink" title="Git协议"></a>Git协议</h3><p>Git支持多种协议，<code>git://</code>和<code>https</code>等<br><code>https</code>协议速度会慢一些</p>
 <h3 id="专有名词"><a href="#专有名词" class="headerlink" title="专有名词"></a>专有名词</h3><p><code>master</code>git自动创建的第一个分支<br><code>HEAD</code>当前版本<br><code>origin</code>远程库   </p>
 <h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ol>
 <li><p>在目录中初始化Git</p>

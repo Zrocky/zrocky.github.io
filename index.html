@@ -1,20 +1,247 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
 
-<div class="main-post-list hidden">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Zrocky</title>
+  <meta name="description" content="Think Different">
+  <meta name="author" content="Zrocky">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Zrocky">
+  <meta name="twitter:description" content="Think Different">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Zrocky">
+  <meta property="og:description" content="Think Different">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Zrocky" href="http://localhost:4000/feed.xml">
+  
+  <!-- <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" /> -->
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover " style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zrocky 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zrocky logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zrocky" class="blog-button">Zrocky</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Stay Hungry, Stay Foolish</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Think Different</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        <p class="panel-cover__description">欢迎与我交流</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="/categories" target="_blank" title="categories">分类</a></li>
+                
+                  <li class="navigation__item"><a href="/archives" target="_blank" title="archives">归档</a></li>
+                
+                  <li class="navigation__item"><a href="/about" target="_blank" title="about">关于</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/zrocky" title="@zrocky 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:roam@zrocky.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-disabled"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <div class="main-post-list hidden">
 
   <ol class="post-list">
-    {% for post in paginator.posts %}
+    
     <li>
-      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
-      <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
-      <div class="post-list__meta"><time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">{{ post.date | date: "%F"}}</time> &#8226; <span class="post-list__meta--tags tags">{{ post.tags | join:' ' }}</span><a class="btn-border-small" href={{ post.url }}>继续阅读</a></div>
+      <h2 class="post-list__post-title post-title"><a href="/2018/11/Life181122/" title="访问 情绪低谷的诸多感悟">情绪低谷的诸多感悟</a></h2>
+      <p class="excerpt">之前没有在博客中发过“牢骚”，今天看了Sheepy的博客，忽然起了一些兴致，也想开始在博客中，聊聊技术之外的事情，也作为自我梳理的工具。在16年底的时候，公司开始重组，走了许多人，留下的人换个地点继续开发我们之前的产品，在新公司配置好一切之前，我想回家把C1驾照拿了，本来以为一个月能拿到，没想到科目三考了两次，等拿到驾照时，我已经用掉了三个多月，这在我职业生涯中算是很长的空白期了。回深圳的时候，人胖了十几斤，那个时候还没什么感觉，现在回想起来，这可能是我自我压力猛增的开始。新公司搬到了华强...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2018-11-22 17:32:54 +0000" class="post-list__meta--date date">2018-11-22</time> &#8226; <span class="post-list__meta--tags tags">Life</span><a class="btn-border-small" href=/2018/11/Life181122/>继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
-    {% endfor %}
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/10/how-to-use-git/" title="访问 使用Git进行版本控制">使用Git进行版本控制</a></h2>
+      <p class="excerpt">公司一直在使用SVN来做版本控制，虽然个人项目早已换成Git，但是对Git没有一个深入的了解，最近因为分支和标签用法的困惑，继而产生想系统学习Git使用的想法，本文是基于廖雪峰Git教程而整理的学习笔记。Git教程Git概念版本库和工作区  master是Git自动创建的第一个分支Git工作分为两步  git add把文件修改添加到暂存区   git commit把暂存区的所有内容提交到当前分支 Git协议Git支持多种协议，git://和https等https协议速度会慢一些专有名词ma...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2018-10-15 14:26:19 +0000" class="post-list__meta--date date">2018-10-15</time> &#8226; <span class="post-list__meta--tags tags">Git</span><a class="btn-border-small" href=/2018/10/how-to-use-git/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/fastlane/" title="访问 使用fastlane自动部署iOS App">使用fastlane自动部署iOS App</a></h2>
+      <p class="excerpt">fastlane是为iOS和Android应用程序自动执行beta部署和发布的最简单方法。它处理所有繁琐的任务，例如生成屏幕截图，处理代码签名和发布应用程序。基本使用安装fastlane      安装最新的Xcode命令行工具     xcode-select --install            安装fastlane（可以使用RubyGems或Homebrew安装）     # Using RubyGems sudo gem install fastlane -NV     # A...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2018-09-12 00:21:47 +0000" class="post-list__meta--date date">2018-09-12</time> &#8226; <span class="post-list__meta--tags tags">Fastlane</span><a class="btn-border-small" href=/2018/09/fastlane/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/how-to-use-fastlane-match/" title="访问 fastlane之使用match同步证书和配置文件">fastlane之使用match同步证书和配置文件</a></h2>
+      <p class="excerpt">在开发过程中，证书和配置文件的管理一直是一个让人头痛的问题，不管是Xcode自动创建的众多让人摸不着头脑的配置文件，还是不断被其它人revoke的证书，这些场景无不让人想要一个简单、彻底的解决方案， match正是为解决这些问题而开发的。match的方案是只创建一份code sign所需文件，并使用Git在团队内共享它们。match是https://codesigning.guide概念的实现。match创建所有必需的证书和配置文件，并将它们存储在单独的git存储库中。每个有权访问仓库的团...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2018-09-10 09:26:40 +0000" class="post-list__meta--date date">2018-09-10</time> &#8226; <span class="post-list__meta--tags tags">Fastlane match</span><a class="btn-border-small" href=/2018/09/how-to-use-fastlane-match/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/regular-expressions/" title="访问 正则表达式">正则表达式</a></h2>
+      <p class="excerpt">字符串是编程时涉及到的最多的一种数据结构，对字符串进行操作的需求几乎无处不在。比如判断一个字符串是否是合法的Email地址，虽然可以编程提取@前后的子串，再分别判断是否是单词和域名，但这样做不但麻烦，而且代码难以复用。正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。尝试所以我们判断一个字符串是否是合法的Email的方法是：      创建一个匹配Email的正则表...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2018-09-01 18:00:00 +0000" class="post-list__meta--date date">2018-09-01</time> &#8226; <span class="post-list__meta--tags tags">Python</span><a class="btn-border-small" href=/2018/09/regular-expressions/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/markdown-guideline-for-team/" title="访问 适用于团队的统一 MarkDown 书写规范">适用于团队的统一 MarkDown 书写规范</a></h2>
+      <p class="excerpt">由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。该规范遵循 [MarkDown 官方语法] 以及 [GitHub MakDown 语法]，旨在统一书写格式和代码风格，将多种写法统一。全局规范  MarkDown 文件均使用.md作为后缀 (小写字母)  普通文本换行，使用行末尾2空格触发格式规范标题结构格式  标题与紧贴的上下正文使用1整行换行隔开  #号和文字之间1个空格连接  标题层级如下，最多6级# 顶级标题 等价于 title 和...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2018-09-01 18:00:00 +0000" class="post-list__meta--date date">2018-09-01</time> &#8226; <span class="post-list__meta--tags tags">MarkDown</span><a class="btn-border-small" href=/2018/09/markdown-guideline-for-team/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/create-ghost-blog/" title="访问 Ghost博客搭建">Ghost博客搭建</a></h2>
+      <p class="excerpt">Ghost是一个现代化的，开源的，基于Node.js的博客发布平台，它的前端管理系统基于Ember.js， 后端的模板引擎采用的handlebars， 而默认数据库是MySQL，当然，你也可以使用其他类型的数据库。Ghost1.0如果用过1.0版本以前的Ghost的同学，会对Ghost版本的更新感到头疼，而一些配置问题也让人心烦。好在，就在一个月前，Ghost推出了Ghost1.0.0，并在一个月内升级到了1.6.2（到目前为止）大版本的提升，主要是因为一个东西的出现，那就是Ghost-C...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2018-09-01 18:00:00 +0000" class="post-list__meta--date date">2018-09-01</time> &#8226; <span class="post-list__meta--tags tags">Ghost</span><a class="btn-border-small" href=/2018/09/create-ghost-blog/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2016/05/python-learning-note/" title="访问 Python笔记">Python笔记</a></h2>
+      <p class="excerpt">很早就对Python这门语言感兴趣, 终于有时间可以系统地学习, 所以才会有这篇笔记, 笔记本身基于C, OC, Swift三门语言, 相同之处没有太多赘述, 我也是一笔带过, 希望知晓! 我学习的来源主要是廖雪峰的Python教程, 本人并不是原创者, 笔记仅为本人自我记录的学习笔记  廖雪峰的Python教程Paython开发基础Python安装在Mac系统中, 系统内置了Python2.7版本, 所以Mac系统用户此时已基本满足编译所需环境。但是随着Python3.x版本的普及,建议...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2016-05-23 18:00:00 +0000" class="post-list__meta--date date">2016-05-23</time> &#8226; <span class="post-list__meta--tags tags">Python</span><a class="btn-border-small" href=/2016/05/python-learning-note/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2016/05/python-crawier/" title="访问 Python爬虫">Python爬虫</a></h2>
+      <p class="excerpt">爬虫, 数据说话的时代, 具有数据收集的手段, 我觉得很重要, 因为这些数据能帮助我们更好的分析趋势, 在解决问题时提供良好的依据, 以上就是我学习爬虫的动力所在  静觅Python爬虫入门Python爬虫有一些基础库, 我们就从基础库的学习, 开始爬虫之路Urllib的使用在使用之前, 需要导入Urllib库import urllib2获取网页# 标准写法 (推荐)request = urllib2.Request("http://www.baidu.com")response = ur...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2016-05-23 18:00:00 +0000" class="post-list__meta--date date">2016-05-23</time> &#8226; <span class="post-list__meta--tags tags">Python</span><a class="btn-border-small" href=/2016/05/python-crawier/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2016/05/ios-develop-guideline/" title="访问 iOS Develop Guideline">iOS Develop Guideline</a></h2>
+      <p class="excerpt">本规范因为Xcode版本的更迭，部分内容已经不太适用。本文仅供参考。以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.开发工具以下列举了我们公司在iOS开发中经常使用到工具, 并附上地址, 原则上需要全部安装  Xcode 历史版本  RubyGems (Ruby环境)  Alcatraz (Xcode开发工具安装包)以下插件均可在Alcatraz插件安装包中下载安装  Peckham (头文件快捷导入)  cocoapods plugin (coco...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2016-05-03 18:00:00 +0000" class="post-list__meta--date date">2016-05-03</time> &#8226; <span class="post-list__meta--tags tags">iOS</span><a class="btn-border-small" href=/2016/05/ios-develop-guideline/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
   </ol>
 
-  {% include pagination.html %}
+  <hr class="post-list__divider " />
+
+<nav class="pagination" role="navigation">
+    
+    <span class="pagination__page-number">1 / 2</span>
+    
+        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/page/2/#blog">更早 &rarr;</a>
+    
+</nav>
+
 
 </div>
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2018</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-119024149-1', 'zrocky.com');
+    ga('send', 'pageview');
+</script>
+
+
+    
+  </body>
+
+</html>

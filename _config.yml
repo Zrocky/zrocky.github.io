@@ -24,14 +24,16 @@ blog_button:
 nav:
     # - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
-    # - {title: 分类, description: categories, url: '/categories'}
-    # - {title: 归档, description: archives, url: '/tags'}
+    - {title: 分类, description: categories, url: '/categories'}
+    - {title: 归档, description: archives, url: '/archives'}
+    # - {title: 标签, description: tags, url: '/tags'}
     - {title: 关于, description: about, url: '/about'}
 
 # Pagination
 gems: [jekyll-paginate]
 paginate: 10
 paginate_path: "page/:num/"
+
 
 # Comment
 comment:
@@ -50,3 +52,4 @@ social:
 ga:
     id: UA-119024149-1
     host: zrocky.com
+

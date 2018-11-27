@@ -2,7 +2,7 @@
 layout: post
 title: 使用Git进行版本控制
 date: 2018-10-15 14:26:19
-tags: Tech
+tags: Git
 categories: Tech
 ---
 
@@ -13,16 +13,16 @@ categories: Tech
 
 ### 版本库和工作区
 
-![版本库和工作区](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393197926757.jpg)
+![版本库和工作区](/../assets/images/post/2018-10-12-15393197926757.jpg)
 
 > `master`是Git自动创建的第一个分支
 
 `Git`工作分为两步
 
 1. `git add`把文件修改添加到暂存区
-    ![git add](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393198237337.jpg)
+    ![git add](/../assets/images/post/2018-10-12-15393198237337.jpg)
 2. `git commit`把暂存区的所有内容提交到当前分支
-    ![git commit](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393198436289.jpg)
+    ![git commit](/../assets/images/post/2018-10-12-15393198436289.jpg)
         
 ### Git协议
 
@@ -150,29 +150,29 @@ Git支持多种协议，`git://`和`https`等
 
 `HEAD`指向当前分支
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393228460803.jpg)
+![](/../assets/images/post/2018-10-12-15393228460803.jpg)
 
 每次提交`master`分支都会向前移动一步
-<video controls="controls" src="http://p9sc3003b.bkt.clouddn.com/master-branch-forward.mp4" width="100%"></video>
+<video controls="controls" src="/../assets/images/post/master-branch-forward.mp4" width="100%"></video>
 
 创建新的分支`dev`，将`HEAD`指向`dev`
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393233193864.jpg)
+![](/../assets/images/post/2018-10-12-15393233193864.jpg)
 
 从现在开始，工作区的修改和提交就是针对`dev`分支的了
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393233502209.jpg)
+![](/../assets/images/post/2018-10-12-15393233502209.jpg)
 
 假如我们在`dev`上的工作完成了，就可以把`dev`合并到`master`上
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393233995876.jpg)
+![](/../assets/images/post/2018-10-12-15393233995876.jpg)
 
 合并完分支后，甚至可以删除`dev`分支。删除`dev`分支就是把`dev`指针给删掉，删掉后，我们就剩下了一条`master`分支
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393234395115.jpg)
+![](/../assets/images/post/2018-10-12-15393234395115.jpg)
 
 过程动画：
-<video controls="controls" src="http://p9sc3003b.bkt.clouddn.com/master-and-dev-ff.mp4" width="100%"></video>
+<video controls="controls" src="/../assets/images/post/master-and-dev-ff.mp4" width="100%"></video>
 
 
 #### 分支命令
@@ -221,11 +221,11 @@ Git支持多种协议，`git://`和`https`等
     
 #### 分支合并冲突
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393286280378.jpg)
+![](/../assets/images/post/2018-10-12-15393286280378.jpg)
 
 此种情况需解决冲突再提交
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393287303720.jpg)
+![](/../assets/images/post/2018-10-12-15393287303720.jpg)
 
 #### 分支策略
 
@@ -237,13 +237,13 @@ Git支持多种协议，`git://`和`https`等
 git merge --no-ff -m "merge with no-ff" dev
 ```
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393299601183.jpg)
+![](/../assets/images/post/2018-10-12-15393299601183.jpg)
 
 ##### 分支开发策略
 
 `master`分支是非常稳定的，也就是仅用来发布新版本，平时不在上面工作，开发都在`dev`分支上，每个人再有自己的分支，按时向`dev`分支合并即可，团队合作的分支看起来是这样的
 
-![](http://p9sc3003b.bkt.clouddn.com/2018-10-12-15393300560209.jpg)
+![](/../assets/images/post/15393300560209.jpg)
 
 ##### bug处理分支
 

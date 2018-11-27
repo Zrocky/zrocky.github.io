@@ -1,9 +1,7 @@
 ---
 layout: page
 title: 关于这个博客
-date: 2018-05-11 15:50:18
 tags: About
-categories: About
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: Ghost博客搭建
 date: 2018-09-01 18:00:00
-tags: Blog
+tags: Ghost
 categories: Blog
 ---
 

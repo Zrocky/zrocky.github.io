@@ -2,7 +2,7 @@
 layout: post
 title: fastlane之使用match同步证书和配置文件
 date: 2018-09-10 09:26:40
-tags: iOS
+tags: [Fastlane, match]
 categories: iOS
 ---
 
@@ -27,7 +27,7 @@ categories: iOS
 fastlane match init
 ```
     
-![match_init](http://p9sc3003b.bkt.clouddn.com/2018-09-07-match_init.gif)
+![match_init](/../assets/images/post/2018-09-07-match_init.gif)
     
 执行命令后会要求输入Git仓库地址, 可以是`https://或git`URL（如果你是使用SSH对Git进行身份验证，则需要使用gitURL，否则在尝试匹配时将看会身份验证错误）。
 
@@ -61,7 +61,7 @@ fastlane match adhoc
 fastlane match appstore
 ```
 
-![match_appstore_small](http://p9sc3003b.bkt.clouddn.com/2018-09-10-match_appstore_small.gif)
+![match_appstore_small](/../assets/images/post/2018-09-10-match_appstore_small.gif)
 
 这将创建一个新的证书和配置文件（如果需要的话）并将它们存储在你的[Git仓库](# Git Repo)中。
 
@@ -159,7 +159,7 @@ fastlane match nuke distribution
 fastlane match nuke enterprise
 ```
 
-![match_nuke](http://p9sc3003b.bkt.clouddn.com/2018-09-10-match_nuke.gif)
+![match_nuke](/../assets/images/post/2018-09-10-match_nuke.gif)
 
 `match`会在操作前会向你确认操作是否执行
 
@@ -172,7 +172,7 @@ fastlane match nuke enterprise
 
 此外，`match`还生成了一个README.md文件，让新的团队成员更容易上手：
 
-![github_repo](http://p9sc3003b.bkt.clouddn.com/2018-09-10-github_repo.png)
+![github_repo](/../assets/images/post/2018-09-10-github_repo.png)
 
 ### 参数
 

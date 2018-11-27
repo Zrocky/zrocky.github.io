@@ -1,13 +1,16 @@
-# Vno - Jekyll
 
-[Vno Jekyll](https://github.com/onevcat/vno-jekyll) is a theme for [Jekyll](http://jekyllrb.com). It is a port of my Ghost theme [vno](https://github.com/onevcat/vno), which is originally developed from [Dale Anthony's Uno](https://github.com/daleanthony/uno).
+# 关于博客
 
-## Live Demo
+> 自我梳理让我更加专注于要解决的问题，也让我内心更加平静。
 
-See [Vno - Jekyll](http://vno.onevcat.com) site and [my blog](http://onevcat.com).
+最开始的时候，我想做一个技术博客，把我学到的东西做一个总结和分享，但是我好像高估了我做这件事情的决心和动力。直到我学习的内容开始变得繁杂，我需要记录清晰的学习思路和总结一些经验，这是单靠个人笔记难以实现的，博客恰巧是一个很好的自我梳理的方式，所以我才有机会重新把博客给弄起来。
 
-You can also find some instruction as well as other sites using Vno theme in [this page](http://vno.onevcat.com/2016/02/hello-world-vno/).
+新的博客不再是只记录技术和学习，也会有我个人生活的一些“感悟”，有很多平常难以和其它人表达的观点，我希望借助博客把他们整理出来，也借机发发牢骚，在博客里写这些，要比在社交平台上更让我自在。
 
-## Licence
+博客内的文章如果你有什么见解，可以在博文下面写出来，比起单纯的客套话，我更喜欢直接一点的交流，即使有冲突也无所谓。
 
-Great thanks to [Dale Anthony](https://github.com/daleanthony) and his [Uno](https://github.com/daleanthony/uno). Vno Jekyll is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember. Vno Jekyll is followed with Uno and be licensed as [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). See the link for more information.
+如果你需要单独联系我，可以给我发邮件roam@zrocky.com。
+
+
+
+

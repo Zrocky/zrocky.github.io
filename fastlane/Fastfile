@@ -1,0 +1,44 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+work_dir = "cd ~/Developer/Jekyll"
+deploy_dir = "cd ~/Developer/Jekyll/_site"
+
+before_all do
+	sh "#{work_dir} && bundle exec jekyll build"
+end
+
+# after_all do
+	
+# end
+
+lane :test do
+	sh "#{work_dir} && bundle exec jekyll serve"
+end
+
+lane :deploy do
+	# publish site
+	sh "#{deploy_dir} && git add ."
+	sh "#{deploy_dir} && git commit -m 'post new blog'"
+	sh "#{deploy_dir} && git pull origin master"
+	sh "#{deploy_dir} && git push origin master"
+
+	# commit origin file
+	sh "#{work_dir} && git add ."
+	sh "#{work_dir} && git commit -m 'post new blog'"
+	sh "#{work_dir} && git pull origin master"
+	sh "#{work_dir} && git push origin master"
+end
+

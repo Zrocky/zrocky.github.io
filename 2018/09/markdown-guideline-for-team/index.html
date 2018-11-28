@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>适用于团队的统一 MarkDown 书写规范</title>
+  <meta name="description" content="由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。该规范遵循 [MarkDown 官方语法] 以及 [GitHub MakDown 语法]，旨在统一书写格式和代码风格，将多种写法统一。">
+  <meta name="author" content="Zrocky">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="适用于团队的统一 MarkDown 书写规范">
+  <meta name="twitter:description" content="由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。该规范遵循 [MarkDown 官方语法] 以及 [GitHub MakDown 语法]，旨在统一书写格式和代码风格，将多种写法统一。">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="适用于团队的统一 MarkDown 书写规范">
+  <meta property="og:description" content="由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。该规范遵循 [MarkDown 官方语法] 以及 [GitHub MakDown 语法]，旨在统一书写格式和代码风格，将多种写法统一。">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://zrocky.com/2018/09/markdown-guideline-for-team/">
+  <link rel="alternate" type="application/rss+xml" title="Zrocky" href="http://zrocky.com/feed.xml">
+  
+  <!-- <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" /> -->
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zrocky 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zrocky logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zrocky" class="blog-button">Zrocky</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Stay Hungry, Stay Foolish</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Think Different</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        <p class="panel-cover__description">欢迎与我交流</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="/categories" target="_blank" title="categories">分类</a></li>
+                
+                  <li class="navigation__item"><a href="/archives" target="_blank" title="archives">归档</a></li>
+                
+                  <li class="navigation__item"><a href="/about" target="_blank" title="about">关于</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/zrocky" title="@zrocky 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:roam@zrocky.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-disabled"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-09-02 02:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-09-02</time> &#8226; <span class="post-meta__tags tags">MarkDown</span>
+    </div>
+    <h1 class="post-title">适用于团队的统一 MarkDown 书写规范</h1>
+  </header>
+
+  <section class="post">
+    <p>由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。<br />
+该规范遵循 [MarkDown 官方语法] 以及 [GitHub MakDown 语法]，旨在统一书写格式和代码风格，将多种写法统一。</p>
+
+<h2 id="全局规范">全局规范</h2>
+<p><a name="top"></a></p>
+
+<ul>
+  <li>MarkDown 文件均使用<code class="highlighter-rouge">.md</code>作为后缀 (<strong>小写字母</strong>)</li>
+  <li>普通文本换行，使用行末尾<code class="highlighter-rouge">2空格</code>触发</li>
+</ul>
+
+<h2 id="格式规范">格式规范</h2>
+
+<h3 id="标题结构格式">标题结构格式</h3>
+
+<ol>
+  <li>标题与紧贴的<code class="highlighter-rouge">上下正文</code>使用<code class="highlighter-rouge">1整行换行</code>隔开</li>
+  <li><code class="highlighter-rouge">#</code>号和文字之间<code class="highlighter-rouge">1个空格</code>连接</li>
+  <li>标题层级如下，最多6级</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 顶级标题 等价于 title 和 &lt;h1&gt;
+## 次级标题 等价于 &lt;h2&gt;
+### 3级标题 等价于 &lt;h3&gt;
+#### 4级标题 等价于 &lt;h4&gt;
+##### 5级标题 等价于 &lt;h5&gt;
+###### 6级标题 等价于 &lt;h6&gt;
+####### 注：此行错误，标题层级最多6级 没有&lt;h7&gt;标签
+</code></pre></div></div>
+
+<h3 id="加强和强调规范">加强和强调规范</h3>
+
+<p>以下两种写法都是正确的，请统一为<strong>第一种</strong>，即一律使用 <code class="highlighter-rouge">**加强</code> <code class="highlighter-rouge">*强调</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*emphasize*   **strong** 相当于&lt;strong&gt;标签和&lt;em&gt;标签
+_emphasize_   __strong__
+</code></pre></div></div>
+
+<p>使用<code class="highlighter-rouge">~~</code>给文字添加删除线</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~~strikethrough~~
+</code></pre></div></div>
+
+<h3 id="代码块规范">代码块规范</h3>
+
+<ul>
+  <li>行内代码使用<code class="highlighter-rouge">1对顿号</code> 如： `hello world!`</li>
+  <li>块级代码使用<code class="highlighter-rouge">3个顿号</code>或<code class="highlighter-rouge">4个空格</code>，且上下均用<code class="highlighter-rouge">整行隔开</code>，如下:  (<strong>占用7行</strong>)</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo '3个顿号';  
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo '4个空格'；
+</code></pre></div></div>
+
+<h3 id="列表写法">列表写法</h3>
+
+<ul>
+  <li>列号<code class="highlighter-rouge">1.</code> 或者<code class="highlighter-rouge">* </code>后其后内容<code class="highlighter-rouge">空格</code>隔开</li>
+  <li>列表块前后<code class="highlighter-rouge">整行隔开</code> 如下：</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Windows  
+2. Mac
+3. iOS
+    * iPhone
+    * iPad
+4. Android
+</code></pre></div></div>
+
+<p><strong>实际预览：</strong></p>
+
+<ol>
+  <li>Windows</li>
+  <li>Mac</li>
+  <li>iOS
+    <ul>
+      <li>iPhone</li>
+      <li>iPad</li>
+    </ul>
+  </li>
+  <li>Android</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Windows  
+*  Mac
+*  iOS
+*  Android
+    1. v3.2
+    2. v4.1
+</code></pre></div></div>
+
+<p><strong>实际预览：</strong></p>
+
+<ul>
+  <li>Windows</li>
+  <li>Mac</li>
+  <li>iOS</li>
+  <li>Android
+    <ol>
+      <li>v3.2</li>
+      <li>v4.1</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="其他标签规范">其他标签规范</h3>
+
+<p>链接和Email
+Inline:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>An [example](http://url.com/ "Title")
+</code></pre></div></div>
+
+<p>引用样式标签 (titles are optional):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>An [example][id]. Then, anywhere
+else in the doc, define the link:
+
+[id]: http://example.com/  "Title"
+</code></pre></div></div>
+
+<p>Email:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>An email &lt;example@example.com&gt; link.
+</code></pre></div></div>
+
+<p>插图
+Inline (titles are optional):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![alt text](/path/img.jpg "Title")
+</code></pre></div></div>
+
+<p>引用式插图:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![alt text][id]
+
+[id]: /url/to/img.jpg "Title"
+</code></pre></div></div>
+
+<p>引用块及嵌套</p>
+
+<blockquote>
+  <p>Email-style angle brackets
+are used for blockquotes.</p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>And, they can be nested.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <h4 id="headers-in-blockquotes">Headers in blockquotes</h4>
+
+  <ul>
+    <li>You can quote a list.</li>
+    <li>Etc.</li>
+  </ul>
+</blockquote>
+
+<p>内联代码</p>
+
+<p><code class="highlighter-rouge">&lt;code&gt;</code> 段落中的用法</p>
+
+<p>也可以 <code class="highlighter-rouge">`代码中包含波浪号`</code>.<br />
+代码块</p>
+
+<p>Indent every line of a code block by at least 4 spaces or 1 tab.
+代码的每行都最少用4个空格或者一个制表符(tab)</p>
+
+<p>我是普通文本块</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>我是一个预格式化的
+代码块.
+</code></pre></div></div>
+
+<p>水平分割线<br />
+三个<code class="highlighter-rouge">连字符-</code>:</p>
+
+<hr />
+
+<h3 id="表格规范">表格规范</h3>
+
+<p>一个简单的表格看起来如下：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>第一个头部</th>
+      <th>第二个头部</th>
+      <th>第三个头部</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>内容格子</td>
+      <td>内容格子</td>
+      <td>内容格子</td>
+    </tr>
+    <tr>
+      <td>内容格子</td>
+      <td>内容格子</td>
+      <td>内容格子</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>每列的对齐可以通过在分割线上添加冒号来实现：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">第一个头部</th>
+      <th style="text-align: center">第二个头部</th>
+      <th style="text-align: right">第三个头部</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">左对齐</td>
+      <td style="text-align: center">居中</td>
+      <td style="text-align: right">右对齐</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">左对齐</td>
+      <td style="text-align: center">居中</td>
+      <td style="text-align: right">右对齐</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="页内锚标记">页内锚标记</h3>
+
+<ul>
+  <li><a href="#全局规范">点我跳转到顶部</a>   // 利用 <code class="highlighter-rouge">#</code>,<code class="highlighter-rouge">##</code> 生成 <code class="highlighter-rouge">id</code> 锚标签</li>
+  <li><a href="#top">另一种锚标记</a> // 利用 <code class="highlighter-rouge">&lt;a name="top"&gt;&lt;/a&gt;</code></li>
+</ul>
+
+<hr />
+
+<p>附：参考 Hello-World.md 源码，<em>注意换行的使用</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Hello-World
+
+这是一个范例文件格式
+我是普通换行
+
+## 我是&lt;h2&gt;标题
+
+我是`&lt;h2&gt;`的内容
+
+## 我是&lt;h3&gt;标题
+
+* Windows  
+*  Mac
+*  iOS
+*  Android
+
+</code></pre></div></div>
+
+<p>注：引用范例请参看底部</p>
+
+<h4 id="license">License</h4>
+
+<p>Released under <a href="http://rem.mit-license.org/">MIT</a> LICENSE</p>
+
+<h4 id="参考">参考</h4>
+<p><a href="https://http://daringfireball.net/projects/markdown/">MarkDown 官方语法</a>
+<a href="https://https://github.com/mojombo/github-flavored-markdown/issues/1">GitHub MakDown 语法</a></p>
+
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2018/09/regular-expressions/" title="link to 正则表达式">正则表达式</a></h2>
+       <p class="excerpt">字符串是编程时涉及到的最多的一种数据结构，对字符串进行操作的需求几乎无处不在。比如判断一个字符串是否是合法的Email地址，虽然可以编程提取@前后的子串，再分别判断是否是单词和域名，但这样做不但麻烦，而且代码难以复用。正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。尝试所以我们判断一个字符串是否是合法的Email的方法是：      创建一个匹配Email的正则表...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-09-02 02:00:00 +0800" class="post-list__meta--date date">2018-09-02</time> &#8226; <span class="post-list__meta--tags tags">Python</span><a class="btn-border-small" href=/2018/09/regular-expressions/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2018/09/create-ghost-blog/" title="link to Ghost博客搭建">Ghost博客搭建</a></h2>
+       <p class="excerpt">Ghost是一个现代化的，开源的，基于Node.js的博客发布平台，它的前端管理系统基于Ember.js， 后端的模板引擎采用的handlebars， 而默认数据库是MySQL，当然，你也可以使用其他类型的数据库。Ghost1.0如果用过1.0版本以前的Ghost的同学，会对Ghost版本的更新感到头疼，而一些配置问题也让人心烦。好在，就在一个月前，Ghost推出了Ghost1.0.0，并在一个月内升级到了1.6.2（到目前为止）大版本的提升，主要是因为一个东西的出现，那就是Ghost-C...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-09-02 02:00:00 +0800" class="post-list__meta--date date">2018-09-02</time> &#8226; <span class="post-list__meta--tags tags">Ghost</span><a class="btn-border-small" href=/2018/09/create-ghost-blog/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://zrocky.com/2018/09/markdown-guideline-for-team/";
+        this.page.identifier = "/2018/09/markdown-guideline-for-team/";
+    };
+
+    var disqus_shortname = 'Zrocky';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2018</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-119024149-1', 'zrocky.com');
+    ga('send', 'pageview');
+</script>
+
+
+    
+  </body>
+
+</html>

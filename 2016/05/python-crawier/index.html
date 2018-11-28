@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Python爬虫</title>
+  <meta name="description" content="爬虫, 数据说话的时代, 具有数据收集的手段, 我觉得很重要, 因为这些数据能帮助我们更好的分析趋势, 在解决问题时提供良好的依据, 以上就是我学习爬虫的动力所在">
+  <meta name="author" content="Zrocky">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Python爬虫">
+  <meta name="twitter:description" content="爬虫, 数据说话的时代, 具有数据收集的手段, 我觉得很重要, 因为这些数据能帮助我们更好的分析趋势, 在解决问题时提供良好的依据, 以上就是我学习爬虫的动力所在">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Python爬虫">
+  <meta property="og:description" content="爬虫, 数据说话的时代, 具有数据收集的手段, 我觉得很重要, 因为这些数据能帮助我们更好的分析趋势, 在解决问题时提供良好的依据, 以上就是我学习爬虫的动力所在">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://zrocky.com/2016/05/python-crawier/">
+  <link rel="alternate" type="application/rss+xml" title="Zrocky" href="http://zrocky.com/feed.xml">
+  
+  <!-- <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" /> -->
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zrocky 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zrocky logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zrocky" class="blog-button">Zrocky</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Stay Hungry, Stay Foolish</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Think Different</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        <p class="panel-cover__description">欢迎与我交流</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="/categories" target="_blank" title="categories">分类</a></li>
+                
+                  <li class="navigation__item"><a href="/archives" target="_blank" title="archives">归档</a></li>
+                
+                  <li class="navigation__item"><a href="/about" target="_blank" title="about">关于</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/zrocky" title="@zrocky 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:roam@zrocky.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-disabled"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2016-05-24 02:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2016-05-24</time> &#8226; <span class="post-meta__tags tags">Python</span>
+    </div>
+    <h1 class="post-title">Python爬虫</h1>
+  </header>
+
+  <section class="post">
+    <p>爬虫, 数据说话的时代, 具有数据收集的手段, 我觉得很重要, 因为这些数据能帮助我们更好的分析趋势, 在解决问题时提供良好的依据, 以上就是我学习爬虫的动力所在</p>
+
+<ul>
+  <li><a href="http://cuiqingcai.com/1052.html">静觅</a></li>
+</ul>
+
+<h2 id="python爬虫入门">Python爬虫入门</h2>
+<p>Python爬虫有一些基础库, 我们就从基础库的学习, 开始爬虫之路</p>
+
+<h3 id="urllib的使用">Urllib的使用</h3>
+<p>在使用之前, 需要导入Urllib库</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib2</span>
+</code></pre></div></div>
+
+<h4 id="获取网页">获取网页</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 标准写法 (推荐)
+</span><span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s">"http://www.baidu.com"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># 简写
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">"http://www.baidu.com"</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>第一个参数<code class="highlighter-rouge">url</code>即为<code class="highlighter-rouge">URL</code>，第二个参数<code class="highlighter-rouge">data</code>是访问<code class="highlighter-rouge">URL</code>时要传送的数据，第三个<code class="highlighter-rouge">timeout</code>是设置超时时间。</p>
+  </li>
+  <li>
+    <p>第二三个参数是可以不传送的，<code class="highlighter-rouge">data</code>默认为空<code class="highlighter-rouge">None</code>，<code class="highlighter-rouge">timeout</code>默认为 <code class="highlighter-rouge">socket._GLOBAL_DEFAULT_TIMEOUT</code></p>
+  </li>
+  <li>
+    <p>第一个参数<code class="highlighter-rouge">URL</code>是必须要传送的，在这个例子里面我们传送了百度的<code class="highlighter-rouge">URL</code>，执行<code class="highlighter-rouge">urlopen</code>方法之后，返回一个<code class="highlighter-rouge">response</code>对象，返回信息便保存在这里面。</p>
+  </li>
+</ul>
+
+<h4 id="post与get数据传送">POST与GET数据传送</h4>
+<h5 id="post">POST</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">"username"</span><span class="p">:</span> <span class="s">"123"</span><span class="p">,</span> <span class="s">"password"</span><span class="p">:</span> <span class="s">"abc"</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://www.baidu.com/login"</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h5 id="get">GET</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">"username"</span><span class="p">:</span> <span class="s">"123"</span><span class="p">,</span> <span class="s">"password"</span><span class="p">:</span> <span class="s">"abc"</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://www.baidu.com/login"</span>
+<span class="n">geturl</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s">"?"</span> <span class="o">+</span> <span class="n">data</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">geturl</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h4 id="urllib高级使用">Urllib高级使用</h4>
+<h5 id="设置headers">设置headers</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">"http://www.baidu.com/login"</span>
+<span class="n">user_agent</span> <span class="o">=</span> <span class="s">"Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"User-Agent"</span><span class="p">:</span> <span class="n">user_agent</span><span class="p">}</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">"username"</span><span class="p">:</span> <span class="s">"123"</span><span class="p">,</span> <span class="s">"password"</span><span class="p">:</span> <span class="s">"abc"</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="o">.</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></div>
+<p>利用设置<code class="highlighter-rouge">headers</code>可以用来对付<code class="highlighter-rouge">"反盗链"</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'User-Agent'</span><span class="p">:</span> <span class="s">'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'</span><span class="p">,</span> <span class="s">'Referer'</span><span class="p">:</span><span class="s">'http://www.zhihu.com/articles'</span><span class="p">}</span>  
+</code></pre></div></div>
+
+<p>需要注意的<code class="highlighter-rouge">headers</code>属性</p>
+
+<blockquote>
+  <ul>
+    <li>User-Agent : 有些服务器或 Proxy 会通过该值来判断是否是浏览器发出的请求</li>
+    <li>Content-Type : 在使用 REST 接口时，服务器会检查该值，用来确定 HTTP Body 中的内容该怎样解析。</li>
+    <li>application/xml ： 在 XML RPC，如 RESTful/SOAP 调用时使用</li>
+    <li>application/json ： 在 JSON RPC 调用时使用</li>
+    <li>application/x-www-form-urlencoded ： 浏览器提交 Web 表单时使用</li>
+    <li>在使用服务器提供的 RESTful 或 SOAP 服务时， Content-Type 设置错误会导致服务器拒绝服务</li>
+  </ul>
+</blockquote>
+
+<h5 id="设置porxy代理">设置Porxy(代理)</h5>
+<p>假如一个网站它会检测某一段时间某个IP 的访问次数，如果访问次数过多，它会禁止你的访问. 所以你可以设置一些代理服务器来帮助你做工作，每隔一段时间换一个代理</p>
+
+<p><code class="highlighter-rouge">urllib2</code>默认会使用环境变量<code class="highlighter-rouge">http_proxy</code> 来设置<code class="highlighter-rouge">HTTP Proxy</code></p>
+
+<p>设置方法:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">enable_proxy</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">proxy_handler</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">({</span><span class="s">"http"</span><span class="p">:</span> <span class="s">"http://some-proxy.com:8080"</span><span class="p">})</span>
+<span class="n">null_proxy_handler</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">({})</span>
+<span class="k">if</span> <span class="n">enable_proxy</span><span class="p">:</span>
+	<span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">proxy_handler</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+	<span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">null_proxy_handler</span><span class="p">)</span>
+<span class="n">urllib2</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h5 id="设置timeout">设置TimeOut</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># data参数空出未填
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">"http://www.baidu.com"</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="c1"># 填写了data参数
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">"http://www.baidu.com"</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h5 id="使用put和delete方法">使用PUT和DELETE方法</h5>
+<p><code class="highlighter-rouge">http</code>协议有六种请求方法，<code class="highlighter-rouge">get</code>,<code class="highlighter-rouge">head</code>,<code class="highlighter-rouge">put</code>,<code class="highlighter-rouge">delete</code>,<code class="highlighter-rouge">post</code>,<code class="highlighter-rouge">options</code>，我们有时候需要用到<code class="highlighter-rouge">PUT</code>方式或者<code class="highlighter-rouge">DELETE</code>方式请求。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">request</span><span class="o">.</span><span class="n">get_method</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s">'PUT'</span> <span class="c1"># or 'DELETE'
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="urlerror异常处理">URLError异常处理</h3>
+<p>可能产生<code class="highlighter-rouge">URLError</code>的原因</p>
+
+<ul>
+  <li>网络无连接，即本机无法上网</li>
+  <li>连接不到特定的服务器</li>
+  <li>服务器不存在</li>
+</ul>
+
+<p>使用<code class="highlighter-rouge">try...except</code>捕获异常</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s">"http://www.xxxxxxxx.com"</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+	<span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+	<span class="k">print</span> <span class="n">e</span><span class="o">.</span><span class="n">reason</span>
+</code></pre></div></div>
+
+<h4 id="httperror">HTTPError</h4>
+<p>服务器不能处理的请求, 会返回一个<code class="highlighter-rouge">HTTPError</code>, <code class="highlighter-rouge">HTTPError</code>是<code class="highlighter-rouge">URLError</code>的子类, 以下列举常见<code class="highlighter-rouge">HTTPError</code>错误码</p>
+
+<blockquote>
+  <ul>
+    <li>100：继续  客户端应当继续发送请求。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。</li>
+    <li>101： 转换协议  在发送完这个响应最后的空行后，服务器将会切换到在Upgrade 消息头中定义的那些协议。只有在切换新的协议更有好处的时候才应该采取类似措施。</li>
+    <li>102：继续处理   由WebDAV（RFC 2518）扩展的状态码，代表处理将被继续执行。</li>
+    <li>200：请求成功      处理方式：获得响应的内容，进行处理</li>
+    <li>201：请求完成，结果是创建了新资源。新创建资源的URI可在响应的实体中得到    处理方式：爬虫中不会遇到</li>
+    <li>202：请求被接受，但处理尚未完成    处理方式：阻塞等待</li>
+    <li>204：服务器端已经实现了请求，但是没有返回新的信 息。如果客户是用户代理，则无须为此更新自身的文档视图。    处理方式：丢弃</li>
+    <li>300：该状态码不被HTTP/1.0的应用程序直接使用， 只是作为3XX类型回应的默认解释。存在多个可用的被请求资源。    处理方式：若程序中能够处理，则进行进一步处理，如果程序中不能处理，则丢弃</li>
+    <li>301：请求到的资源都会分配一个永久的URL，这样就可以在将来通过该URL来访问此资源    处理方式：重定向到分配的URL</li>
+    <li>302：请求到的资源在一个不同的URL处临时保存     处理方式：重定向到临时的URL</li>
+    <li>304：请求的资源未更新     处理方式：丢弃</li>
+    <li>400：非法请求     处理方式：丢弃</li>
+    <li>401：未授权     处理方式：丢弃</li>
+    <li>403：禁止     处理方式：丢弃</li>
+    <li>404：没有找到     处理方式：丢弃</li>
+    <li>500：服务器内部错误  服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器端的源代码出现错误时出现。</li>
+    <li>501：服务器无法识别  服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。</li>
+    <li>502：错误网关  作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。</li>
+    <li>503：服务出错   由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是临时的，并且将在一段时间以后恢复。</li>
+  </ul>
+</blockquote>
+
+<p>在错误判断上我们预先判断子类错误, 如果判断不到, 再判断父类错误, 在输出错误信息之前还可以使用<code class="highlighter-rouge">hasattr</code>方法提前对属性进行判断</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s">"http://www.xxxxxxxx.com"</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+	<span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+	<span class="k">print</span> <span class="n">e</span><span class="o">.</span><span class="n">code</span>
+<span class="k">except</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">URLError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s">"code"</span><span class="p">):</span>
+		<span class="k">print</span> <span class="n">e</span><span class="o">.</span><span class="n">code</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s">"reason"</span><span class="p">):</span>
+		<span class="k">print</span> <span class="n">e</span><span class="o">.</span><span class="n">reason</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="k">print</span> <span class="s">"OK"</span>
+</code></pre></div></div>
+
+<h3 id="cookie的使用">Cookie的使用</h3>
+<p>Cookie，指某些网站为了辨别用户身份、进行session跟踪而储存在用户本地终端上的数据（通常经过加密）</p>
+
+<h4 id="opener">Opener</h4>
+<p><code class="highlighter-rouge">opener</code>是一个urllib2.OpenerDirector的实例, 获取一个<code class="highlighter-rouge">URL</code>时会使用一个<code class="highlighter-rouge">opener</code>, <code class="highlighter-rouge">urlopen</code>就是一个特殊的<code class="highlighter-rouge">opener</code>实例, 如果我们使用到了<code class="highlighter-rouge">Cookie</code>, 仅仅使用<code class="highlighter-rouge">urlopen</code>是不能达到目的的</p>
+
+<h4 id="cookielib">Cookielib</h4>
+<p><code class="highlighter-rouge">cookielib</code>模块的主要作用是提供可存储<code class="highlighter-rouge">cookie</code>的对象，以便于与<code class="highlighter-rouge">urllib2</code>模块配合使用来访问Internet资源。<code class="highlighter-rouge">Cookielib</code>模块非常强大，我们可以利用本模块的<code class="highlighter-rouge">CookieJar</code>类的对象来捕获<code class="highlighter-rouge">cookie</code>并在后续连接请求时重新发送，比如可以实现模拟登录功能。该模块主要的对象有<code class="highlighter-rouge">CookieJar</code>、<code class="highlighter-rouge">FileCookieJar</code>、<code class="highlighter-rouge">MozillaCookieJar</code>、<code class="highlighter-rouge">LWPCookieJar</code>。</p>
+
+<h5 id="获取cookie">获取Cookie</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="kn">import</span> <span class="nn">cookielib</span>
+<span class="c1">#声明一个CookieJar对象实例来保存cookie
+</span><span class="n">cookie</span> <span class="o">=</span> <span class="n">cookielib</span><span class="o">.</span><span class="n">CookieJar</span><span class="p">()</span>
+<span class="c1">#利用urllib2库的HTTPCookieProcessor对象来创建cookie处理器
+</span><span class="n">handler</span><span class="o">=</span><span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">cookie</span><span class="p">)</span>
+<span class="c1">#通过handler来构建opener
+</span><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<span class="c1">#此处的open方法同urllib2的urlopen方法，也可以传入request
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="s">'http://www.baidu.com'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cookie</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">'Name = '</span><span class="o">+</span><span class="n">item</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">print</span> <span class="s">'Value = '</span><span class="o">+</span><span class="n">item</span><span class="o">.</span><span class="n">value</span>
+</code></pre></div></div>
+
+<h5 id="保存cookie到文件">保存Cookie到文件</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">cookielib</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+
+<span class="c1">#设置保存cookie的文件，同级目录下的cookie.txt
+</span><span class="n">filename</span> <span class="o">=</span> <span class="s">'cookie.txt'</span>
+<span class="c1">#声明一个MozillaCookieJar对象实例来保存cookie，之后写入文件
+</span><span class="n">cookie</span> <span class="o">=</span> <span class="n">cookielib</span><span class="o">.</span><span class="n">MozillaCookieJar</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="c1">#利用urllib2库的HTTPCookieProcessor对象来创建cookie处理器
+</span><span class="n">handler</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">cookie</span><span class="p">)</span>
+<span class="c1">#通过handler来构建opener
+</span><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<span class="c1">#创建一个请求，原理同urllib2的urlopen
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="s">"http://www.baidu.com"</span><span class="p">)</span>
+<span class="c1">#保存cookie到文件
+</span><span class="n">cookie</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">ignore_discard</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">ignore_expires</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">ignore_discard</code>的意思是即使<code class="highlighter-rouge">cookies</code>将被丢弃也将它保存下来</li>
+  <li><code class="highlighter-rouge">ignore_expires</code>的意思是如果在该文件中<code class="highlighter-rouge">cookies</code>已经存在，则覆盖原文件写入</li>
+</ul>
+
+<h5 id="从文件中读取cookie">从文件中读取Cookie</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">cookielib</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+
+<span class="c1">#创建MozillaCookieJar实例对象
+</span><span class="n">cookie</span> <span class="o">=</span> <span class="n">cookielib</span><span class="o">.</span><span class="n">MozillaCookieJar</span><span class="p">()</span>
+<span class="c1">#从文件中读取cookie内容到变量
+</span><span class="n">cookie</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">'cookie.txt'</span><span class="p">,</span> <span class="n">ignore_discard</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">ignore_expires</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1">#创建请求的request
+</span><span class="n">req</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s">"http://www.baidu.com"</span><span class="p">)</span>
+<span class="c1">#利用urllib2的build_opener方法创建一个opener
+</span><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">cookie</span><span class="p">))</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h5 id="利用cookie模拟网站登录">利用Cookie模拟网站登录</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="kn">import</span> <span class="nn">cookielib</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s">'cookie.txt'</span>
+<span class="c1">#声明一个MozillaCookieJar对象实例来保存cookie，之后写入文件
+</span><span class="n">cookie</span> <span class="o">=</span> <span class="n">cookielib</span><span class="o">.</span><span class="n">MozillaCookieJar</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">cookie</span><span class="p">))</span>
+<span class="n">postdata</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="p">({</span>
+			<span class="s">'stuid'</span><span class="p">:</span><span class="s">'201200131012'</span><span class="p">,</span>
+			<span class="s">'pwd'</span><span class="p">:</span><span class="s">'23342321'</span>
+		<span class="p">})</span>
+<span class="c1">#登录教务系统的URL
+</span><span class="n">loginUrl</span> <span class="o">=</span> <span class="s">'http://jwxt.sdu.edu.cn:7890/pls/wwwbks/bks_login2.login'</span>
+<span class="c1">#模拟登录，并把cookie保存到变量
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">loginUrl</span><span class="p">,</span><span class="n">postdata</span><span class="p">)</span>
+<span class="c1">#保存cookie到cookie.txt中
+</span><span class="n">cookie</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">ignore_discard</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">ignore_expires</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1">#利用cookie请求访问另一个网址，此网址是成绩查询网址
+</span><span class="n">gradeUrl</span> <span class="o">=</span> <span class="s">'http://jwxt.sdu.edu.cn:7890/pls/wwwbks/bkscjcx.curscopre'</span>
+<span class="c1">#请求访问成绩查询网址
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">gradeUrl</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">result</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="正则表达式">正则表达式</h3>
+<blockquote>
+  <p>正则表达式是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。</p>
+</blockquote>
+
+<p><img src="http://qiniu.cuiqingcai.com/wp-content/uploads/2015/02/20130515113723855.png" alt="" /></p>
+
+<h4 id="相关注解">相关注解</h4>
+<h5 id="数量词的贪婪模式与非贪婪模式">数量词的贪婪模式与非贪婪模式</h5>
+<p>正则表达式通常用于在文本中查找匹配的字符串。<code class="highlighter-rouge">Python</code>里数量词默认是贪婪的（在少数语言里也可能是默认非贪婪），总是尝试匹配尽可能多的字符；非贪婪的则相反，总是尝试匹配尽可能少的字符。例如：正则表达式<code class="highlighter-rouge">”ab*”</code>如果用于查找<code class="highlighter-rouge">”abbbc”</code>，将找到<code class="highlighter-rouge">”abbb”</code>。而如果使用非贪婪的数量词<code class="highlighter-rouge">”ab*?”</code>，将找到<code class="highlighter-rouge">”a”</code>。</p>
+
+<h5 id="反斜杠">反斜杠</h5>
+<p>与大多数编程语言相同，正则表达式里使用<code class="highlighter-rouge">”\”</code>作为转义字符，这就可能造成反斜杠困扰。假如你需要匹配文本中的字符<code class="highlighter-rouge">”\”</code>，那么使用编程语言表示的正则表达式里将需要4个反斜杠<code class="highlighter-rouge">”\\\\”</code>：前两个和后两个分别用于在编程语言里转义成反斜杠，转换成两个反斜杠后再在正则表达式里转义成一个反斜杠。</p>
+
+<p><code class="highlighter-rouge">Python</code>里的原生字符串很好地解决了这个问题，这个例子中的正则表达式可以使用<code class="highlighter-rouge">r”\\”</code>表示。同样，匹配一个数字的<code class="highlighter-rouge">”\\d”</code>可以写成<code class="highlighter-rouge">r”\d”</code>。有了原生字符串，妈妈也不用担心是不是漏写了反斜杠，写出来的表达式也更直观勒。</p>
+
+<h4 id="re模块">Re模块</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#返回pattern对象
+</span><span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">string</span><span class="p">[,</span><span class="n">flag</span><span class="p">])</span>  
+<span class="c1">#以下为匹配所用函数
+</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">[,</span> <span class="n">flags</span><span class="p">])</span>
+<span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">[,</span> <span class="n">flags</span><span class="p">])</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">[,</span> <span class="n">maxsplit</span><span class="p">])</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">[,</span> <span class="n">flags</span><span class="p">])</span>
+<span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">[,</span> <span class="n">flags</span><span class="p">])</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">[,</span> <span class="n">count</span><span class="p">])</span>
+<span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">[,</span> <span class="n">count</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">pattern</code>可以理解为一个匹配模式，我们需要利用<code class="highlighter-rouge">re.compile</code>方法获取<code class="highlighter-rouge">pattern</code></p>
+
+<p>在参数中我们传入了原生字符串对象，通过compile方法编译生成一个pattern对象，然后我们利用这个对象来进行进一步的匹配。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>参数flag是匹配模式，取值可以使用按位或运算符’</td>
+      <td>’表示同时生效，比如re.I</td>
+      <td>re.M。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>可选值有：</p>
+
+<blockquote>
+  <ul>
+    <li>re.I(全拼：IGNORECASE): 忽略大小写（括号内是完整写法，下同）</li>
+    <li>re.M(全拼：MULTILINE): 多行模式，改变’^’和’$’的行为（参见上图）</li>
+    <li>re.S(全拼：DOTALL): 点任意匹配模式，改变’.’的行为</li>
+    <li>re.L(全拼：LOCALE): 使预定字符类 \w \W \b \B \s \S 取决于当前区域设定</li>
+    <li>re.U(全拼：UNICODE): 使预定字符类 \w \W \b \B \s \S \d \D 取决于unicode定义的字符属性</li>
+    <li>re.X(全拼：VERBOSE): 详细模式。这个模式下正则表达式可以是多行，忽略空白字符，并可以加入注释。</li>
+  </ul>
+</blockquote>
+
+<p><em>注：以下七个方法中的flags同样是代表匹配模式的意思，如果在pattern生成时已经指明了flags，那么在下面的方法中就不需要传入这个参数了。</em></p>
+
+<h5 id="rematchpattern-string-flags">re.match(pattern, string[, flags])</h5>
+<p>这个方法将会从<code class="highlighter-rouge">string</code>（我们要匹配的字符串）的开头开始，尝试匹配<code class="highlighter-rouge">pattern</code>，一直向后匹配，如果遇到无法匹配的字符，立即返回<code class="highlighter-rouge">None</code>，如果匹配未结束已经到达<code class="highlighter-rouge">string</code>的末尾，也会返回<code class="highlighter-rouge">None</code>。两个结果均表示匹配失败，否则匹配<code class="highlighter-rouge">pattern</code>成功，同时匹配终止，不再对<code class="highlighter-rouge">string</code>向后匹配。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">__author__</span> <span class="o">=</span> <span class="s">'CQC'</span>
+<span class="c1"># -*- coding: utf-8 -*-
+</span>
+<span class="c1">#导入re模块
+</span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># 将正则表达式编译成Pattern对象，注意hello前面的r的意思是“原生字符串”
+</span><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'hello'</span><span class="p">)</span>
+
+<span class="c1"># 使用re.match匹配文本，获得匹配结果，无法匹配时将返回None
+</span><span class="n">result1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">'hello'</span><span class="p">)</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">'helloo CQC!'</span><span class="p">)</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">'helo CQC!'</span><span class="p">)</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">'hello CQC!'</span><span class="p">)</span>
+
+<span class="c1">#如果1匹配成功
+</span><span class="k">if</span> <span class="n">result1</span><span class="p">:</span>
+    <span class="c1"># 使用Match获得分组信息
+</span>    <span class="k">print</span> <span class="n">result1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">'1匹配失败！'</span>
+
+
+<span class="c1">#如果2匹配成功
+</span><span class="k">if</span> <span class="n">result2</span><span class="p">:</span>
+    <span class="c1"># 使用Match获得分组信息
+</span>    <span class="k">print</span> <span class="n">result2</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">'2匹配失败！'</span>
+
+
+<span class="c1">#如果3匹配成功
+</span><span class="k">if</span> <span class="n">result3</span><span class="p">:</span>
+    <span class="c1"># 使用Match获得分组信息
+</span>    <span class="k">print</span> <span class="n">result3</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">'3匹配失败！'</span>
+
+<span class="c1">#如果4匹配成功
+</span><span class="k">if</span> <span class="n">result4</span><span class="p">:</span>
+    <span class="c1"># 使用Match获得分组信息
+</span>    <span class="k">print</span> <span class="n">result4</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">'4匹配失败！'</span>
+</code></pre></div></div>
+
+<p>匹配分析</p>
+
+<ol>
+  <li>
+    <p>第一个匹配，<code class="highlighter-rouge">pattern</code>正则表达式为<code class="highlighter-rouge">’hello’</code>，我们匹配的目标字符串<code class="highlighter-rouge">string</code>也为<code class="highlighter-rouge">hello</code>，从头至尾完全匹配，匹配成功。</p>
+  </li>
+  <li>
+    <p>第二个匹配，<code class="highlighter-rouge">string</code>为<code class="highlighter-rouge">helloo CQC</code>，从<code class="highlighter-rouge">string</code>头开始匹配<code class="highlighter-rouge">pattern</code>完全可以匹配，<code class="highlighter-rouge">pattern</code>匹配结束，同时匹配终止，后面的<code class="highlighter-rouge">o CQC</code>不再匹配，返回匹配成功的信息。</p>
+  </li>
+  <li>
+    <p>第三个匹配，<code class="highlighter-rouge">string</code>为<code class="highlighter-rouge">helo CQC</code>，从<code class="highlighter-rouge">string</code>头开始匹配<code class="highlighter-rouge">pattern</code>，发现到 <code class="highlighter-rouge">‘o’</code> 时无法完成匹配，匹配终止，返回<code class="highlighter-rouge">None</code></p>
+  </li>
+  <li>
+    <p>第四个匹配，同第二个匹配原理，即使遇到了空格符也不会受影响。</p>
+  </li>
+</ol>
+
+<p>我们还看到最后打印出了<code class="highlighter-rouge">result.group()</code>，这个是什么意思呢？下面我们说一下关于<code class="highlighter-rouge">match</code>对象的的属性和方法
+<code class="highlighter-rouge">Match</code>对象是一次匹配的结果，包含了很多关于此次匹配的信息，可以使用<code class="highlighter-rouge">Match</code>提供的可读属性或方法来获取这些信息。</p>
+
+<blockquote>
+  <p>属性：</p>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>string: 匹配时使用的文本。</li>
+    <li>re: 匹配时使用的Pattern对象。</li>
+    <li>pos: 文本中正则表达式开始搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。</li>
+    <li>endpos: 文本中正则表达式结束搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。</li>
+    <li>lastindex: 最后一个被捕获的分组在文本中的索引。如果没有被捕获的分组，将为None。</li>
+    <li>lastgroup: 最后一个被捕获的分组的别名。如果这个分组没有别名或者没有被捕获的分组，将为None。</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p>方法：</p>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>group([group1, …]):
+获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group(0)；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串。</li>
+    <li>groups([default]):
+以元组形式返回全部分组截获的字符串。相当于调用group(1,2,…last)。default表示没有截获字符串的组以这个值替代，默认为None。</li>
+    <li>groupdict([default]):
+返回以有别名的组的别名为键、以该组截获的子串为值的字典，没有别名的组不包含在内。default含义同上。</li>
+    <li>start([group]):
+返回指定的组截获的子串在string中的起始索引（子串第一个字符的索引）。group默认值为0。</li>
+    <li>end([group]):
+返回指定的组截获的子串在string中的结束索引（子串最后一个字符的索引+1）。group默认值为0。</li>
+    <li>span([group]):
+返回(start(group), end(group))。</li>
+    <li>expand(template):
+将匹配到的分组代入template中然后返回。template中可以使用\id或\g、\g引用分组，但不能使用编号0。\id与\g是等价的；但\10将被认为是第10个分组，如果你想表达\1之后是字符’0’，只能使用\g0。</li>
+  </ol>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># -*- coding: utf-8 -*-
+#一个简单的match实例
+</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># 匹配如下内容：单词+空格+单词+任意字符
+</span><span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">r'(\w+) (\w+)(?P&lt;sign&gt;.*)'</span><span class="p">,</span> <span class="s">'hello world!'</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">"m.string:"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">string</span>
+<span class="k">print</span> <span class="s">"m.re:"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">re</span>
+<span class="k">print</span> <span class="s">"m.pos:"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">pos</span>
+<span class="k">print</span> <span class="s">"m.endpos:"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">endpos</span>
+<span class="k">print</span> <span class="s">"m.lastindex:"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">lastindex</span>
+<span class="k">print</span> <span class="s">"m.lastgroup:"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">lastgroup</span>
+<span class="k">print</span> <span class="s">"m.group():"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">"m.group(1,2):"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">"m.groups():"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">"m.groupdict():"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">"m.start(2):"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">"m.end(2):"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">"m.span(2):"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">span</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">r"m.expand(r'\g \g\g'):"</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="s">r'\2 \1\3'</span><span class="p">)</span>
+ 
+<span class="c1">### output ###
+# m.string: hello world!
+# m.re: 
+# m.pos: 0
+# m.endpos: 12
+# m.lastindex: 3
+# m.lastgroup: sign
+# m.group(1,2): ('hello', 'world')
+# m.groups(): ('hello', 'world', '!')
+# m.groupdict(): {'sign': '!'}
+# m.start(2): 6
+# m.end(2): 11
+# m.span(2): (6, 11)
+# m.expand(r'\2 \1\3'): world hello!
+</span></code></pre></div></div>
+
+<h5 id="researchpattern-string-flags">re.search(pattern, string[, flags])</h5>
+<p><code class="highlighter-rouge">search</code>方法与<code class="highlighter-rouge">match</code>方法极其类似，区别在于<code class="highlighter-rouge">match()</code>函数只检测<code class="highlighter-rouge">re</code>是不是在<code class="highlighter-rouge">string</code>的开始位置匹配，<code class="highlighter-rouge">search()</code>会扫描整个<code class="highlighter-rouge">string</code>查找匹配，<code class="highlighter-rouge">match（）</code>只有在0位置匹配成功的话才有返回，如果不是开始位置匹配成功的话，<code class="highlighter-rouge">match()</code>就返回<code class="highlighter-rouge">None</code>。同样，<code class="highlighter-rouge">search</code>方法的返回对象同样<code class="highlighter-rouge">match()</code>返回对象的方法和属性。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#导入re模块
+</span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># 将正则表达式编译成Pattern对象
+</span><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'world'</span><span class="p">)</span>
+<span class="c1"># 使用search()查找匹配的子串，不存在能匹配的子串时将返回None
+# 这个例子中使用match()无法成功匹配
+</span><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">'hello world!'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="c1"># 使用Match获得分组信息
+</span>    <span class="k">print</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="c1">### 输出 ###
+# world
+</span></code></pre></div></div>
+
+<h5 id="resplitpattern-string-maxsplit">re.split(pattern, string[, maxsplit])</h5>
+<p>按照能够匹配的子串将<code class="highlighter-rouge">string</code>分割后返回列表。<code class="highlighter-rouge">maxsplit</code>用于指定最大分割次数，不指定将全部分割</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'\d+'</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">'one1two2three3four4'</span><span class="p">)</span>
+
+<span class="c1">### 输出 ###
+# ['one', 'two', 'three', 'four', '']
+</span></code></pre></div></div>
+
+<h5 id="refindallpattern-string-flags">re.findall(pattern, string[, flags])</h5>
+<p>搜索string，以列表形式返回全部能匹配的子串</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'\d+'</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">'one1two2three3four4'</span><span class="p">)</span>
+
+<span class="c1">### 输出 ###
+# ['1', '2', '3', '4']
+</span></code></pre></div></div>
+
+<h5 id="refinditerpattern-string-flags">re.finditer(pattern, string[, flags])</h5>
+<p>搜索string，返回一个顺序访问每一个匹配结果（Match对象）的迭代器</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'\d+'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">'one1two2three3four4'</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(),</span>
+
+<span class="c1">### 输出 ###
+# 1 2 3 4
+</span></code></pre></div></div>
+
+<h5 id="resubpattern-repl-string-count">re.sub(pattern, repl, string[, count])</h5>
+<p>使用<code class="highlighter-rouge">repl</code>替换<code class="highlighter-rouge">string</code>中每一个匹配的子串后返回替换后的字符串。
+当<code class="highlighter-rouge">repl</code>是一个字符串时，可以使用<code class="highlighter-rouge">\id</code>或<code class="highlighter-rouge">\g</code>、<code class="highlighter-rouge">\g</code>引用分组，但不能使用编号0。
+当<code class="highlighter-rouge">repl</code>是一个方法时，这个方法应当只接受一个参数（<code class="highlighter-rouge">Match</code>对象），并返回一个字符串用于替换（返回的字符串中不能再引用分组）。
+<code class="highlighter-rouge">count</code>用于指定最多替换次数，不指定时全部替换。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'(\w+) (\w+)'</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">'i say, hello world!'</span>
+
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">r'\2 \1'</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s">' '</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="n">func</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="c1">### output ###
+# say i, world hello!
+# I Say, Hello World!
+</span></code></pre></div></div>
+
+<h5 id="resubnpattern-repl-string-count">re.subn(pattern, repl, string[, count])</h5>
+<p>返回 (sub(repl, string[, count]), 替换次数)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+ 
+<span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'(\w+) (\w+)'</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">'i say, hello world!'</span>
+ 
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s">r'\2 \1'</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+ 
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s">' '</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+ 
+<span class="k">print</span> <span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="n">func</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+ 
+<span class="c1">### output ###
+# ('say i, world hello!', 2)
+# ('I Say, Hello World!', 2)
+</span></code></pre></div></div>
+
+<p>在上面我们介绍了7个工具方法，例如<code class="highlighter-rouge">match</code>，<code class="highlighter-rouge">search</code>等等，不过调用方式都是 <code class="highlighter-rouge">re.match</code>，<code class="highlighter-rouge">re.search</code>的方式，其实还有另外一种调用方式，可以通过<code class="highlighter-rouge">pattern.match</code>，<code class="highlighter-rouge">pattern.search</code>调用，这样调用便不用将<code class="highlighter-rouge">pattern</code>作为第一个参数传入了，大家想怎样调用皆可。</p>
+
+<p>函数API列表</p>
+
+<blockquote>
+  <ul>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>match(string[, pos[, endpos]])</td>
+            <td>re.match(pattern, string[, flags])</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>search(string[, pos[, endpos]])</td>
+            <td>re.search(pattern, string[, flags])</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>split(string[, maxsplit])</td>
+            <td>re.split(pattern, string[, maxsplit])</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>findall(string[, pos[, endpos]])</td>
+            <td>re.findall(pattern, string[, flags])</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>finditer(string[, pos[, endpos]])</td>
+            <td>re.finditer(pattern, string[, flags])</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>sub(repl, string[, count])</td>
+            <td>re.sub(pattern, repl, string[, count])</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>subn(repl, string[, count])</td>
+            <td>re.sub(pattern, repl, string[, count])</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+</blockquote>
+
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2016/05/python-learning-note/" title="link to Python笔记">Python笔记</a></h2>
+       <p class="excerpt">很早就对Python这门语言感兴趣, 终于有时间可以系统地学习, 所以才会有这篇笔记, 笔记本身基于C, OC, Swift三门语言, 相同之处没有太多赘述, 我也是一笔带过, 希望知晓! 我学习的来源主要是廖雪峰的Python教程, 本人并不是原创者, 笔记仅为本人自我记录的学习笔记  廖雪峰的Python教程Paython开发基础Python安装在Mac系统中, 系统内置了Python2.7版本, 所以Mac系统用户此时已基本满足编译所需环境。但是随着Python3.x版本的普及,建议...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2016-05-24 02:00:00 +0800" class="post-list__meta--date date">2016-05-24</time> &#8226; <span class="post-list__meta--tags tags">Python</span><a class="btn-border-small" href=/2016/05/python-learning-note/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2016/05/ios-develop-guideline/" title="link to iOS Develop Guideline">iOS Develop Guideline</a></h2>
+       <p class="excerpt">本规范因为Xcode版本的更迭，部分内容已经不太适用。本文仅供参考。以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.开发工具以下列举了我们公司在iOS开发中经常使用到工具, 并附上地址, 原则上需要全部安装  Xcode 历史版本  RubyGems (Ruby环境)  Alcatraz (Xcode开发工具安装包)以下插件均可在Alcatraz插件安装包中下载安装  Peckham (头文件快捷导入)  cocoapods plugin (coco...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2016-05-04 02:00:00 +0800" class="post-list__meta--date date">2016-05-04</time> &#8226; <span class="post-list__meta--tags tags">iOS</span><a class="btn-border-small" href=/2016/05/ios-develop-guideline/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://zrocky.com/2016/05/python-crawier/";
+        this.page.identifier = "/2016/05/python-crawier/";
+    };
+
+    var disqus_shortname = 'Zrocky';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2018</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-119024149-1', 'zrocky.com');
+    ga('send', 'pageview');
+</script>
+
+
+    
+  </body>
+
+</html>

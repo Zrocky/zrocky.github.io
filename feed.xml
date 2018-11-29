@@ -5,8 +5,8 @@
     <description>Think Different</description>
     <link>http://zrocky.com/</link>
     <atom:link href="http://zrocky.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 29 Nov 2018 17:08:49 +0800</pubDate>
-    <lastBuildDate>Thu, 29 Nov 2018 17:08:49 +0800</lastBuildDate>
+    <pubDate>Thu, 29 Nov 2018 17:16:38 +0800</pubDate>
+    <lastBuildDate>Thu, 29 Nov 2018 17:16:38 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -1645,7 +1645,7 @@ B123456789012345678901234567890123456789  DeviceName2
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane match init
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-07-match_init.gif&quot; alt=&quot;match_init&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-07-match-init.gif&quot; alt=&quot;match_init&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;执行命令后会要求输入Git仓库地址, 可以是&lt;code class=&quot;highlighter-rouge&quot;&gt;https://或git&lt;/code&gt;URL（如果你是使用SSH对Git进行身份验证，则需要使用gitURL，否则在尝试匹配时将看会身份验证错误）。&lt;/p&gt;
 
@@ -1679,7 +1679,7 @@ fastlane match adhoc
 fastlane match appstore
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-match_appstore_small.gif&quot; alt=&quot;match_appstore_small&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-match-appstore-small.gif&quot; alt=&quot;match_appstore_small&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;这将创建一个新的证书和配置文件（如果需要的话）并将它们存储在你的&lt;a href=&quot;# Git Repo&quot;&gt;Git仓库&lt;/a&gt;中。&lt;/p&gt;
 
@@ -1769,7 +1769,7 @@ fastlane match nuke distribution
 fastlane match nuke enterprise
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-match_nuke.gif&quot; alt=&quot;match_nuke&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-match-nuke.gif&quot; alt=&quot;match_nuke&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;match&lt;/code&gt;会在操作前会向你确认操作是否执行&lt;/p&gt;
 
@@ -1784,7 +1784,7 @@ fastlane match nuke enterprise
 
 &lt;p&gt;此外，&lt;code class=&quot;highlighter-rouge&quot;&gt;match&lt;/code&gt;还生成了一个README.md文件，让新的团队成员更容易上手：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-github_repo.png&quot; alt=&quot;github_repo&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-github-repo.png&quot; alt=&quot;github_repo&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;参数&quot;&gt;参数&lt;/h3&gt;
 

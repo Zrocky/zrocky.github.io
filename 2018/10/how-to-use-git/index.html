@@ -159,14 +159,15 @@
 
 <h3 id="git协议">Git协议</h3>
 
-<p>Git支持多种协议，<code class="highlighter-rouge">git://</code>和<code class="highlighter-rouge">https</code>等
-<code class="highlighter-rouge">https</code>协议速度会慢一些</p>
+<p>Git支持多种协议，<code class="highlighter-rouge">git://</code>和<code class="highlighter-rouge">https</code>等，<code class="highlighter-rouge">https</code>协议速度会慢一些</p>
 
 <h3 id="专有名词">专有名词</h3>
 
-<p><code class="highlighter-rouge">master</code>git自动创建的第一个分支
-<code class="highlighter-rouge">HEAD</code>当前版本
-<code class="highlighter-rouge">origin</code>远程库</p>
+<p><code class="highlighter-rouge">master</code>git自动创建的第一个分支</p>
+
+<p><code class="highlighter-rouge">HEAD</code>当前版本</p>
+
+<p><code class="highlighter-rouge">origin</code>远程库</p>
 
 <h2 id="基础命令">基础命令</h2>
 
@@ -174,56 +175,56 @@
   <li>
     <p>在目录中初始化Git</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git init
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git init
+</code></pre>    </div>
   </li>
   <li>
     <p>将修改添加到Git</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # 添加全部改动（常用）
+    <div class="highlighter-rouge"><pre class="highlight"><code> # 添加全部改动（常用）
  git add .
 
  # 添加具体变动
  git add file1 file2
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
   <li>
     <p>将修改提交</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git commit -m "changelog"
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git commit -m "changelog"
+</code></pre>    </div>
   </li>
   <li>
     <p>查看仓库当前状态</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git status
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git status
+</code></pre>    </div>
   </li>
   <li>
     <p>查看文件修改内容</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git diff filename
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git diff filename
+</code></pre>    </div>
   </li>
   <li>
     <p>查看Git日志</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # 完整日志（带时间）
+    <div class="highlighter-rouge"><pre class="highlight"><code> # 完整日志（带时间）
  git log
     
  #精简日志
  git log --pretty=oneline
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
   <li>
     <p>将当前版本回退（切换）到具体版本</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # 回退到具体版本号（版本号不需要写全，只需前几位）
+    <div class="highlighter-rouge"><pre class="highlight"><code> # 回退到具体版本号（版本号不需要写全，只需前几位）
  git reset --hard commit_id
     
  # 回退到当前版本的上一版本
  git reset --hard HEAD^
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
 </ol>
 
@@ -238,15 +239,15 @@
   <li>
     <p>查看历史命令（历史版本号）</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git reflog
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git reflog
+</code></pre>    </div>
   </li>
   <li>
     <p>撤销工作区中的修改（使用版本库中的版本替换工作区版本）</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # “--”很重要，不然会和checkout命令冲突
+    <div class="highlighter-rouge"><pre class="highlight"><code> # “--”很重要，不然会和checkout命令冲突
  git checkout -- filename
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
 </ol>
 
@@ -261,24 +262,24 @@
   <li>
     <p>撤销暂存区中的修改</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset HEAD filename
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code>git reset HEAD filename
+</code></pre>    </div>
   </li>
   <li>
     <p>将本地仓库添加到远程库中</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@github.com:zrocky/testgit.git
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code>git remote add origin git@github.com:zrocky/testgit.git
+</code></pre>    </div>
   </li>
   <li>
     <p>将本地库中的内容推送到远程库上</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 首次push需添加-u参数
+    <div class="highlighter-rouge"><pre class="highlight"><code># 首次push需添加-u参数
 git push -u origin master
     
 # 提交到远程库
 git push origin master
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
 </ol>
 
@@ -290,8 +291,8 @@ git push origin master
   <li>
     <p>从远程库中克隆到本地库</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:zrocky/testgit.git
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:zrocky/testgit.git
+</code></pre>    </div>
   </li>
 </ol>
 
@@ -333,44 +334,44 @@ git push origin master
   <li>
     <p>创建分支</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git branch dev
+    <div class="highlighter-rouge"><pre class="highlight"><code> git branch dev
     
  # 创建并切换分支
  git checkout -b dev
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
   <li>
     <p>切换分支</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git checkout dev
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git checkout dev
+</code></pre>    </div>
   </li>
   <li>
     <p>查看当前分支</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git branch
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git branch
+</code></pre>    </div>
   </li>
   <li>
     <p>合并分支到当前分支</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git merge dev
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git merge dev
+</code></pre>    </div>
   </li>
   <li>
     <p>删除分支</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git branch -d dev
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> git branch -d dev
+</code></pre>    </div>
   </li>
   <li>
     <p>查看分支合并图</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git log --graph
+    <div class="highlighter-rouge"><pre class="highlight"><code> git log --graph
     
  # 显示简化图
  git log --graph --pretty=oneline --abbrev-commit
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
 </ol>
 
@@ -388,8 +389,8 @@ git push origin master
 
 <p>使用<code class="highlighter-rouge">--no--ff</code>参数禁用<code class="highlighter-rouge">Fast forward</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git merge --no-ff -m "merge with no-ff" dev
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git merge --no-ff -m "merge with no-ff" dev
+</code></pre></div>
 
 <p><img src="/../assets/images/post/2018-10-12-15393299601183.jpg" alt="" /></p>
 
@@ -403,61 +404,61 @@ git push origin master
 
 <p>在<code class="highlighter-rouge">dev</code>分支工作，手头工作并未完成，不能提交，但是bug急修，这个时候，可以使用<code class="highlighter-rouge">stash</code>先将工作区暂时“储藏”起来，等修复bug后再恢复</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git stash
+</code></pre></div>
 
 <p>假定为修复线上bug，可从<code class="highlighter-rouge">master</code>分支创建临时分支</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b issus-101
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git checkout -b issus-101
+</code></pre></div>
 
 <p>bug修复完成后，合并分支到<code class="highlighter-rouge">master</code>，再切换回<code class="highlighter-rouge">dev</code>分支，使用<code class="highlighter-rouge">stash</code>恢复之前的工作区</p>
 
 <p>查看<code class="highlighter-rouge">stash</code>挂起的任务</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash list
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git stash list
+</code></pre></div>
 
 <p>恢复<code class="highlighter-rouge">stash</code>任务</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 只恢复任务，挂起的任务还在list中
+<div class="highlighter-rouge"><pre class="highlight"><code># 只恢复任务，挂起的任务还在list中
 git stash apply stash@{0}
 
 # 恢复的同时把stash挂起任务删除
 git stash pop
-</code></pre></div></div>
+</code></pre></div>
 
 <p>删除<code class="highlighter-rouge">stash list</code>中任务</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git stash drop stash@{0}
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git stash drop stash@{0}
+</code></pre></div>
 
 <h5 id="feature分支">Feature分支</h5>
 
 <p>feature分支和bug分支的处理类似，但如果feature最终放弃，需要删除分支时，使用原来的分支将会报错，需要删除未合并的分支时，要使用<code class="highlighter-rouge">-D</code>参数强行删除</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch -D feature-vulcan
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git branch -D feature-vulcan
+</code></pre></div>
 
 <h5 id="多人协作">多人协作</h5>
 
 <p>查看远程库信息</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote
+<div class="highlighter-rouge"><pre class="highlight"><code>git remote
 
 # 详细信息
 git remote -v
-</code></pre></div></div>
+</code></pre></div>
 
 <p>推送分支到远程库</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 主分支
+<div class="highlighter-rouge"><pre class="highlight"><code># 主分支
 git push origin master
 
 # 开发分支
 git push origin dev
 
-</code></pre></div></div>
+</code></pre></div>
 
 <blockquote>
   <ol>
@@ -471,8 +472,8 @@ git push origin dev
 
 <p>从远程库<code class="highlighter-rouge">clone</code>到本地时，默认只能看到<code class="highlighter-rouge">master</code>分支，如果需要再<code class="highlighter-rouge">dev</code>等其它分支上开发，则必须创建<code class="highlighter-rouge">origin</code>远程库的<code class="highlighter-rouge">dev</code>分支到本地</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b dev origin/dev
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git checkout -b dev origin/dev
+</code></pre></div>
 
 <p>如果<code class="highlighter-rouge">push</code>更新到远程分支时发生冲突，则需要使用<code class="highlighter-rouge">git pull</code>命令从远程拉取更新，在本地处理完冲突后，再用<code class="highlighter-rouge">git push origin &lt;branch-name&gt;</code>命令<code class="highlighter-rouge">push</code>到远程库</p>
 
@@ -484,8 +485,8 @@ git push origin dev
 
 <p>使用<code class="highlighter-rouge">rebase</code>可以整理本地<code class="highlighter-rouge">commit</code>的分叉，使之变成线性，而不再是“蜘蛛网”，<code class="highlighter-rouge">rebase</code>只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git rebase
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git rebase
+</code></pre></div>
 
 <h3 id="tag-标签">Tag (标签）</h3>
 
@@ -493,50 +494,50 @@ git push origin dev
 
 <p>基于当前分支创建新标签</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git tag v1.0
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git tag v1.0
+</code></pre></div>
 
 <p>基于特定版本创建新标签</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git tag v0.9 f52c633
+<div class="highlighter-rouge"><pre class="highlight"><code>git tag v0.9 f52c633
 
 # 指定说明文字
 git tag -a v0.1 -m "version 0.1 released" 1094adb
-</code></pre></div></div>
+</code></pre></div>
 
 <p>查看所有标签</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git tag 
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git tag 
+</code></pre></div>
 
 <p>查看某个标签的信息</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git show v0.9
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git show v0.9
+</code></pre></div>
 
 <p>推送标签到远程库</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin v1.0
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git push origin v1.0
+</code></pre></div>
 
 <p>推送全部标签到远程库</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin --tags
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git push origin --tags
+</code></pre></div>
 
 <p>删除本地标签</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git tag -d v0.1
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git tag -d v0.1
+</code></pre></div>
 
 <p>删除远程标签</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 先在本地删除
+<div class="highlighter-rouge"><pre class="highlight"><code># 先在本地删除
 git tag -d v0.9
 
 # 远程删除
 git push origin :refs/tags/v0.9
-</code></pre></div></div>
+</code></pre></div>
 
 <h2 id="git高级">Git高级</h2>
 
@@ -544,8 +545,8 @@ git push origin :refs/tags/v0.9
 
 <p>删除远程库</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote rm origin
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git remote rm origin
+</code></pre></div>
 
 <blockquote>
   <p>只删除了关联关系，并未删除远程数据</p>
@@ -553,8 +554,8 @@ git push origin :refs/tags/v0.9
 
 <p>添加多个远程库</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add bitbucket git@bitbucket.org:Zrocky/git_test.git
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git remote add bitbucket git@bitbucket.org:Zrocky/git_test.git
+</code></pre></div>
 
 <blockquote>
   <p>只需在push时，选择相应的远程库即可</p>
@@ -580,13 +581,13 @@ git push origin :refs/tags/v0.9
 
 <p>第一步，安装<code class="highlighter-rouge">git</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install git
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install git
+</code></pre></div>
 
 <p>第二步，创建一个<code class="highlighter-rouge">git</code>用户，用来运行<code class="highlighter-rouge">git</code>服务：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo adduser git
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo adduser git
+</code></pre></div>
 
 <p>第三步，创建证书登录</p>
 
@@ -594,30 +595,30 @@ git push origin :refs/tags/v0.9
 
 <p>第四部，初始化Git仓库</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo git init --bare sample.git
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo git init --bare sample.git
+</code></pre></div>
 
 <p>Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上的Git仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的Git仓库通常都以.git结尾。然后，把owner改为git：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chown -R git:git sample.git
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo chown -R git:git sample.git
+</code></pre></div>
 
 <p>第五步，禁用shell登录</p>
 
 <p>出于安全考虑，第二步创建的git用户不允许登录shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git:x:1001:1001:,,,:/home/git:/bin/bash
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git:x:1001:1001:,,,:/home/git:/bin/bash
+</code></pre></div>
 
 <p>改为</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
+</code></pre></div>
 
 <p>第六步，克隆远程仓库</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@server:/srv/sample.git 
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone git@server:/srv/sample.git 
+</code></pre></div>
 
 <h4 id="管理公钥">管理公钥</h4>
 
@@ -684,7 +685,7 @@ git push origin :refs/tags/v0.9
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2018</span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2019</span>
     </footer>
 </section>
 

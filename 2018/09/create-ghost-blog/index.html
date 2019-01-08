@@ -178,28 +178,28 @@
 
 <p>你可以看<a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04">这个</a>，或者在命令行中输入（官方推荐方法）</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dd </span><span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/var/swap <span class="nv">bs</span><span class="o">=</span>1k <span class="nv">count</span><span class="o">=</span>1024k
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/var/swap <span class="nv">bs</span><span class="o">=</span>1k <span class="nv">count</span><span class="o">=</span>1024k
 mkswap /var/swap
 swapon /var/swap
-<span class="nb">echo</span> <span class="s1">'/var/swap swap swap default 0 0'</span> <span class="o">&gt;&gt;</span> /etc/fstab
-</code></pre></div></div>
+<span class="nb">echo</span> <span class="s1">'/var/swap swap swap default 0 0'</span> &gt;&gt; /etc/fstab
+</code></pre></div>
 
 <h3 id="用非root用户执行ghost命令">用非root用户执行ghost命令</h3>
 
 <p>增加用户</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adduser &lt;user&gt;
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>adduser &lt;user&gt;
+</code></pre></div>
 
 <p>给用户sudo权限</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usermod <span class="nt">-G</span> <span class="nb">sudo</span> &lt;user&gt;
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>usermod -G sudo &lt;user&gt;
+</code></pre></div>
 
 <p>切换到非root用户</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su - &lt;user&gt;
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>su - &lt;user&gt;
+</code></pre></div>
 
 <h3 id="用apt-get安装mysql和nginx以及node">用apt-get安装MySQL和Nginx以及Node</h3>
 
@@ -207,48 +207,48 @@ swapon /var/swap
 
 <p><strong>Update package lists</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
+</code></pre></div>
 
 <p><strong>Upgrade installed packages</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get upgrade
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get upgrade
+</code></pre></div>
 
 <p><strong>Install NGINX</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>nginx
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get install nginx
+</code></pre></div>
 
 <p><strong>Open Firewall for HTTP/HTTPS</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>ufw allow <span class="s1">'Nginx Full'</span>
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo ufw allow <span class="s1">'Nginx Full'</span>
+</code></pre></div>
 
 <p><strong>Install MySQL</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>mysql-server
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get install mysql-server
+</code></pre></div>
 
 <p><strong>Add the NodeSource APT repository for Node 6</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_6.x | <span class="nb">sudo</span> <span class="nt">-E</span> bash 
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash 
+</code></pre></div>
 
 <p><strong>install Node.js</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> nodejs
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get install -y nodejs
+</code></pre></div>
 
 <p><strong>安装Ghost-CLI</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>npm i <span class="nt">-g</span> ghost-cli
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo npm i -g ghost-cli
+</code></pre></div>
 
 <p><strong>或者使用yarn(&gt;= 0.23.x)</strong></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yarn global add ghost-cli
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo yarn global add ghost-cli
+</code></pre></div>
 
 <p>准备工作完成。</p>
 
@@ -256,24 +256,24 @@ swapon /var/swap
 
 <p>新建一个文件夹</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo mkdir</span> <span class="nt">-p</span> /var/www/ghost
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo mkdir -p /var/www/ghost
+</code></pre></div>
 
 <p>！！不要安装在/root下
 给这个文件夹你的用户的权限([user] 换成你的非root用户名)</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chown</span> <span class="o">[</span>user]:[user] /var/www/ghost
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo chown <span class="o">[</span>user]:[user] /var/www/ghost
+</code></pre></div>
 
 <p>切换到新文件夹里</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/ghost
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> /var/www/ghost
+</code></pre></div>
 
 <p>安装</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghost <span class="nb">install</span>
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>ghost install
+</code></pre></div>
 
 <p>然后会蹦出一系列的问题，包括</p>
 
@@ -356,7 +356,7 @@ swapon /var/swap
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2018</span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2019</span>
     </footer>
 </section>
 

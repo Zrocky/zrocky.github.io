@@ -157,26 +157,26 @@
   <li>标题层级如下，最多6级</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 顶级标题 等价于 title 和 &lt;h1&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code># 顶级标题 等价于 title 和 &lt;h1&gt;
 ## 次级标题 等价于 &lt;h2&gt;
 ### 3级标题 等价于 &lt;h3&gt;
 #### 4级标题 等价于 &lt;h4&gt;
 ##### 5级标题 等价于 &lt;h5&gt;
 ###### 6级标题 等价于 &lt;h6&gt;
 ####### 注：此行错误，标题层级最多6级 没有&lt;h7&gt;标签
-</code></pre></div></div>
+</code></pre></div>
 
 <h3 id="加强和强调规范">加强和强调规范</h3>
 
 <p>以下两种写法都是正确的，请统一为<strong>第一种</strong>，即一律使用 <code class="highlighter-rouge">**加强</code> <code class="highlighter-rouge">*强调</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*emphasize*   **strong** 相当于&lt;strong&gt;标签和&lt;em&gt;标签
+<div class="highlighter-rouge"><pre class="highlight"><code>*emphasize*   **strong** 相当于&lt;strong&gt;标签和&lt;em&gt;标签
 _emphasize_   __strong__
-</code></pre></div></div>
+</code></pre></div>
 
 <p>使用<code class="highlighter-rouge">~~</code>给文字添加删除线</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~~strikethrough~~
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>~~strikethrough~~
+</code></pre></div>
 
 <h3 id="代码块规范">代码块规范</h3>
 
@@ -185,11 +185,11 @@ _emphasize_   __strong__
   <li>块级代码使用<code class="highlighter-rouge">3个顿号</code>或<code class="highlighter-rouge">4个空格</code>，且上下均用<code class="highlighter-rouge">整行隔开</code>，如下:  (<strong>占用7行</strong>)</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo '3个顿号';  
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>echo '3个顿号';  
+</code></pre></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo '4个空格'；
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>echo '4个空格'；
+</code></pre></div>
 
 <h3 id="列表写法">列表写法</h3>
 
@@ -198,13 +198,13 @@ _emphasize_   __strong__
   <li>列表块前后<code class="highlighter-rouge">整行隔开</code> 如下：</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Windows  
+<div class="highlighter-rouge"><pre class="highlight"><code>1. Windows  
 2. Mac
 3. iOS
     * iPhone
     * iPad
 4. Android
-</code></pre></div></div>
+</code></pre></div>
 
 <p><strong>实际预览：</strong></p>
 
@@ -220,13 +220,13 @@ _emphasize_   __strong__
   <li>Android</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Windows  
+<div class="highlighter-rouge"><pre class="highlight"><code>* Windows  
 *  Mac
 *  iOS
 *  Android
     1. v3.2
     2. v4.1
-</code></pre></div></div>
+</code></pre></div>
 
 <p><strong>实际预览：</strong></p>
 
@@ -247,34 +247,34 @@ _emphasize_   __strong__
 <p>链接和Email
 Inline:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>An [example](http://url.com/ "Title")
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>An [example](http://url.com/ "Title")
+</code></pre></div>
 
 <p>引用样式标签 (titles are optional):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>An [example][id]. Then, anywhere
+<div class="highlighter-rouge"><pre class="highlight"><code>An [example][id]. Then, anywhere
 else in the doc, define the link:
 
 [id]: http://example.com/  "Title"
-</code></pre></div></div>
+</code></pre></div>
 
 <p>Email:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>An email &lt;example@example.com&gt; link.
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>An email &lt;example@example.com&gt; link.
+</code></pre></div>
 
 <p>插图
 Inline (titles are optional):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![alt text](/path/img.jpg "Title")
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>![alt text](/path/img.jpg "Title")
+</code></pre></div>
 
 <p>引用式插图:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![alt text][id]
+<div class="highlighter-rouge"><pre class="highlight"><code>![alt text][id]
 
 [id]: /url/to/img.jpg "Title"
-</code></pre></div></div>
+</code></pre></div>
 
 <p>引用块及嵌套</p>
 
@@ -310,9 +310,9 @@ are used for blockquotes.</p>
 
 <p>我是普通文本块</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>我是一个预格式化的
+<div class="highlighter-rouge"><pre class="highlight"><code>我是一个预格式化的
 代码块.
-</code></pre></div></div>
+</code></pre></div>
 
 <p>水平分割线<br />
 三个<code class="highlighter-rouge">连字符-</code>:</p>
@@ -380,7 +380,7 @@ are used for blockquotes.</p>
 
 <p>附：参考 Hello-World.md 源码，<em>注意换行的使用</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Hello-World
+<div class="highlighter-rouge"><pre class="highlight"><code># Hello-World
 
 这是一个范例文件格式
 我是普通换行
@@ -396,7 +396,7 @@ are used for blockquotes.</p>
 *  iOS
 *  Android
 
-</code></pre></div></div>
+</code></pre></div>
 
 <p>注：引用范例请参看底部</p>
 
@@ -465,7 +465,7 @@ are used for blockquotes.</p>
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2018</span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2019</span>
     </footer>
 </section>
 

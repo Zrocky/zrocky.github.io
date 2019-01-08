@@ -146,18 +146,18 @@
   <li>
     <p>安装最新的Xcode命令行工具</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> xcode-select --install
-</code></pre></div>    </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code> xcode-select --install
+</code></pre>    </div>
   </li>
   <li>
     <p>安装fastlane（可以使用RubyGems或Homebrew安装）</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # Using RubyGems
+    <div class="highlighter-rouge"><pre class="highlight"><code> # Using RubyGems
  sudo gem install fastlane -NV
     
  # Alternatively using Homebrew
  brew cask install fastlane
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
 </ol>
 
@@ -165,8 +165,8 @@
 
 <p>在Shell中，切换到项目目录并运行</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane init
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane init
+</code></pre></div>
 
 <p><img src="/../assets/images/post/2018-09-11-15366328908637.jpg" alt="fastlane_init" /></p>
 
@@ -190,7 +190,7 @@
 
 <p><code class="highlighter-rouge">Fastlane</code>文件中默认配置：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>default_platform(:ios)
+<div class="highlighter-rouge"><pre class="highlight"><code>default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
@@ -198,7 +198,7 @@ platform :ios do
     # do something
   end
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <ul>
   <li>每个<code class="highlighter-rouge">lane</code>即一个流程，可在这里配置例如Beta部署或发布App Store的操作。</li>
@@ -209,8 +209,8 @@ end
 
 <p>在Shell中切换到项目根目录，使用以下方法执行<code class="highlighter-rouge">lane</code>：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane custom_lane
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane custom_lane
+</code></pre></div>
 
 <h4 id="代码签名">代码签名</h4>
 
@@ -222,10 +222,10 @@ end
 
 <p>通过使用<code class="highlighter-rouge">match</code>，可以将私钥和证书存储在Git仓库中，以便跨机器同步它们。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>match(git_url: "https://github.com/fastlane/certificates",
+<div class="highlighter-rouge"><pre class="highlight"><code>match(git_url: "https://github.com/fastlane/certificates",
       type: "adhoc",
       app_identifier: "tools.fastlane.app")
-</code></pre></div></div>
+</code></pre></div>
 
 <p>关于match的配置方法，我单独写了一篇文章介绍，推荐使用这种方法。<a href="https://zrocky.com/2018/how-to-use-fastlane-match">使用match同步证书和配置文件</a></p>
 
@@ -240,10 +240,10 @@ end
   <li><code class="highlighter-rouge">sigh</code>将确保你在本地安装了与证书相匹配的有效配置文件</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane: beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane: beta do
     cert
     sigh(force: true)
-</code></pre></div></div>
+</code></pre></div>
 
 <p><code class="highlighter-rouge">force: true</code>将确保每次运行时重新生成配置文件。</p>
 
@@ -251,8 +251,8 @@ end
 
 <p><code class="highlighter-rouge">cert</code>将检查本地计算机上是否安装了任何可用的签名证书。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane cert
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane cert
+</code></pre></div>
 
 <p>只有在需要创建新证书的时候，<code class="highlighter-rouge">cert</code>才会</p>
 
@@ -267,17 +267,17 @@ end
 
 <p>设置Apple ID</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane cert -u cert@krausefx.com
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane cert -u cert@krausefx.com
 
-</code></pre></div></div>
+</code></pre></div>
 
 <p>在<code class="highlighter-rouge">lane</code>中使用</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cert(
+<div class="highlighter-rouge"><pre class="highlight"><code>cert(
     development: true,
     username: "user@email.com"
 )
-</code></pre></div></div>
+</code></pre></div>
 
 <p><a href="#cert参数">更多<code class="highlighter-rouge">cert</code>参数</a></p>
 
@@ -291,25 +291,25 @@ end
 
 <p><code class="highlighter-rouge">sigh</code>将默认为App Store创建、修复和下载配置文件。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane sigh --appstore  # default
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane sigh --appstore  # default
 fastlane sigh --adhoc
 fastlane sigh --development
-</code></pre></div></div>
+</code></pre></div>
 
 <p>设置标识符和用户名：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane sigh -a com.krausefx.app -u username
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane sigh -a com.krausefx.app -u username
+</code></pre></div>
 
 <p>在<code class="highlighter-rouge">lane</code>中使用</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane: beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane: beta do
     sigh(
         adhoc: true,
         force: true,
         filename: "myFile.mobileprovision"
     )
-</code></pre></div></div>
+</code></pre></div>
 
 <p><a href="#sigh参数">更多<code class="highlighter-rouge">sigh</code>参数</a></p>
 
@@ -325,28 +325,28 @@ fastlane sigh --development
 
 <p>使用<code class="highlighter-rouge">gym</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane gym
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane gym
+</code></pre></div>
 
 <p>设置参数进行构建</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane gym --workspace "Example.xcworkspace" --scheme "AppName" --clean
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane gym --workspace "Example.xcworkspace" --scheme "AppName" --clean
+</code></pre></div>
 
 <p>如果您需要使用其他Xcode安装，请使用xcode-select或定义DEVELOPER_DIR：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEVELOPER_DIR="/Applications/Xcode6.2.app" fastlane gym
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>DEVELOPER_DIR="/Applications/Xcode6.2.app" fastlane gym
+</code></pre></div>
 
 <p>如果需要上传到App Store或TestFlight，设置<code class="highlighter-rouge">gym</code>的导出方法：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane gym --export_method ad-hoc
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane gym --export_method ad-hoc
+</code></pre></div>
 
 <p>传递布尔参数</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane gym --include_bitcode true --include_symbols false
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane gym --include_bitcode true --include_symbols false
+</code></pre></div>
 
 <p>需要<code class="highlighter-rouge">xcodebuild</code>原始日志信息，打开<code class="highlighter-rouge">~/Library/Logs/gym</code></p>
 
@@ -354,7 +354,7 @@ fastlane sigh --development
 
 <p>在<code class="highlighter-rouge">lane</code>中使用<code class="highlighter-rouge">gym</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   scan
   gym(scheme: "MyApp")
   crashlytics
@@ -370,7 +370,7 @@ error do |lane, exception|
     payload: { "Output" =&gt; exception.error_info.to_s } 
   )
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>当<code class="highlighter-rouge">gym</code>引发错误时，<code class="highlighter-rouge">error_info</code>属性将包含进程输出，让你可以在第三方工具（如Slack）中显示错误。</p>
 
@@ -384,13 +384,13 @@ end
 
 <p>你所要做的就是在使用<code class="highlighter-rouge">gym</code>构建应用程序后，将你选择的Beta测试提供程序添加到<code class="highlighter-rouge">lane</code>中：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   match(type: "appstore")    # see code signing guide for more information
   gym(scheme: "MyApp")
   pilot
   slack(message: "Successfully distributed a new beta build")
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>fastlane会自动将生成的<code class="highlighter-rouge">.ipa</code>文件的信息从<code class="highlighter-rouge">gym</code>传递给你选择的Beta测试提供程序。</p>
 
@@ -400,16 +400,16 @@ end
 
 <p>你可以使用fastlane轻松地将新版本上传到TestFlight（它是App Store Connect的一部分）。为此，只需testflight在构建应用程序后使用内置操作即可</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   # ...
   gym
   pilot
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>一些示例用例</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   # ...
   gym
 
@@ -421,7 +421,7 @@ end
   #   the binary to your tests, nor set a changelog
   pilot(skip_waiting_for_build_processing: true)
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>如果你曾经<code class="highlighter-rouge">fastlane init</code>设置过fastlane，那么你的Apple ID将存储在<code class="highlighter-rouge">fastlane/Appfile</code>。你也可以使用覆盖用户名<code class="highlighter-rouge">pilot(username: "bot@fastlane.tools")</code>。</p>
 
@@ -429,13 +429,13 @@ end
 
 <h5 id="crashlytics-fabric-beta">Crashlytics (Fabric Beta）</h5>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   # ...
   gym
   crashlytics(api_token: "[insert_key_here]",
               build_secret: "[insert_key_here]")
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>要获取API令牌，请打开<a href="https://www.fabric.io/settings/organizations">组织设置页面</a>，然后单击API密钥并构建机密链接。</p>
 
@@ -443,24 +443,24 @@ end
 
 <h5 id="firim">fir.im</h5>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
     gym
     firim(firim_api_token: "427899702537eaadc5104ecbf5096d5c"
       )
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p><a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim">更多插件信息</a></p>
 
 <h5 id="蒲公英">蒲公英</h5>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
     gym
     pgyer(api_key: "7f15xxxxxxxxxxxxxxxxxx141",
     user_key: "4a5bcxxxxxxxxxxxxxxx3a9e"
     )
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p><a href="https://github.com/shishirui/fastlane-plugin-pgyer">更多插件信息</a></p>
 
@@ -468,22 +468,22 @@ end
 
 <p>构建应用程序后，就可以使用<code class="highlighter-rouge">deliver</code>上传到App Store了</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane: release do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane: release do
     match(type: "appstore")  # see code signing guide for more information
     gym(scheme: "MyApp")
     deliver                  # upload your app to App Store Connect
     slack(message: "Successfully uploaded a new App Store build")    
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>设置参数调用</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deliver(
+<div class="highlighter-rouge"><pre class="highlight"><code>deliver(
   submit_for_review: true,
   force: true,
   metadata_path: "./metadata"
 )
-</code></pre></div></div>
+</code></pre></div>
 
 <p><a href="https://docs.fastlane.tools/actions/upload_to_app_store/">更多<code class="highlighter-rouge">deliver</code>参数</a></p>
 
@@ -497,18 +497,18 @@ end
 
 <p>列出所有可用的插件</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane search_plugins
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane search_plugins
+</code></pre></div>
 
 <p>搜索特定的插件</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane search_plugins [query]
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane search_plugins [query]
+</code></pre></div>
 
 <h4 id="在项目中添加插件">在项目中添加插件</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane add_plugin [name]
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane add_plugin [name]
+</code></pre></div>
 
 <p>运行此命令后，fastlane会帮你对项目进行设置以开始使用插件：</p>
 
@@ -523,15 +523,15 @@ end
 
 <p>要确保所有插件都安装在本地计算机上，请运行：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane install_plugins
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane install_plugins
+</code></pre></div>
 
 <h4 id="删除插件">删除插件</h4>
 
 <p>打开<code class="highlighter-rouge">fastlane/Pluginfile</code>文件，并删除文件中像这样的配置项：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem "fastlane-plugin-[plugin_name]"
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>gem "fastlane-plugin-[plugin_name]"
+</code></pre></div>
 
 <h3 id="appfile">Appfile</h3>
 
@@ -539,7 +539,7 @@ end
 
 <p>默认情况下的<code class="highlighter-rouge">Appfile</code>：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app_identifier "net.sunapps.1" # The bundle identifier of your app
+<div class="highlighter-rouge"><pre class="highlight"><code>app_identifier "net.sunapps.1" # The bundle identifier of your app
 apple_id "felix@krausefx.com"  # Your Apple email address
 
 # You can uncomment the lines below and add your own
@@ -550,22 +550,22 @@ apple_id "felix@krausefx.com"  # Your Apple email address
 # To select a team for App Store Connect use
 # itc_team_name "Company Name"
 # itc_team_id "18742801"
-</code></pre></div></div>
+</code></pre></div>
 
 <p>如果你的App Store Connect和Apple Developer账号不相同，使用以下代码配置：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app_identifier "tools.fastlane.app"       # The bundle identifier of your app
+<div class="highlighter-rouge"><pre class="highlight"><code>app_identifier "tools.fastlane.app"       # The bundle identifier of your app
 
 apple_dev_portal_id "portal@company.com"  # Apple Developer Account
 itunes_connect_id "tunes@company.com"     # App Store Connect Account
 
 team_id "Q2CBPJ58CA" # Developer Portal Team ID
 itc_team_id "18742801" # App Store Connect Team ID
-</code></pre></div></div>
+</code></pre></div>
 
 <p>如果你的项目每个环境都具有不同的包标识符（即beta，app store），则可以使用<code class="highlighter-rouge">for_platform</code>和<code class="highlighter-rouge">/</code>或<code class="highlighter-rouge">for_lane</code>块声明来定义它。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app_identifier "net.sunapps.1"
+<div class="highlighter-rouge"><pre class="highlight"><code>app_identifier "net.sunapps.1"
 apple_id "felix@krausefx.com"
 team_id "Q2CBPJ58CC"
 
@@ -575,15 +575,15 @@ for_platform :ios do
     app_identifier 'com.app.test'
   end
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <h4 id="在fastlane中使用appfile中的配置">在fastlane中使用Appfile中的配置</h4>
 
 <p>在<code class="highlighter-rouge">Fastfile</code>中访问这些配置</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+<div class="highlighter-rouge"><pre class="highlight"><code>identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
-</code></pre></div></div>
+</code></pre></div>
 
 <h3 id="使用gemfile进行依赖管理">使用Gemfile进行依赖管理</h3>
 
@@ -593,9 +593,9 @@ team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
   <li>
     <p>在项目的根目录创建一个<code class="highlighter-rouge">Gemfile</code>文件</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  source "https://rubygems.org"
+    <div class="highlighter-rouge"><pre class="highlight"><code>  source "https://rubygems.org"
   gem "fastlane" 
-</code></pre></div>    </div>
+</code></pre>    </div>
   </li>
   <li>运行<code class="highlighter-rouge">sudo bundle update</code>同时添加<code class="highlighter-rouge">./Gemfile</code>和<code class="highlighter-rouge">./Gemfile.lock</code>版本控制文件</li>
   <li>每次运行fastlane时，请使用<code class="highlighter-rouge">bundle exec fastlane [lane]</code></li>
@@ -609,8 +609,8 @@ team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 
 <p><img src="/../assets/images/post/2018-09-12-PEMRecording.gif" alt="PEMRecording" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane pem
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane pem
+</code></pre></div>
 
 <p>命令会执行如下操作：</p>
 
@@ -625,32 +625,32 @@ team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 
 <p>如果你已启用推送证书，该证书至少有30天有效，则pem不会创建新证书。如果你仍想创建一个，请使用force：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane pem --force
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane pem --force
+</code></pre></div>
 
 <p>你可以传递这样的参数：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane pem -a com.krausefx.app -u username
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane pem -a com.krausefx.app -u username
+</code></pre></div>
 
 <p>如果要生成开发证书，请执行以下操作：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane pem --development
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane pem --development
+</code></pre></div>
 
 <p>为你的p12文件设置密码：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane pem -p "MyPass"
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane pem -p "MyPass"
+</code></pre></div>
 
 <p>你可以为输出文件指定名称：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane pem -o my.pem
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>fastlane pem -o my.pem
+</code></pre></div>
 
 <p>在<code class="highlighter-rouge">lane</code>中使用</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pem(
+<div class="highlighter-rouge"><pre class="highlight"><code>pem(
   force: true, # create a new profile, even if the old one is still valid
   app_identifier: "net.sunapps.9", # optional app identifier,
   save_private_key: true,
@@ -659,7 +659,7 @@ team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
     # insert the code to upload the PEM file to the server
   end
 )
-</code></pre></div></div>
+</code></pre></div>
 
 <p><a href="#pem参数">更多<code class="highlighter-rouge">pem</code>参数</a></p>
 
@@ -670,17 +670,17 @@ team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 <h4 id="beta内部版本号">Beta内部版本号</h4>
 <p>下面的代码示例将使用TestFlight中的最新版本号并临时设置它。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   increment_build_number(
     build_number: latest_testflight_build_number + 1,
     xcodeproj: "Example.xcodeproj"
   )
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>将构建号提交给版本控制</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   # Ensure that your git status is not dirty
   ensure_git_status_clean
 
@@ -698,25 +698,25 @@ end
   # Push the new commit and tag back to your git remote
   push_to_git_remote
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <h4 id="app-store内部版本号">App Store内部版本号</h4>
 
 <p>下面的代码示例将使用App Store Connect中的最新版本号并临时设置它。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   increment_build_number(
     build_number: app_store_build_number + 1,
     xcodeproj: "Example.xcodeproj"
   )
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <h3 id="第三方beta测试服务">第三方Beta测试服务</h3>
 
 <p>如果你不是使用TestFlight作为测试服务，则需要管理已注册的设备及其UDID。fastlane已经支持设备注册和更新配置文件。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta do
+<div class="highlighter-rouge"><pre class="highlight"><code>lane :beta do
   # Before calling match, we make sure all our devices are registered on the Apple Developer Portal
   register_devices(devices_file: "devices.txt")
 
@@ -726,14 +726,14 @@ end
   build_app
   # ...
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p><code class="highlighter-rouge">devices.txt</code>应该是这样的：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Device ID Device Name
+<div class="highlighter-rouge"><pre class="highlight"><code>Device ID Device Name
 A123456789012345678901234567890123456789  DeviceName1
 B123456789012345678901234567890123456789  DeviceName2
-</code></pre></div></div>
+</code></pre></div>
 
 <h2 id="参数表">参数表</h2>
 
@@ -1220,7 +1220,7 @@ B123456789012345678901234567890123456789  DeviceName2
    <div class="read-more-item">
        <span class="read-more-item-dim">最近的文章</span>
        <h2 class="post-list__post-title post-title"><a href="/2018/10/how-to-use-git/" title="link to 使用Git进行版本控制">使用Git进行版本控制</a></h2>
-       <p class="excerpt">公司一直在使用SVN来做版本控制，虽然个人项目早已换成Git，但是对Git没有一个深入的了解，最近因为分支和标签用法的困惑，继而产生想系统学习Git使用的想法，本文是基于廖雪峰Git教程而整理的学习笔记。Git概念版本库和工作区  master是Git自动创建的第一个分支Git工作分为两步  git add把文件修改添加到暂存区   git commit把暂存区的所有内容提交到当前分支 Git协议Git支持多种协议，git://和https等https协议速度会慢一些专有名词masterg...&hellip;</p>
+       <p class="excerpt">公司一直在使用SVN来做版本控制，虽然个人项目早已换成Git，但是对Git没有一个深入的了解，最近因为分支和标签用法的困惑，继而产生想系统学习Git使用的想法，本文是基于廖雪峰Git教程而整理的学习笔记。Git概念版本库和工作区  master是Git自动创建的第一个分支Git工作分为两步  git add把文件修改添加到暂存区   git commit把暂存区的所有内容提交到当前分支 Git协议Git支持多种协议，git://和https等，https协议速度会慢一些专有名词master...&hellip;</p>
        <div class="post-list__meta"><time datetime="2018-10-15 22:26:19 +0800" class="post-list__meta--date date">2018-10-15</time> &#8226; <span class="post-list__meta--tags tags">Git</span><a class="btn-border-small" href=/2018/10/how-to-use-git/>继续阅读</a></div>
    </div>
    
@@ -1267,7 +1267,7 @@ B123456789012345678901234567890123456789  DeviceName2
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2018</span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2019</span>
     </footer>
 </section>
 

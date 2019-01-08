@@ -152,8 +152,8 @@
   <li>在项目目录中执行<code class="highlighter-rouge">Shell</code>命令:</li>
 </ol>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane match init
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>fastlane match init
+</code></pre></div>
 
 <p><img src="/../assets/images/post/2018-09-07-match-init.gif" alt="match_init" /></p>
 
@@ -163,11 +163,11 @@
 
 <p><code class="highlighter-rouge">Matchfile</code>内配置示例:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git_url<span class="o">(</span><span class="s2">"https://github.com/fastlane/certificates"</span><span class="o">)</span>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>git_url<span class="o">(</span><span class="s2">"https://github.com/fastlane/certificates"</span><span class="o">)</span>
  
 app_identifier<span class="o">(</span><span class="s2">"tools.fastlane.app"</span><span class="o">)</span>
 <span class="c"># username("user@fastlane.tools")</span>
-</code></pre></div></div>
+</code></pre></div>
 
 <p>文件内记录了证书和配置文件的Git仓库地址及<code class="highlighter-rouge">match</code>命令的相关配置，可以根据你的需求来修改它们。</p>
 
@@ -179,7 +179,7 @@ app_identifier<span class="o">(</span><span class="s2">"tools.fastlane.app"</spa
 
 <p>你可以使用以下命令来生成证书:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 开发证书及配置文件</span>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 开发证书及配置文件</span>
 fastlane match development 
 
 <span class="c"># 生成证书及内部分发配置文件</span>
@@ -187,7 +187,7 @@ fastlane match adhoc
 
 <span class="c"># 生产证书及配置文件</span>
 fastlane match appstore
-</code></pre></div></div>
+</code></pre></div>
 
 <p><img src="/../assets/images/post/2018-09-10-match-appstore-small.gif" alt="match_appstore_small" /></p>
 
@@ -199,31 +199,42 @@ fastlane match appstore
 
 <p>如果你有多个标识符，则可以将同步操作换成以下命令执行，不同标识符之间使用逗号隔开</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane match appstore <span class="nt">-a</span> tools.fastlane.app,tools.fastlane.app.watchkitapp 
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>fastlane match appstore -a tools.fastlane.app,tools.fastlane.app.watchkitapp 
+</code></pre></div>
 
 <p>当然，你也可以使用<code class="highlighter-rouge">lane</code>来处理以上操作：</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :certificates <span class="k">do
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>lane :certificates <span class="k">do
   </span>match<span class="o">(</span>app_identifier: <span class="o">[</span><span class="s2">"com.krausefx.app1"</span>, <span class="s2">"com.krausefx.app2"</span>, <span class="s2">"com.krausefx.app3"</span><span class="o">]</span>, <span class="nb">type</span>: appstrore, <span class="nb">readonly</span>: <span class="nb">true</span><span class="o">)</span>
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>这样，你就只需执行<code class="highlighter-rouge">fantlane certificates</code>命令即可完成操作</p>
+
+<h4 id="在同一个仓库中配置多个团队证书">在同一个仓库中配置多个团队证书</h4>
+
+<p>要配置多个的证书，需要在<code class="highlighter-rouge">Git</code>中创建<code class="highlighter-rouge">branch</code>来存放这些证书</p>
+
+<p>在生成证书时你应该使用<code class="highlighter-rouge">--git_branch</code>参数，或者在<code class="highlighter-rouge">Matchfile</code>中添加<code class="highlighter-rouge">git_branch</code>参数，这样就能把生成的证书保存在对应的<code class="highlighter-rouge">branch</code>中</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>fastlane match appstore -a tools.fastlane.app --git_branch team01
+</code></pre></div>
+
+<p>// TODO</p>
 
 <h3 id="其他成员执行同步">其他成员执行同步</h3>
 
 <p>其他成员需要同步证书和配置文件，只需执行相同的命令：</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane match development
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>fastlane match development
+</code></pre></div>
 
 <p>它会识别Git仓库中是否有现成的证书和配置文件，如果有，就会安装仓库中现有的证书和配置文件。</p>
 
 <p>你甚至可以在某个模式下执行<code class="highlighter-rouge">match</code>操作，<code class="highlighter-rouge">readonly</code>用来确保不会生成证书和配置文件</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane match development <span class="nt">--readonly</span>
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>fastlane match development --readonly
+</code></pre></div>
 
 <h2 id="扩展使用">扩展使用</h2>
 
@@ -231,7 +242,7 @@ end
 
 <p>添加<code class="highlighter-rouge">match</code>方法到<code class="highlighter-rouge">Fastfile</code>中，则可以使用<code class="highlighter-rouge">lane</code>来快速同步证书和配置文件</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>match<span class="o">(</span><span class="nb">type</span>: <span class="s2">"appstore"</span><span class="o">)</span>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>match<span class="o">(</span><span class="nb">type</span>: <span class="s2">"appstore"</span><span class="o">)</span>
 
 match<span class="o">(</span>git_url: <span class="s2">"https://github.com/fastlane/certificates"</span>,
       <span class="nb">type</span>: <span class="s2">"development"</span><span class="o">)</span>
@@ -247,17 +258,17 @@ match<span class="o">(</span>git_url: <span class="s2">"https://github.com/fastl
 <span class="c"># _match_ should be called before building the app with _gym_</span>
 gym
 <span class="c"># ...</span>
-</code></pre></div></div>
+</code></pre></div>
 
 <h3 id="注册新设备">注册新设备</h3>
 
 <p>通过使用<code class="highlighter-rouge">match</code>，每次将新设备添加到Ad Hoc或开发配置文件时都会节省大量的时间。将<code class="highlighter-rouge">match</code>与<code class="highlighter-rouge">register_devices</code>操作结合使用。</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lane :beta <span class="k">do
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>lane :beta <span class="k">do
   </span>register_devices<span class="o">(</span>devices_file: <span class="s2">"./devices.txt"</span><span class="o">)</span>
   match<span class="o">(</span><span class="nb">type</span>: <span class="s2">"adhoc"</span>, force_for_new_devices: <span class="nb">true</span><span class="o">)</span>
 end
-</code></pre></div></div>
+</code></pre></div>
 
 <p>通过使用<code class="highlighter-rouge">force_for_new_devices</code>参数，<code class="highlighter-rouge">match</code>将检查自上次运行匹配以来，设备计数是否已更改，并在必要时自动重新生成配置文件。你也可以使用<code class="highlighter-rouge">force: true</code>参数强制每次运行时都重新生成配置文件。</p>
 
@@ -265,8 +276,8 @@ end
 
 <p>如果你不使用<code class="highlighter-rouge">fastlane</code>，还可以使用命令行中的<code class="highlighter-rouge">force_for_new_devices</code>选项：</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane match adhoc <span class="nt">--force_for_new_devices</span>
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>fastlane match adhoc --force_for_new_devices
+</code></pre></div>
 
 <h3 id="清除现有配置文件和证书">清除现有配置文件和证书</h3>
 
@@ -274,10 +285,10 @@ end
 
 <p>要撤消特定环境的所有证书和配置文件：</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastlane match nuke development
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>fastlane match nuke development
 fastlane match nuke distribution
 fastlane match nuke enterprise
-</code></pre></div></div>
+</code></pre></div>
 
 <p><img src="/../assets/images/post/2018-09-10-match-nuke.gif" alt="match_nuke" /></p>
 
@@ -478,7 +489,7 @@ fastlane match nuke enterprise
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2018</span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2019</span>
     </footer>
 </section>
 

@@ -5,8 +5,8 @@
     <description>Think Different</description>
     <link>http://zrocky.com/</link>
     <atom:link href="http://zrocky.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Jan 2019 16:36:47 +0800</pubDate>
-    <lastBuildDate>Tue, 08 Jan 2019 16:36:47 +0800</lastBuildDate>
+    <pubDate>Wed, 17 Apr 2019 16:16:32 +0800</pubDate>
+    <lastBuildDate>Wed, 17 Apr 2019 16:16:32 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -497,6 +497,11 @@ git push origin :refs/tags/v0.9
 &lt;blockquote&gt;
   &lt;p&gt;只需在push时，选择相应的远程库即可&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;修改远程库名称&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote rename oldname newname
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;忽略文件&quot;&gt;忽略文件&lt;/h3&gt;
 

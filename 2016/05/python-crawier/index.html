@@ -430,7 +430,7 @@
   <p>正则表达式是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。</p>
 </blockquote>
 
-<p><img src="http://qiniu.cuiqingcai.com/wp-content/uploads/2015/02/20130515113723855.png" alt="" /></p>
+<p><img src="/assets/images/post/20130515113723855.png" alt="" /></p>
 
 <h4 id="相关注解">相关注解</h4>
 <h5 id="数量词的贪婪模式与非贪婪模式">数量词的贪婪模式与非贪婪模式</h5>
@@ -459,15 +459,7 @@
 
 <p>在参数中我们传入了原生字符串对象，通过compile方法编译生成一个pattern对象，然后我们利用这个对象来进行进一步的匹配。</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>参数flag是匹配模式，取值可以使用按位或运算符’</td>
-      <td>’表示同时生效，比如re.I</td>
-      <td>re.M。</td>
-    </tr>
-  </tbody>
-</table>
+<p>参数flag是匹配模式，取值可以使用按位或运算符<code class="highlighter-rouge">|</code>表示同时生效，比如<code class="highlighter-rouge">re.I | re.M。</code></p>
 
 <p>可选值有：</p>
 
@@ -555,9 +547,7 @@
 
 <blockquote>
   <p>属性：</p>
-</blockquote>
 
-<blockquote>
   <ol>
     <li>string: 匹配时使用的文本。</li>
     <li>re: 匹配时使用的Pattern对象。</li>
@@ -570,9 +560,7 @@
 
 <blockquote>
   <p>方法：</p>
-</blockquote>
 
-<blockquote>
   <ol>
     <li>group([group1, …]):
 获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group(0)；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串。</li>
@@ -729,82 +717,46 @@
 
 <p>在上面我们介绍了7个工具方法，例如<code class="highlighter-rouge">match</code>，<code class="highlighter-rouge">search</code>等等，不过调用方式都是 <code class="highlighter-rouge">re.match</code>，<code class="highlighter-rouge">re.search</code>的方式，其实还有另外一种调用方式，可以通过<code class="highlighter-rouge">pattern.match</code>，<code class="highlighter-rouge">pattern.search</code>调用，这样调用便不用将<code class="highlighter-rouge">pattern</code>作为第一个参数传入了，大家想怎样调用皆可。</p>
 
-<p>函数API列表</p>
+<h6 id="函数api列表">函数API列表</h6>
 
-<blockquote>
-  <ul>
-    <li>
-      <table>
-        <tbody>
-          <tr>
-            <td>match(string[, pos[, endpos]])</td>
-            <td>re.match(pattern, string[, flags])</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <table>
-        <tbody>
-          <tr>
-            <td>search(string[, pos[, endpos]])</td>
-            <td>re.search(pattern, string[, flags])</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <table>
-        <tbody>
-          <tr>
-            <td>split(string[, maxsplit])</td>
-            <td>re.split(pattern, string[, maxsplit])</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <table>
-        <tbody>
-          <tr>
-            <td>findall(string[, pos[, endpos]])</td>
-            <td>re.findall(pattern, string[, flags])</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <table>
-        <tbody>
-          <tr>
-            <td>finditer(string[, pos[, endpos]])</td>
-            <td>re.finditer(pattern, string[, flags])</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <table>
-        <tbody>
-          <tr>
-            <td>sub(repl, string[, count])</td>
-            <td>re.sub(pattern, repl, string[, count])</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <table>
-        <tbody>
-          <tr>
-            <td>subn(repl, string[, count])</td>
-            <td>re.sub(pattern, repl, string[, count])</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-  </ul>
-</blockquote>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>match(string[, pos[, endpos]])</td>
+      <td>re.match(pattern, string[, flags])</td>
+    </tr>
+    <tr>
+      <td>search(string[, pos[, endpos]])</td>
+      <td>re.search(pattern, string[, flags])</td>
+    </tr>
+    <tr>
+      <td>split(string[, maxsplit])</td>
+      <td>re.split(pattern, string[, maxsplit])</td>
+    </tr>
+    <tr>
+      <td>findall(string[, pos[, endpos]])</td>
+      <td>re.findall(pattern, string[, flags])</td>
+    </tr>
+    <tr>
+      <td>finditer(string[, pos[, endpos]])</td>
+      <td>re.finditer(pattern, string[, flags])</td>
+    </tr>
+    <tr>
+      <td>sub(repl, string[, count])</td>
+      <td>re.sub(pattern, repl, string[, count])</td>
+    </tr>
+    <tr>
+      <td>subn(repl, string[, count])</td>
+      <td>re.sub(pattern, repl, string[, count])</td>
+    </tr>
+  </tbody>
+</table>
 
 
   </section>

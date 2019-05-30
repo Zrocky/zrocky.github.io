@@ -5,8 +5,8 @@
     <description>Think Different</description>
     <link>http://zrocky.com/</link>
     <atom:link href="http://zrocky.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Apr 2019 16:16:32 +0800</pubDate>
-    <lastBuildDate>Wed, 17 Apr 2019 16:16:32 +0800</lastBuildDate>
+    <pubDate>Thu, 30 May 2019 11:36:01 +0800</pubDate>
+    <lastBuildDate>Thu, 30 May 2019 11:36:01 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -42,15 +42,15 @@
 
   &lt;p&gt;不过毕竟当局者迷，身处时代风暴核心的时候，人们很难看清楚自己究竟站在哪里。&lt;/p&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qswmnj208p2p812m.jpg&quot; alt=&quot;62531fffgy1fxp51qswmnj208p2p812&quot; /&gt;
-&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qqhybj21520c2taa.jpg&quot; alt=&quot;62531fffgy1fxp51qqhybj21520c2taa&quot; /&gt;
-&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qq7boj210y0baabr.jpg&quot; alt=&quot;62531fffgy1fxp51qq7boj210y0baab&quot; /&gt;
-&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qngczj20w602q3yv.jpg&quot; alt=&quot;62531fffgy1fxp51qngczj20w602q3yv&quot; /&gt;
-&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qng0bj20g101c74b.jpg&quot; alt=&quot;62531fffgy1fxp51qng0bj20g101c74b&quot; /&gt;
-&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qnd35j20t202omxg.jpg&quot; alt=&quot;62531fffgy1fxp51qnd35j20t202omxg&quot; /&gt;
-&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qniwej20jr02jaa6.jpg&quot; alt=&quot;62531fffgy1fxp51qniwej20jr02jaa6&quot; /&gt;
-&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qo8nxj20se02qjs1.jpg&quot; alt=&quot;62531fffgy1fxp51qo8nxj20se02qjs1&quot; /&gt;
-&lt;img src=&quot;/../assets/images/post/62531fffgy1fxp51qng61j20em028t8n.jpg&quot; alt=&quot;62531fffgy1fxp51qng61j20em028t8n&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qswmnj208p2p812m.jpg&quot; alt=&quot;62531fffgy1fxp51qswmnj208p2p812&quot; /&gt;
+&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qqhybj21520c2taa.jpg&quot; alt=&quot;62531fffgy1fxp51qqhybj21520c2taa&quot; /&gt;
+&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qq7boj210y0baabr.jpg&quot; alt=&quot;62531fffgy1fxp51qq7boj210y0baab&quot; /&gt;
+&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qngczj20w602q3yv.jpg&quot; alt=&quot;62531fffgy1fxp51qngczj20w602q3yv&quot; /&gt;
+&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qng0bj20g101c74b.jpg&quot; alt=&quot;62531fffgy1fxp51qng0bj20g101c74b&quot; /&gt;
+&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qnd35j20t202omxg.jpg&quot; alt=&quot;62531fffgy1fxp51qnd35j20t202omxg&quot; /&gt;
+&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qniwej20jr02jaa6.jpg&quot; alt=&quot;62531fffgy1fxp51qniwej20jr02jaa6&quot; /&gt;
+&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qo8nxj20se02qjs1.jpg&quot; alt=&quot;62531fffgy1fxp51qo8nxj20se02qjs1&quot; /&gt;
+&lt;img src=&quot;/assets/images/post/62531fffgy1fxp51qng61j20em028t8n.jpg&quot; alt=&quot;62531fffgy1fxp51qng61j20em028t8n&quot; /&gt;&lt;/p&gt;
 
   &lt;p&gt;引用自：&lt;a href=&quot;https://weibo.com/1649614847/H4VSCFPbP?type=comment#_rnd1543547737652&quot;&gt;Ent_evo&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -79,7 +79,7 @@
 
 &lt;h3 id=&quot;版本库和工作区&quot;&gt;版本库和工作区&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393197926757.jpg&quot; alt=&quot;版本库和工作区&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393197926757.jpg&quot; alt=&quot;版本库和工作区&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;是Git自动创建的第一个分支&lt;/p&gt;
@@ -89,9 +89,9 @@
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt;把文件修改添加到暂存区
- &lt;img src=&quot;/../assets/images/post/2018-10-12-15393198237337.jpg&quot; alt=&quot;git add&quot; /&gt;&lt;/li&gt;
+ &lt;img src=&quot;/assets/images/post/2018-10-12-15393198237337.jpg&quot; alt=&quot;git add&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt;把暂存区的所有内容提交到当前分支
- &lt;img src=&quot;/../assets/images/post/2018-10-12-15393198436289.jpg&quot; alt=&quot;git commit&quot; /&gt;&lt;/li&gt;
+ &lt;img src=&quot;/assets/images/post/2018-10-12-15393198436289.jpg&quot; alt=&quot;git commit&quot; /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;git协议&quot;&gt;Git协议&lt;/h3&gt;
@@ -241,29 +241,29 @@ git push origin master
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD&lt;/code&gt;指向当前分支&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393228460803.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393228460803.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;每次提交&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;分支都会向前移动一步&lt;/p&gt;
-&lt;video controls=&quot;controls&quot; src=&quot;/../assets/images/post/master-branch-forward.mp4&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;
+&lt;video controls=&quot;controls&quot; src=&quot;/assets/images/post/master-branch-forward.mp4&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;
 
 &lt;p&gt;创建新的分支&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;，将&lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD&lt;/code&gt;指向&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393233193864.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393233193864.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;从现在开始，工作区的修改和提交就是针对&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;分支的了&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393233502209.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393233502209.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;假如我们在&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;上的工作完成了，就可以把&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;合并到&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;上&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393233995876.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393233995876.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;合并完分支后，甚至可以删除&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;分支。删除&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;分支就是把&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;指针给删掉，删掉后，我们就剩下了一条&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;分支&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393234395115.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393234395115.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;过程动画：&lt;/p&gt;
-&lt;video controls=&quot;controls&quot; src=&quot;/../assets/images/post/master-and-dev-ff.mp4&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;
+&lt;video controls=&quot;controls&quot; src=&quot;/assets/images/post/master-and-dev-ff.mp4&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;
 
 &lt;h4 id=&quot;分支命令&quot;&gt;分支命令&lt;/h4&gt;
 
@@ -314,11 +314,11 @@ git push origin master
 
 &lt;h4 id=&quot;分支合并冲突&quot;&gt;分支合并冲突&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393286280378.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393286280378.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;此种情况需解决冲突再提交&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393287303720.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393287303720.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;分支策略&quot;&gt;分支策略&lt;/h4&gt;
 
@@ -329,13 +329,13 @@ git push origin master
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git merge --no-ff -m &quot;merge with no-ff&quot; dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-10-12-15393299601183.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-10-12-15393299601183.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;分支开发策略&quot;&gt;分支开发策略&lt;/h5&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;分支是非常稳定的，也就是仅用来发布新版本，平时不在上面工作，开发都在&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;分支上，每个人再有自己的分支，按时向&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;分支合并即可，团队合作的分支看起来是这样的&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/15393300560209.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/15393300560209.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;bug处理分支&quot;&gt;bug处理分支&lt;/h5&gt;
 
@@ -616,13 +616,13 @@ git push origin :refs/tags/v0.9
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane init
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-11-15366328908637.jpg&quot; alt=&quot;fastlane_init&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-09-11-15366328908637.jpg&quot; alt=&quot;fastlane_init&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;fastlane提供了几种默认的配置，可以根据实际需求选择，期间可能会要求输入一些配置信息，根据提示输入即可。&lt;/p&gt;
 
 &lt;p&gt;根据你选择的配置，会生成不同的配置文件。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-11-15366335231432.jpg&quot; alt=&quot;fastlane_file&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-09-11-15366335231432.jpg&quot; alt=&quot;fastlane_file&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fastlane/Fastfile&lt;/code&gt;包含了发布应用程序所需的所有信息。&lt;/li&gt;
@@ -735,7 +735,7 @@ end
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sigh&lt;/code&gt;执行的文件操作&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-11-sighRecording.gif&quot; alt=&quot;sighRecording&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-09-11-sighRecording.gif&quot; alt=&quot;sighRecording&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sigh&lt;/code&gt;将默认为App Store创建、修复和下载配置文件。&lt;/p&gt;
 
@@ -1691,7 +1691,7 @@ B123456789012345678901234567890123456789  DeviceName2
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane match init
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-07-match-init.gif&quot; alt=&quot;match_init&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-09-07-match_init.gif&quot; alt=&quot;match_init&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;执行命令后会要求输入Git仓库地址, 可以是&lt;code class=&quot;highlighter-rouge&quot;&gt;https://或git&lt;/code&gt;URL（如果你是使用SSH对Git进行身份验证，则需要使用gitURL，否则在尝试匹配时将看会身份验证错误）。&lt;/p&gt;
 
@@ -1725,7 +1725,7 @@ fastlane match adhoc
 fastlane match appstore
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-match-appstore-small.gif&quot; alt=&quot;match_appstore_small&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-09-10-match_appstore_small.gif&quot; alt=&quot;match_appstore_small&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;这将创建一个新的证书和配置文件（如果需要的话）并将它们存储在你的&lt;a href=&quot;# Git Repo&quot;&gt;Git仓库&lt;/a&gt;中。&lt;/p&gt;
 
@@ -1755,8 +1755,6 @@ end
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane match appstore -a tools.fastlane.app --git_branch team01
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;// TODO&lt;/p&gt;
 
 &lt;h3 id=&quot;其他成员执行同步&quot;&gt;其他成员执行同步&lt;/h3&gt;
 
@@ -1826,7 +1824,7 @@ fastlane match nuke distribution
 fastlane match nuke enterprise
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-match-nuke.gif&quot; alt=&quot;match_nuke&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-09-10-match_nuke.gif&quot; alt=&quot;match_nuke&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;match&lt;/code&gt;会在操作前会向你确认操作是否执行&lt;/p&gt;
 
@@ -1841,7 +1839,7 @@ fastlane match nuke enterprise
 
 &lt;p&gt;此外，&lt;code class=&quot;highlighter-rouge&quot;&gt;match&lt;/code&gt;还生成了一个README.md文件，让新的团队成员更容易上手：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/post/2018-09-10-github-repo.png&quot; alt=&quot;github_repo&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/2018-09-10-github_repo.png&quot; alt=&quot;github_repo&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;参数&quot;&gt;参数&lt;/h3&gt;
 
@@ -2236,8 +2234,6 @@ else:
 该规范遵循 [MarkDown 官方语法] 以及 [GitHub MakDown 语法]，旨在统一书写格式和代码风格，将多种写法统一。&lt;/p&gt;
 
 &lt;h2 id=&quot;全局规范&quot;&gt;全局规范&lt;/h2&gt;
-&lt;p&gt;&lt;a name=&quot;top&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
 &lt;ul&gt;
   &lt;li&gt;MarkDown 文件均使用&lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt;作为后缀 (&lt;strong&gt;小写字母&lt;/strong&gt;)&lt;/li&gt;
   &lt;li&gt;普通文本换行，使用行末尾&lt;code class=&quot;highlighter-rouge&quot;&gt;2空格&lt;/code&gt;触发&lt;/li&gt;
@@ -2869,11 +2865,11 @@ line3
 
 &lt;p&gt;用记事本编辑的时候，从文件读取的&lt;code class=&quot;highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt;字符被转换为&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;字符到内存里，编辑完成后，保存的时候再把&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;转换为&lt;code class=&quot;highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt;保存到文件：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.liaoxuefeng.com/files/attachments/001387245992536e2ba28125cf04f5c8985dbc94a02245e000/0&quot; alt=&quot;textCode&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/0.png&quot; alt=&quot;textCode&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;浏览网页的时候，服务器会把动态生成的&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;内容转换为&lt;code class=&quot;highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt;再传输到浏览器：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.liaoxuefeng.com/files/attachments/001387245979827634fd6204f9346a1ae6358d9ed051666000/0&quot; alt=&quot;webCode&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/0-20190530110859458.png&quot; alt=&quot;webCode&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;python字符&quot;&gt;Python字符&lt;/h3&gt;
 &lt;h4 id=&quot;ascii与字符之间的转换&quot;&gt;ASCII与字符之间的转换&lt;/h4&gt;
@@ -3589,7 +3585,7 @@ set([1, 2, 3, 4])
   &lt;p&gt;正则表达式是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://qiniu.cuiqingcai.com/wp-content/uploads/2015/02/20130515113723855.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/20130515113723855.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;相关注解&quot;&gt;相关注解&lt;/h4&gt;
 &lt;h5 id=&quot;数量词的贪婪模式与非贪婪模式&quot;&gt;数量词的贪婪模式与非贪婪模式&lt;/h5&gt;
@@ -3618,15 +3614,7 @@ set([1, 2, 3, 4])
 
 &lt;p&gt;在参数中我们传入了原生字符串对象，通过compile方法编译生成一个pattern对象，然后我们利用这个对象来进行进一步的匹配。&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;参数flag是匹配模式，取值可以使用按位或运算符’&lt;/td&gt;
-      &lt;td&gt;’表示同时生效，比如re.I&lt;/td&gt;
-      &lt;td&gt;re.M。&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;参数flag是匹配模式，取值可以使用按位或运算符&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;表示同时生效，比如&lt;code class=&quot;highlighter-rouge&quot;&gt;re.I | re.M。&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;可选值有：&lt;/p&gt;
 
@@ -3714,9 +3702,7 @@ set([1, 2, 3, 4])
 
 &lt;blockquote&gt;
   &lt;p&gt;属性：&lt;/p&gt;
-&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
   &lt;ol&gt;
     &lt;li&gt;string: 匹配时使用的文本。&lt;/li&gt;
     &lt;li&gt;re: 匹配时使用的Pattern对象。&lt;/li&gt;
@@ -3729,9 +3715,7 @@ set([1, 2, 3, 4])
 
 &lt;blockquote&gt;
   &lt;p&gt;方法：&lt;/p&gt;
-&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
   &lt;ol&gt;
     &lt;li&gt;group([group1, …]):
 获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group(0)；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串。&lt;/li&gt;
@@ -3888,82 +3872,46 @@ set([1, 2, 3, 4])
 
 &lt;p&gt;在上面我们介绍了7个工具方法，例如&lt;code class=&quot;highlighter-rouge&quot;&gt;match&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;search&lt;/code&gt;等等，不过调用方式都是 &lt;code class=&quot;highlighter-rouge&quot;&gt;re.match&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;re.search&lt;/code&gt;的方式，其实还有另外一种调用方式，可以通过&lt;code class=&quot;highlighter-rouge&quot;&gt;pattern.match&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;pattern.search&lt;/code&gt;调用，这样调用便不用将&lt;code class=&quot;highlighter-rouge&quot;&gt;pattern&lt;/code&gt;作为第一个参数传入了，大家想怎样调用皆可。&lt;/p&gt;
 
-&lt;p&gt;函数API列表&lt;/p&gt;
+&lt;h6 id=&quot;函数api列表&quot;&gt;函数API列表&lt;/h6&gt;
 
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;match(string[, pos[, endpos]])&lt;/td&gt;
-            &lt;td&gt;re.match(pattern, string[, flags])&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;search(string[, pos[, endpos]])&lt;/td&gt;
-            &lt;td&gt;re.search(pattern, string[, flags])&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;split(string[, maxsplit])&lt;/td&gt;
-            &lt;td&gt;re.split(pattern, string[, maxsplit])&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;findall(string[, pos[, endpos]])&lt;/td&gt;
-            &lt;td&gt;re.findall(pattern, string[, flags])&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;finditer(string[, pos[, endpos]])&lt;/td&gt;
-            &lt;td&gt;re.finditer(pattern, string[, flags])&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;sub(repl, string[, count])&lt;/td&gt;
-            &lt;td&gt;re.sub(pattern, repl, string[, count])&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;subn(repl, string[, count])&lt;/td&gt;
-            &lt;td&gt;re.sub(pattern, repl, string[, count])&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;match(string[, pos[, endpos]])&lt;/td&gt;
+      &lt;td&gt;re.match(pattern, string[, flags])&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;search(string[, pos[, endpos]])&lt;/td&gt;
+      &lt;td&gt;re.search(pattern, string[, flags])&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;split(string[, maxsplit])&lt;/td&gt;
+      &lt;td&gt;re.split(pattern, string[, maxsplit])&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;findall(string[, pos[, endpos]])&lt;/td&gt;
+      &lt;td&gt;re.findall(pattern, string[, flags])&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;finditer(string[, pos[, endpos]])&lt;/td&gt;
+      &lt;td&gt;re.finditer(pattern, string[, flags])&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sub(repl, string[, count])&lt;/td&gt;
+      &lt;td&gt;re.sub(pattern, repl, string[, count])&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;subn(repl, string[, count])&lt;/td&gt;
+      &lt;td&gt;re.sub(pattern, repl, string[, count])&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 </description>
         <pubDate>Tue, 24 May 2016 02:00:00 +0800</pubDate>

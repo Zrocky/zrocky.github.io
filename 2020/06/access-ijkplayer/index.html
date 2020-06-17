@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>Zrocky</title>
-  <meta name="description" content="Think Different">
+  <title>接入IJKPlayer</title>
+  <meta name="description" content="项目地址： https://github.com/bilibili/ijkplayer">
   <meta name="author" content="Zrocky">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Zrocky">
-  <meta name="twitter:description" content="Think Different">
+  <meta name="twitter:title" content="接入IJKPlayer">
+  <meta name="twitter:description" content="项目地址： https://github.com/bilibili/ijkplayer">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Zrocky">
-  <meta property="og:description" content="Think Different">
+  <meta property="og:title" content="接入IJKPlayer">
+  <meta property="og:description" content="项目地址： https://github.com/bilibili/ijkplayer">
   
   <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://zrocky.com/archives/">
+  <link rel="canonical" href="http://zrocky.com/2020/06/access-ijkplayer/">
   <link rel="alternate" type="application/rss+xml" title="Zrocky" href="http://zrocky.com/feed.xml">
   
   <!-- <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" /> -->
@@ -130,181 +130,92 @@
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="" itemprop="datePublished" class="post-meta__date date"></time> &#8226; <span class="post-meta__tags tags">Archives</span>
+      <time datetime="2020-06-17 10:49:14 +0800" itemprop="datePublished" class="post-meta__date date">2020-06-17</time> &#8226; <span class="post-meta__tags tags">iOS</span>
     </div>
-    <h1 class="post-title"></h1>
+    <h1 class="post-title">接入IJKPlayer</h1>
   </header>
 
   <section class="post">
-    <ul>
-  
+    <p>项目地址： https://github.com/bilibili/ijkplayer</p>
 
-    
-      <h3>2020</h3>
-    
+<p>官方Build说明:</p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/Bilibili/ijkplayer.git ijkplayer-ios
+<span class="nb">cd </span>ijkplayer-ios
+git checkout -B latest k0.8.8
 
-    <li>06-17  <a href="/2020/06/use-srs/">SRS使用</a></li>
-  
+./init-ios.sh
 
-    
-      
-      
-      
-    
+<span class="nb">cd </span>ios
+./compile-ffmpeg.sh clean
+./compile-ffmpeg.sh all
+</code></pre></div>
 
-    <li>06-17  <a href="/2020/06/map-flatmap-compactmap/">map与flatMap和compactMap的区别</a></li>
-  
+<p>接入过程说明：</p>
+<ol>
+  <li>
+    <p>按官方给出说明，到最后一步<code class="highlighter-rouge">all</code>命令时，会报armv7错误，原因可能是XCode不再支持32位系统，解决办法就是修改<code class="highlighter-rouge">compile-ffmpeg.sh</code>文件，将<code class="highlighter-rouge">armv7</code>删除。
+  <img src="%E6%8E%A5%E5%85%A5IJKPlayer.assets/image-20200507164043340.png" alt="image-20200507164043340" /></p>
+  </li>
+  <li>
+    <p>接入到自己的项目时，我采用framework形式，所以需要制作静态库，使用<code class="highlighter-rouge">IJKMediaPlayer</code>文件夹中的项目制作；build真机包时，报了<code class="highlighter-rouge">avconfig.h</code>和<code class="highlighter-rouge">config.h</code>文件not found，找到对应文件，注释<code class="highlighter-rouge">includ armv7</code>行即可。文件位置<code class="highlighter-rouge">ios/build/universal/include/libffmpeg/config.h</code>及<code class="highlighter-rouge">ios/build/universal/include/libavutil/avconfig.h</code></p>
 
-    
-      
-      
-      
-    
+    <p><img src="%E6%8E%A5%E5%85%A5IJKPlayer.assets/5276080-b6fdc7d5ee1bcfdb.png" alt="5276080-b6fdc7d5ee1bcfdb" /></p>
+  </li>
+</ol>
 
-    <li>06-17  <a href="/2020/06/ios-use-universal-links/">iOS项目使用Universal Links</a></li>
-  
 
-    
-      
-      
-      
-    
-
-    <li>06-17  <a href="/2020/06/git-proxy-setup/">Mac设置Git代理</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>06-17  <a href="/2020/06/git-command/">Git常用命令</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>06-17  <a href="/2020/06/draw-formula/">绘图公式</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>06-17  <a href="/2020/06/curl-proxy-setup/">Mac设置curl代理</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>06-17  <a href="/2020/06/access-ijkplayer/">接入IJKPlayer</a></li>
-  
-
-    
-      
-      
-      
-        <h3>2018</h3>
-      
-    
-
-    <li>10-15  <a href="/2018/10/how-to-use-git/">使用Git进行版本控制</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-12  <a href="/2018/09/fastlane/">使用fastlane自动部署iOS App</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-10  <a href="/2018/09/how-to-use-fastlane-match/">fastlane之使用match同步证书和配置文件</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-02  <a href="/2018/09/regular-expressions/">正则表达式</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-02  <a href="/2018/09/markdown-guideline-for-team/">适用于团队的统一 MarkDown 书写规范</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-02  <a href="/2018/09/create-ghost-blog/">Ghost博客搭建</a></li>
-  
-
-    
-      
-      
-      
-        <h3>2016</h3>
-      
-    
-
-    <li>05-24  <a href="/2016/05/python-learning-note/">Python笔记</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>05-24  <a href="/2016/05/python-crawier/">Python爬虫</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>05-04  <a href="/2016/05/ios-develop-guideline/">iOS Develop Guideline</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>04-28  <a href="/2016/04/objectivec-coding-guideline/">Objective-C Coding Guideline</a></li>
-  
-</ul>
   </section>
 </article>
+
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2020/06/curl-proxy-setup/" title="link to Mac设置curl代理">Mac设置curl代理</a></h2>
+       <p class="excerpt">编辑~/.curlrc文件，添加以下代码：socks5=127.0.0.1:1086&hellip;</p>
+       <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">Mac curl</span><a class="btn-border-small" href=/2020/06/curl-proxy-setup/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2018/10/how-to-use-git/" title="link to 使用Git进行版本控制">使用Git进行版本控制</a></h2>
+       <p class="excerpt">公司一直在使用SVN来做版本控制，虽然个人项目早已换成Git，但是对Git没有一个深入的了解，最近因为分支和标签用法的困惑，继而产生想系统学习Git使用的想法，本文是基于廖雪峰Git教程而整理的学习笔记。Git概念版本库和工作区  master是Git自动创建的第一个分支Git工作分为两步  git add把文件修改添加到暂存区   git commit把暂存区的所有内容提交到当前分支 Git协议Git支持多种协议，git://和https等，https协议速度会慢一些专有名词master...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-10-15 22:26:19 +0800" class="post-list__meta--date date">2018-10-15</time> &#8226; <span class="post-list__meta--tags tags">Git</span><a class="btn-border-small" href=/2018/10/how-to-use-git/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://zrocky.com/2020/06/access-ijkplayer/";
+        this.page.identifier = "/2020/06/access-ijkplayer/";
+    };
+
+    var disqus_shortname = 'Zrocky';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
 
             <section class="footer">
     <footer>

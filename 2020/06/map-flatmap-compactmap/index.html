@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>Zrocky</title>
-  <meta name="description" content="Think Different">
+  <title>map与flatMap和compactMap的区别</title>
+  <meta name="description" content="map与flatMap和compactMap的区别">
   <meta name="author" content="Zrocky">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Zrocky">
-  <meta name="twitter:description" content="Think Different">
+  <meta name="twitter:title" content="map与flatMap和compactMap的区别">
+  <meta name="twitter:description" content="map与flatMap和compactMap的区别">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Zrocky">
-  <meta property="og:description" content="Think Different">
+  <meta property="og:title" content="map与flatMap和compactMap的区别">
+  <meta property="og:description" content="map与flatMap和compactMap的区别">
   
   <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://zrocky.com/archives/">
+  <link rel="canonical" href="http://zrocky.com/2020/06/map-flatmap-compactmap/">
   <link rel="alternate" type="application/rss+xml" title="Zrocky" href="http://zrocky.com/feed.xml">
   
   <!-- <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" /> -->
@@ -130,181 +130,85 @@
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="" itemprop="datePublished" class="post-meta__date date"></time> &#8226; <span class="post-meta__tags tags">Archives</span>
+      <time datetime="2020-06-17 10:49:14 +0800" itemprop="datePublished" class="post-meta__date date">2020-06-17</time> &#8226; <span class="post-meta__tags tags">iOS</span>
     </div>
-    <h1 class="post-title"></h1>
+    <h1 class="post-title">map与flatMap和compactMap的区别</h1>
   </header>
 
   <section class="post">
-    <ul>
-  
+    <h1 id="map与flatmap和compactmap的区别">map与flatMap和compactMap的区别</h1>
 
-    
-      <h3>2020</h3>
-    
+<p>Swift在<em>4.1</em>版本之前只有<code class="highlighter-rouge">map</code>和<code class="highlighter-rouge">flatMap</code>函数，之后引入了<code class="highlighter-rouge">compactMap</code>函数，但是<code class="highlighter-rouge">compactMap</code>函数并不是实现新的功能，而是用来解决<code class="highlighter-rouge">flatMap</code>函数功能不唯一的问题。原先<code class="highlighter-rouge">flatMap</code>函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift <em>4.1</em>以后，使用<code class="highlighter-rouge">flatMap</code>函数只解决降维问题，去除nil的功能由新引入的<code class="highlighter-rouge">compactMap</code>函数完成。</p>
 
-    <li>06-17  <a href="/2020/06/use-srs/">SRS使用</a></li>
-  
+<p><strong>map函数</strong></p>
 
-    
-      
-      
-      
-    
+<p>逐个处理数组中的元素，并生成新数组</p>
 
-    <li>06-17  <a href="/2020/06/map-flatmap-compactmap/">map与flatMap和compactMap的区别</a></li>
-  
+<p><strong>flatMap函数</strong></p>
 
-    
-      
-      
-      
-    
+<p>和<code class="highlighter-rouge">map</code>函数一致，只是当结果返回nil时，新数组会去除这一项</p>
 
-    <li>06-17  <a href="/2020/06/ios-use-universal-links/">iOS项目使用Universal Links</a></li>
-  
+<p><img src="/assets/images/post/image-20200423120104137.png" alt="image-20200423120104137" /></p>
 
-    
-      
-      
-      
-    
+<p><strong>compactMap函数</strong></p>
 
-    <li>06-17  <a href="/2020/06/git-proxy-setup/">Mac设置Git代理</a></li>
-  
+<p>和<code class="highlighter-rouge">map</code>函数一致，但当原数组是多维数组时，新数组只会返回一维数组</p>
 
-    
-      
-      
-      
-    
+<p><img src="/assets/images/post/image-20200423120137384.png" alt="image-20200423120137384" /></p>
 
-    <li>06-17  <a href="/2020/06/git-command/">Git常用命令</a></li>
-  
 
-    
-      
-      
-      
-    
-
-    <li>06-17  <a href="/2020/06/draw-formula/">绘图公式</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>06-17  <a href="/2020/06/curl-proxy-setup/">Mac设置curl代理</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>06-17  <a href="/2020/06/access-ijkplayer/">接入IJKPlayer</a></li>
-  
-
-    
-      
-      
-      
-        <h3>2018</h3>
-      
-    
-
-    <li>10-15  <a href="/2018/10/how-to-use-git/">使用Git进行版本控制</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-12  <a href="/2018/09/fastlane/">使用fastlane自动部署iOS App</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-10  <a href="/2018/09/how-to-use-fastlane-match/">fastlane之使用match同步证书和配置文件</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-02  <a href="/2018/09/regular-expressions/">正则表达式</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-02  <a href="/2018/09/markdown-guideline-for-team/">适用于团队的统一 MarkDown 书写规范</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>09-02  <a href="/2018/09/create-ghost-blog/">Ghost博客搭建</a></li>
-  
-
-    
-      
-      
-      
-        <h3>2016</h3>
-      
-    
-
-    <li>05-24  <a href="/2016/05/python-learning-note/">Python笔记</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>05-24  <a href="/2016/05/python-crawier/">Python爬虫</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>05-04  <a href="/2016/05/ios-develop-guideline/">iOS Develop Guideline</a></li>
-  
-
-    
-      
-      
-      
-    
-
-    <li>04-28  <a href="/2016/04/objectivec-coding-guideline/">Objective-C Coding Guideline</a></li>
-  
-</ul>
   </section>
 </article>
+
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2020/06/use-srs/" title="link to SRS使用">SRS使用</a></h2>
+       <p class="excerpt">&gt;&gt;&gt; Install dockerDownload docker from here then start docker.&gt;&gt;&gt; Clone SRSgit clone https://gitee.com/winlinvip/srs.oschina.git srs &amp;&amp;cd srs &amp;&amp; git remote set-url origin https://github.com/ossrs/srs.git &amp;&amp...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">docker framework</span><a class="btn-border-small" href=/2020/06/use-srs/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2020/06/ios-use-universal-links/" title="link to iOS项目使用Universal Links">iOS项目使用Universal Links</a></h2>
+       <p class="excerpt">使用Universal Links来取代Scheme的跳转App功能，有更好的安全性（第三方不能使用这种方法跳转你的App），且不会弹出跳转确认框。可以查看官方文档 获取更详细的介绍。要使用Universal Links，首先需要一个网站，该网站必须使用https协议（存疑，我使用http跳转也能成功），然后按以下步骤操作：      创建一个无后缀文件，文件名为apple-app-site-association，写入以下信息：    {    "applinks": {        ...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">应用间跳转</span><a class="btn-border-small" href=/2020/06/ios-use-universal-links/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://zrocky.com/2020/06/map-flatmap-compactmap/";
+        this.page.identifier = "/2020/06/map-flatmap-compactmap/";
+    };
+
+    var disqus_shortname = 'Zrocky';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
 
             <section class="footer">
     <footer>

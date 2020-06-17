@@ -132,9 +132,58 @@
   <ol class="post-list">
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/11/social181130/" title="访问 首例免疫艾滋病基因编辑婴儿">首例免疫艾滋病基因编辑婴儿</a></h2>
-      <p class="excerpt">  351年前的冬天，一位法国医生完成了一例给人输血的手术，用的是牛血。  病人死了。  这个医生名叫让-巴蒂斯特·德尼。此前他已经给两人输了一点羊羔的血，两人都活了下来。大受鼓舞的德尼从巴黎的街上绑架了一个疯子，拿绳子捆起来强迫他接受输血“治疗”，不料这个疯子出现了明显的不良反应；德尼不肯放弃，第三次输血之后疯子死了。  事情闹上了法庭。出乎众人意料的是，德尼没有因为杀人而上绞刑架。法庭发现这个疯子并非死于输血，而是死于砷中毒。  德尼自己不可能给患者下毒，患者死了实验就失败了，肯定另有...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2018-11-30 11:18:31 +0800" class="post-list__meta--date date">2018-11-30</time> &#8226; <span class="post-list__meta--tags tags">Social</span><a class="btn-border-small" href=/2018/11/social181130/>继续阅读</a></div>
+      <h2 class="post-list__post-title post-title"><a href="/2020/06/use-srs/" title="访问 SRS使用">SRS使用</a></h2>
+      <p class="excerpt">&gt;&gt;&gt; Install dockerDownload docker from here then start docker.&gt;&gt;&gt; Clone SRSgit clone https://gitee.com/winlinvip/srs.oschina.git srs &amp;&amp;cd srs &amp;&amp; git remote set-url origin https://github.com/ossrs/srs.git &amp;&amp...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">docker framework</span><a class="btn-border-small" href=/2020/06/use-srs/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/06/map-flatmap-compactmap/" title="访问 map与flatMap和compactMap的区别">map与flatMap和compactMap的区别</a></h2>
+      <p class="excerpt">map与flatMap和compactMap的区别Swift在4.1版本之前只有map和flatMap函数，之后引入了compactMap函数，但是compactMap函数并不是实现新的功能，而是用来解决flatMap函数功能不唯一的问题。原先flatMap函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift 4.1以后，使用flatMap函数只解决降维问题，去除nil的功能由新引入的compactMap函数完成。map函数逐个处理数组中的元...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">Swift 函数</span><a class="btn-border-small" href=/2020/06/map-flatmap-compactmap/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/06/ios-use-universal-links/" title="访问 iOS项目使用Universal Links">iOS项目使用Universal Links</a></h2>
+      <p class="excerpt">使用Universal Links来取代Scheme的跳转App功能，有更好的安全性（第三方不能使用这种方法跳转你的App），且不会弹出跳转确认框。可以查看官方文档 获取更详细的介绍。要使用Universal Links，首先需要一个网站，该网站必须使用https协议（存疑，我使用http跳转也能成功），然后按以下步骤操作：      创建一个无后缀文件，文件名为apple-app-site-association，写入以下信息：    {    "applinks": {        ...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">应用间跳转</span><a class="btn-border-small" href=/2020/06/ios-use-universal-links/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/06/git-proxy-setup/" title="访问 Mac设置Git代理">Mac设置Git代理</a></h2>
+      <p class="excerpt">设置git代理：      设置github.com走代理    编辑~/.gitconfig文件，添加以下代码：    [https "https://github.com"]  proxy = socks5://127.0.0.1:1086            设置github.com走IP（效果未验证，可跳过此步骤）    编辑/etc/hosts文件，添加以下代码：    151.101.72.249 http://global-ssl.fastly.Net192.30.253....&hellip;</p>
+      <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">Mac Git</span><a class="btn-border-small" href=/2020/06/git-proxy-setup/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/06/git-command/" title="访问 Git常用命令">Git常用命令</a></h2>
+      <p class="excerpt">删除远程分支tag先删除本地仓库taggit tag -d $tagname再删除远程仓库taggit push origin :refs/tags/$tagname查看历史命令 git reflog&hellip;</p>
+      <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">Git</span><a class="btn-border-small" href=/2020/06/git-command/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/06/draw-formula/" title="访问 绘图公式">绘图公式</a></h2>
+      <p class="excerpt">圆面积：周长：求圆心为(a, b)的圆上点坐标：椭圆求圆心为(h, k)，长半径为a、短半径为b的椭圆上点坐标：&hellip;</p>
+      <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">Math</span><a class="btn-border-small" href=/2020/06/draw-formula/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/06/curl-proxy-setup/" title="访问 Mac设置curl代理">Mac设置curl代理</a></h2>
+      <p class="excerpt">编辑~/.curlrc文件，添加以下代码：socks5=127.0.0.1:1086&hellip;</p>
+      <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">Mac curl</span><a class="btn-border-small" href=/2020/06/curl-proxy-setup/>继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/06/access-ijkplayer/" title="访问 接入IJKPlayer">接入IJKPlayer</a></h2>
+      <p class="excerpt">项目地址： https://github.com/bilibili/ijkplayer官方Build说明:git clone https://github.com/Bilibili/ijkplayer.git ijkplayer-ioscd ijkplayer-iosgit checkout -B latest k0.8.8./init-ios.shcd ios./compile-ffmpeg.sh clean./compile-ffmpeg.sh all接入过程说明：      按官方给...&hellip;</p>
+      <div class="post-list__meta"><time datetime="2020-06-17 10:49:14 +0800" class="post-list__meta--date date">2020-06-17</time> &#8226; <span class="post-list__meta--tags tags">Framework</span><a class="btn-border-small" href=/2020/06/access-ijkplayer/>继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
     
@@ -149,55 +198,6 @@
       <h2 class="post-list__post-title post-title"><a href="/2018/09/fastlane/" title="访问 使用fastlane自动部署iOS App">使用fastlane自动部署iOS App</a></h2>
       <p class="excerpt">fastlane是为iOS和Android应用程序自动执行beta部署和发布的最简单方法。它处理所有繁琐的任务，例如生成屏幕截图，处理代码签名和发布应用程序。基本使用安装fastlane      安装最新的Xcode命令行工具     xcode-select --install            安装fastlane（可以使用RubyGems或Homebrew安装）     # Using RubyGems sudo gem install fastlane -NV     # A...&hellip;</p>
       <div class="post-list__meta"><time datetime="2018-09-12 08:21:47 +0800" class="post-list__meta--date date">2018-09-12</time> &#8226; <span class="post-list__meta--tags tags">Fastlane</span><a class="btn-border-small" href=/2018/09/fastlane/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/09/how-to-use-fastlane-match/" title="访问 fastlane之使用match同步证书和配置文件">fastlane之使用match同步证书和配置文件</a></h2>
-      <p class="excerpt">在开发过程中，证书和配置文件的管理一直是一个让人头痛的问题，不管是Xcode自动创建的众多让人摸不着头脑的配置文件，还是不断被其它人revoke的证书，这些场景无不让人想要一个简单、彻底的解决方案， match正是为解决这些问题而开发的。match的方案是只创建一份code sign所需文件，并使用Git在团队内共享它们。match是https://codesigning.guide概念的实现。match创建所有必需的证书和配置文件，并将它们存储在单独的git存储库中。每个有权访问仓库的团...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2018-09-10 17:26:40 +0800" class="post-list__meta--date date">2018-09-10</time> &#8226; <span class="post-list__meta--tags tags">Fastlane match</span><a class="btn-border-small" href=/2018/09/how-to-use-fastlane-match/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/09/regular-expressions/" title="访问 正则表达式">正则表达式</a></h2>
-      <p class="excerpt">字符串是编程时涉及到的最多的一种数据结构，对字符串进行操作的需求几乎无处不在。比如判断一个字符串是否是合法的Email地址，虽然可以编程提取@前后的子串，再分别判断是否是单词和域名，但这样做不但麻烦，而且代码难以复用。正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。尝试所以我们判断一个字符串是否是合法的Email的方法是：      创建一个匹配Email的正则表...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2018-09-02 02:00:00 +0800" class="post-list__meta--date date">2018-09-02</time> &#8226; <span class="post-list__meta--tags tags">Python</span><a class="btn-border-small" href=/2018/09/regular-expressions/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/09/markdown-guideline-for-team/" title="访问 适用于团队的统一 MarkDown 书写规范">适用于团队的统一 MarkDown 书写规范</a></h2>
-      <p class="excerpt">由于 MarkDown 语法在细节的书写方式很多，为了让不同个体的文档传产出结构一致，提炼出此规范。该规范遵循 [MarkDown 官方语法] 以及 [GitHub MakDown 语法]，旨在统一书写格式和代码风格，将多种写法统一。全局规范  MarkDown 文件均使用.md作为后缀 (小写字母)  普通文本换行，使用行末尾2空格触发格式规范标题结构格式  标题与紧贴的上下正文使用1整行换行隔开  #号和文字之间1个空格连接  标题层级如下，最多6级# 顶级标题 等价于 title 和...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2018-09-02 02:00:00 +0800" class="post-list__meta--date date">2018-09-02</time> &#8226; <span class="post-list__meta--tags tags">MarkDown</span><a class="btn-border-small" href=/2018/09/markdown-guideline-for-team/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/09/create-ghost-blog/" title="访问 Ghost博客搭建">Ghost博客搭建</a></h2>
-      <p class="excerpt">Ghost是一个现代化的，开源的，基于Node.js的博客发布平台，它的前端管理系统基于Ember.js， 后端的模板引擎采用的handlebars， 而默认数据库是MySQL，当然，你也可以使用其他类型的数据库。Ghost1.0如果用过1.0版本以前的Ghost的同学，会对Ghost版本的更新感到头疼，而一些配置问题也让人心烦。好在，就在一个月前，Ghost推出了Ghost1.0.0，并在一个月内升级到了1.6.2（到目前为止）大版本的提升，主要是因为一个东西的出现，那就是Ghost-C...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2018-09-02 02:00:00 +0800" class="post-list__meta--date date">2018-09-02</time> &#8226; <span class="post-list__meta--tags tags">Ghost</span><a class="btn-border-small" href=/2018/09/create-ghost-blog/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2016/05/python-learning-note/" title="访问 Python笔记">Python笔记</a></h2>
-      <p class="excerpt">很早就对Python这门语言感兴趣, 终于有时间可以系统地学习, 所以才会有这篇笔记, 笔记本身基于C, OC, Swift三门语言, 相同之处没有太多赘述, 我也是一笔带过, 希望知晓! 我学习的来源主要是廖雪峰的Python教程, 本人并不是原创者, 笔记仅为本人自我记录的学习笔记  廖雪峰的Python教程Paython开发基础Python安装在Mac系统中, 系统内置了Python2.7版本, 所以Mac系统用户此时已基本满足编译所需环境。但是随着Python3.x版本的普及,建议...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2016-05-24 02:00:00 +0800" class="post-list__meta--date date">2016-05-24</time> &#8226; <span class="post-list__meta--tags tags">Python</span><a class="btn-border-small" href=/2016/05/python-learning-note/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2016/05/python-crawier/" title="访问 Python爬虫">Python爬虫</a></h2>
-      <p class="excerpt">爬虫, 数据说话的时代, 具有数据收集的手段, 我觉得很重要, 因为这些数据能帮助我们更好的分析趋势, 在解决问题时提供良好的依据, 以上就是我学习爬虫的动力所在  静觅Python爬虫入门Python爬虫有一些基础库, 我们就从基础库的学习, 开始爬虫之路Urllib的使用在使用之前, 需要导入Urllib库import urllib2获取网页# 标准写法 (推荐)request = urllib2.Request("http://www.baidu.com")response = ur...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2016-05-24 02:00:00 +0800" class="post-list__meta--date date">2016-05-24</time> &#8226; <span class="post-list__meta--tags tags">Python</span><a class="btn-border-small" href=/2016/05/python-crawier/>继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2016/05/ios-develop-guideline/" title="访问 iOS Develop Guideline">iOS Develop Guideline</a></h2>
-      <p class="excerpt">本规范因为Xcode版本的更迭，部分内容已经不太适用。本文仅供参考。以下是我们公司在iOS开发前需要了解的开发规范, 总结自日常的开发过程和团队所有的经验.开发工具以下列举了我们公司在iOS开发中经常使用到工具, 并附上地址, 原则上需要全部安装  Xcode 历史版本  RubyGems (Ruby环境)  Alcatraz (Xcode开发工具安装包)以下插件均可在Alcatraz插件安装包中下载安装  Peckham (头文件快捷导入)  cocoapods plugin (coco...&hellip;</p>
-      <div class="post-list__meta"><time datetime="2016-05-04 02:00:00 +0800" class="post-list__meta--date date">2016-05-04</time> &#8226; <span class="post-list__meta--tags tags">iOS</span><a class="btn-border-small" href=/2016/05/ios-develop-guideline/>继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
     
@@ -219,7 +219,7 @@
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2019</span>
+        <span class="footer__copyright">由 <a href="http://zrocky.com">@Zrocky</a> 创建 - &copy; 2020</span>
     </footer>
 </section>
 

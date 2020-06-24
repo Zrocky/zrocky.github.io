@@ -5,8 +5,8 @@
     <description>Think Different</description>
     <link>http://zrocky.com/</link>
     <atom:link href="http://zrocky.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Jun 2020 11:24:57 +0800</pubDate>
-    <lastBuildDate>Wed, 17 Jun 2020 11:24:57 +0800</lastBuildDate>
+    <pubDate>Wed, 24 Jun 2020 17:23:30 +0800</pubDate>
+    <lastBuildDate>Wed, 24 Jun 2020 17:23:30 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -219,20 +219,34 @@ cd srs &amp;amp;&amp;amp; git remote set-url origin https://github.com/ossrs/srs
         <title>Git常用命令</title>
         <description>&lt;p&gt;&lt;strong&gt;删除远程分支tag&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;先删除本地仓库tag&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag -d &lt;span class=&quot;nv&quot;&gt;$tagname&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;再删除远程仓库tag&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push origin :refs/tags/&lt;span class=&quot;nv&quot;&gt;$tagname&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;先删除本地仓库tag
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  git tag -d &lt;span class=&quot;nv&quot;&gt;$tagname&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;再删除远程仓库tag
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  git push origin :refs/tags/&lt;span class=&quot;nv&quot;&gt;$tagname&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;strong&gt;查看历史命令&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git reflog
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;撤销更改&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;撤销工作区所有更改
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  git checkout .
+&lt;/code&gt;&lt;/pre&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;撤销暂存区所有更改
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  git reset HEAD 
+&lt;/code&gt;&lt;/pre&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 </description>
         <pubDate>Wed, 17 Jun 2020 10:49:14 +0800</pubDate>
@@ -254,7 +268,7 @@ cd srs &amp;amp;&amp;amp; git remote set-url origin https://github.com/ossrs/srs
 
 &lt;p&gt;周长：&lt;img src=&quot;/assets/images/post/image-20200610165651297.png&quot; alt=&quot;image-20200610165651297&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;求圆心为&lt;em&gt;(a, b)&lt;/em&gt;的圆上点坐标：&lt;img src=&quot;/assets/images/post/image-20200610165546644.png&quot; alt=&quot;image-20200610165546644&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;求圆心为&lt;em&gt;(a, b)&lt;/em&gt;的圆上点坐标：&lt;img src=&quot;/assets/images/post/image-20200622173643328.png&quot; alt=&quot;image-20200622173643328&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;椭圆&lt;/strong&gt;&lt;/p&gt;
 

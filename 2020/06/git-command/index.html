@@ -138,20 +138,34 @@
   <section class="post">
     <p><strong>删除远程分支tag</strong></p>
 
-<p>先删除本地仓库tag</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>git tag -d <span class="nv">$tagname</span>
-</code></pre></div>
-
-<p>再删除远程仓库tag</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>git push origin :refs/tags/<span class="nv">$tagname</span>
-</code></pre></div>
+<ol>
+  <li>先删除本地仓库tag
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>  git tag -d <span class="nv">$tagname</span>
+</code></pre>    </div>
+  </li>
+  <li>再删除远程仓库tag
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>  git push origin :refs/tags/<span class="nv">$tagname</span>
+</code></pre>    </div>
+  </li>
+</ol>
 
 <p><strong>查看历史命令</strong></p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code> git reflog
 </code></pre></div>
+
+<p><strong>撤销更改</strong></p>
+
+<ol>
+  <li>撤销工作区所有更改
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>  git checkout .
+</code></pre>    </div>
+  </li>
+  <li>撤销暂存区所有更改
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code>  git reset HEAD 
+</code></pre>    </div>
+  </li>
+</ol>
 
 
   </section>

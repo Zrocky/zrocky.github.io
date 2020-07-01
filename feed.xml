@@ -5,8 +5,8 @@
     <description>Think Different</description>
     <link>http://zrocky.com/</link>
     <atom:link href="http://zrocky.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Jun 2020 17:23:30 +0800</pubDate>
-    <lastBuildDate>Wed, 24 Jun 2020 17:23:30 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Jul 2020 15:58:44 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Jul 2020 15:58:44 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -61,9 +61,7 @@ cd srs &amp;amp;&amp;amp; git remote set-url origin https://github.com/ossrs/srs
     
       <item>
         <title>map与flatMap和compactMap的区别</title>
-        <description>&lt;h1 id=&quot;map与flatmap和compactmap的区别&quot;&gt;map与flatMap和compactMap的区别&lt;/h1&gt;
-
-&lt;p&gt;Swift在&lt;em&gt;4.1&lt;/em&gt;版本之前只有&lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;函数，之后引入了&lt;code class=&quot;highlighter-rouge&quot;&gt;compactMap&lt;/code&gt;函数，但是&lt;code class=&quot;highlighter-rouge&quot;&gt;compactMap&lt;/code&gt;函数并不是实现新的功能，而是用来解决&lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;函数功能不唯一的问题。原先&lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift &lt;em&gt;4.1&lt;/em&gt;以后，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;函数只解决降维问题，去除nil的功能由新引入的&lt;code class=&quot;highlighter-rouge&quot;&gt;compactMap&lt;/code&gt;函数完成。&lt;/p&gt;
+        <description>&lt;p&gt;Swift在&lt;em&gt;4.1&lt;/em&gt;版本之前只有&lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;函数，之后引入了&lt;code class=&quot;highlighter-rouge&quot;&gt;compactMap&lt;/code&gt;函数，但是&lt;code class=&quot;highlighter-rouge&quot;&gt;compactMap&lt;/code&gt;函数并不是实现新的功能，而是用来解决&lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;函数功能不唯一的问题。原先&lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift &lt;em&gt;4.1&lt;/em&gt;以后，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;函数只解决降维问题，去除nil的功能由新引入的&lt;code class=&quot;highlighter-rouge&quot;&gt;compactMap&lt;/code&gt;函数完成。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;map函数&lt;/strong&gt;&lt;/p&gt;
 

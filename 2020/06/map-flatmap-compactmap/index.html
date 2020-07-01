@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <title>map与flatMap和compactMap的区别</title>
-  <meta name="description" content="map与flatMap和compactMap的区别">
+  <meta name="description" content="Swift在4.1版本之前只有map和flatMap函数，之后引入了compactMap函数，但是compactMap函数并不是实现新的功能，而是用来解决flatMap函数功能不唯一的问题。原先flatMap函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift 4....">
   <meta name="author" content="Zrocky">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="map与flatMap和compactMap的区别">
-  <meta name="twitter:description" content="map与flatMap和compactMap的区别">
+  <meta name="twitter:description" content="Swift在4.1版本之前只有map和flatMap函数，之后引入了compactMap函数，但是compactMap函数并不是实现新的功能，而是用来解决flatMap函数功能不唯一的问题。原先flatMap函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift 4....">
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="map与flatMap和compactMap的区别">
-  <meta property="og:description" content="map与flatMap和compactMap的区别">
+  <meta property="og:description" content="Swift在4.1版本之前只有map和flatMap函数，之后引入了compactMap函数，但是compactMap函数并不是实现新的功能，而是用来解决flatMap函数功能不唯一的问题。原先flatMap函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift 4....">
   
   <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -136,9 +136,7 @@
   </header>
 
   <section class="post">
-    <h1 id="map与flatmap和compactmap的区别">map与flatMap和compactMap的区别</h1>
-
-<p>Swift在<em>4.1</em>版本之前只有<code class="highlighter-rouge">map</code>和<code class="highlighter-rouge">flatMap</code>函数，之后引入了<code class="highlighter-rouge">compactMap</code>函数，但是<code class="highlighter-rouge">compactMap</code>函数并不是实现新的功能，而是用来解决<code class="highlighter-rouge">flatMap</code>函数功能不唯一的问题。原先<code class="highlighter-rouge">flatMap</code>函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift <em>4.1</em>以后，使用<code class="highlighter-rouge">flatMap</code>函数只解决降维问题，去除nil的功能由新引入的<code class="highlighter-rouge">compactMap</code>函数完成。</p>
+    <p>Swift在<em>4.1</em>版本之前只有<code class="highlighter-rouge">map</code>和<code class="highlighter-rouge">flatMap</code>函数，之后引入了<code class="highlighter-rouge">compactMap</code>函数，但是<code class="highlighter-rouge">compactMap</code>函数并不是实现新的功能，而是用来解决<code class="highlighter-rouge">flatMap</code>函数功能不唯一的问题。原先<code class="highlighter-rouge">flatMap</code>函数既有去除nil的功能，也能将多维数组降维成一维，这违背了函数设计的单一职责原则，所以 Swift <em>4.1</em>以后，使用<code class="highlighter-rouge">flatMap</code>函数只解决降维问题，去除nil的功能由新引入的<code class="highlighter-rouge">compactMap</code>函数完成。</p>
 
 <p><strong>map函数</strong></p>
 

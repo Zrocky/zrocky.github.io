@@ -5,8 +5,8 @@
     <description>Think Different</description>
     <link>http://zrocky.com/</link>
     <atom:link href="http://zrocky.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 Nov 2020 18:16:22 +0800</pubDate>
-    <lastBuildDate>Fri, 06 Nov 2020 18:16:22 +0800</lastBuildDate>
+    <pubDate>Fri, 09 Jun 2023 16:12:49 +0800</pubDate>
+    <lastBuildDate>Fri, 09 Jun 2023 16:12:49 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -94,13 +94,13 @@ cd srs &amp;amp;&amp;amp; git remote set-url origin https://github.com/ossrs/srs
 
 &lt;p&gt;逐个处理数组中的元素，并生成新数组&lt;/p&gt;
 
-&lt;p&gt;complactMap函数**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;complactMap函数&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;函数一致，只是当结果返回nil时，新数组会去除这一项&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/post/image-20200423120104137.png&quot; alt=&quot;image-20200423120104137&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;flatMap函数**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;flatMap函数&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;函数一致，但当原数组是多维数组时，新数组只会返回一维数组&lt;/p&gt;
 
@@ -272,6 +272,11 @@ cd srs &amp;amp;&amp;amp; git remote set-url origin https://github.com/ossrs/srs
 &lt;/code&gt;&lt;/pre&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Github提交大文件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git lfs init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
         <pubDate>Wed, 17 Jun 2020 10:49:14 +0800</pubDate>
